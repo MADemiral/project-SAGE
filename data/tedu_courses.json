@@ -1,0 +1,47 @@
+[
+  {
+    "code": "CMPE 101",
+    "name": "Introduction to Computer Engineering",
+    "credits": "3",
+    "ects": "5",
+    "semester": "1",
+    "type": "Compulsory",
+    "description": "Introduction to computer systems, hardware and software. Overview of computer engineering profession. Problem solving and algorithm development. Introduction to programming."
+  },
+  {
+    "code": "CMPE 102",
+    "name": "Computer Programming I",
+    "credits": "3",
+    "ects": "6",
+    "semester": "1",
+    "type": "Compulsory",
+    "description": "Fundamental programming concepts. Variables, data types, operators. Control structures: selection and iteration. Functions and parameter passing. Arrays and strings. Introduction to C programming language."
+  },
+  {
+    "code": "CMPE 220",
+    "name": "Data Structures and Algorithms",
+    "credits": "4",
+    "ects": "7",
+    "semester": "3",
+    "type": "Compulsory",
+    "description": "Abstract data types. Arrays, linked lists, stacks, queues. Trees and graphs. Sorting and searching algorithms. Algorithm complexity analysis. Hash tables."
+  },
+  {
+    "code": "CMPE 462",
+    "name": "Machine Learning",
+    "credits": "3",
+    "ects": "6",
+    "semester": "6",
+    "type": "Elective",
+    "description": "Introduction to machine learning. Supervised learning algorithms. Unsupervised learning. Neural networks and deep learning. Model evaluation and validation."
+  },
+  {
+    "code": "CMPE 481",
+    "name": "Artificial Intelligence",
+    "credits": "3",
+    "ects": "6",
+    "semester": "8",
+    "type": "Elective",
+    "description": "AI fundamentals. Search algorithms. Knowledge representation. Logic and reasoning. Planning. Natural language processing. Expert systems."
+  }
+]
