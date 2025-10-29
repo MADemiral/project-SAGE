@@ -6,8 +6,8 @@ import os
 # Add scripts directory to path
 sys.path.append(os.path.join(os.path.dirname(__file__), '../../scripts'))
 
-from scrape_courses import scrape_tedu_courses, save_courses_to_json
-from create_embeddings import load_courses, create_course_documents, store_in_chromadb
+#from scrape_courses import scrape_tedu_courses, save_courses_to_json
+#from create_embeddings import load_courses, create_course_documents, store_in_chromadb
 
 router = APIRouter()
 
