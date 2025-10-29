@@ -49,8 +49,8 @@ def scrape_syllabus_detail(driver, syllabus_url: str) -> Dict:
             "academic_year": "",
             "semester": "",
             "catalog_description": "",
-            "prerequisites": "",
-            "corequisites": "",
+            "prerequisites": [],
+            "corequisites": [],
             "instructor": "",
             "learning_outcomes": "",
             "learning_activities": "",
@@ -101,15 +101,27 @@ def scrape_syllabus_detail(driver, syllabus_url: str) -> Dict:
         if desc_match:
             detail_info["catalog_description"] = desc_match.group(1).strip()
         
-        # Prerequisites
+        # Prerequisites - split by OR and create list
         prereq_match = re.search(r'Pre-requisites?:\s*([^\n]+)', page_text, re.IGNORECASE)
         if prereq_match:
-            detail_info["prerequisites"] = prereq_match.group(1).strip()
+            prereq_text = prereq_match.group(1).strip()
+            if prereq_text.upper() == "NONE":
+                detail_info["prerequisites"] = []
+            else:
+                # Split by OR and clean up
+                prereq_list = [p.strip() for p in re.split(r'\s+OR\s+', prereq_text, flags=re.IGNORECASE)]
+                detail_info["prerequisites"] = prereq_list
         
-        # Corequisites
+        # Corequisites - split by OR and create list
         coreq_match = re.search(r'Co-requisites?:\s*([^\n]+)', page_text, re.IGNORECASE)
         if coreq_match:
-            detail_info["corequisites"] = coreq_match.group(1).strip()
+            coreq_text = coreq_match.group(1).strip()
+            if coreq_text.upper() == "NONE":
+                detail_info["corequisites"] = []
+            else:
+                # Split by OR and clean up
+                coreq_list = [c.strip() for c in re.split(r'\s+OR\s+', coreq_text, flags=re.IGNORECASE)]
+                detail_info["corequisites"] = coreq_list
         
         # Instructor
         instructor_match = re.search(r'Instructor:\s*([^\n]+)', page_text, re.IGNORECASE)
@@ -161,8 +173,8 @@ def scrape_syllabus_detail(driver, syllabus_url: str) -> Dict:
             "academic_year": "",
             "semester": "",
             "catalog_description": "",
-            "prerequisites": "",
-            "corequisites": "",
+            "prerequisites": [],
+            "corequisites": [],
             "instructor": "",
             "learning_outcomes": "",
             "learning_activities": "",
@@ -381,8 +393,8 @@ def scrape_courses():
                                 "credit_hours": "",
                                 "academic_year": "",
                                 "catalog_description": "",
-                                "prerequisites": "",
-                                "corequisites": "",
+                                "prerequisites": [],
+                                "corequisites": [],
                                 "learning_outcomes": "",
                                 "learning_activities": "",
                                 "assessment_methods": "",
