@@ -1,6 +1,5 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
-from pydantic import field_validator
-from typing import List
+from typing import List, Union
 
 
 class Settings(BaseSettings):
@@ -26,20 +25,20 @@ class Settings(BaseSettings):
     def CHROMA_URL(self) -> str:
         return f"http://{self.CHROMA_HOST}:{self.CHROMA_PORT}"
     
-    # CORS
-    ALLOWED_ORIGINS: List[str] = ["http://localhost:3000", "http://localhost:5173", "http://localhost:8080", "http://localhost"]
+    # CORS - can be string (comma-separated) or list
+    ALLOWED_ORIGINS: Union[str, List[str]] = "http://localhost:3000,http://localhost:5173,http://localhost:8080,http://localhost"
+    
+    @property
+    def allowed_origins_list(self) -> List[str]:
+        """Get ALLOWED_ORIGINS as a list"""
+        if isinstance(self.ALLOWED_ORIGINS, str):
+            return [x.strip() for x in self.ALLOWED_ORIGINS.split(',')]
+        return self.ALLOWED_ORIGINS
     
     # Security
     SECRET_KEY: str = "your-secret-key-here-change-in-production-09d25e094faa6ca2556c818166b7a9563b93f7099f6f0f4caa6cf63b88e8d3e7"
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
-    
-    @field_validator('ALLOWED_ORIGINS', mode='before')
-    @classmethod
-    def parse_allowed_origins(cls, v):
-        if isinstance(v, str):
-            return [x.strip() for x in v.split(',')]
-        return v
     
     model_config = SettingsConfigDict(
         env_file=".env",

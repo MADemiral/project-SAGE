@@ -92,9 +92,10 @@ CREATE INDEX IF NOT EXISTS idx_queries_created_at ON queries(created_at DESC);
 
 -- Insert mock admin user (email: admin@admin.com, password: admin)
 -- Password hash generated with bcrypt for 'admin'
+-- This is a standard bcrypt hash that should work consistently across rebuilds
 INSERT INTO users (username, email, hashed_password, full_name, is_active, is_superuser) 
 VALUES 
-    ('admin', 'admin@admin.com', '$2b$12$LQv3c1yqBWVHxkd0LHAkCOYz6TtxMQJqhN8/LewY5GyYqHqyJg8zi', 'System Administrator', TRUE, TRUE)
+    ('admin', 'admin@admin.com', '$2b$12$QwAlA0WofzgYTDibnCUbcuvUfE.tgk6hzfh1NnlRsHEBWdV.HT2NS', 'System Administrator', TRUE, TRUE)
 ON CONFLICT (email) DO NOTHING;
 
 -- Insert sample documents
