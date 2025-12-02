@@ -135,6 +135,40 @@ CREATE TABLE IF NOT EXISTS messages (
 CREATE INDEX IF NOT EXISTS idx_messages_conversation_id ON messages(conversation_id);
 CREATE INDEX IF NOT EXISTS idx_messages_created_at ON messages(created_at);
 
+-- Create courses table (for TED University courses)
+CREATE TABLE IF NOT EXISTS courses (
+    id SERIAL PRIMARY KEY,
+    course_code VARCHAR(20) NOT NULL UNIQUE,
+    course_title VARCHAR(255),
+    department VARCHAR(10),
+    level VARCHAR(50),
+    credits INTEGER,
+    ects INTEGER,
+    hours VARCHAR(50),
+    catalog_description TEXT,
+    prerequisites JSONB DEFAULT '[]'::jsonb,
+    corequisites JSONB DEFAULT '[]'::jsonb,
+    instructor VARCHAR(255),
+    learning_outcomes TEXT,
+    assessment_methods TEXT,
+    textbooks TEXT,
+    syllabus_url VARCHAR(512),
+    offered_semesters JSONB DEFAULT '[]'::jsonb,
+    semester_data JSONB DEFAULT '{}'::jsonb,
+    metadata JSONB DEFAULT '{}'::jsonb,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE INDEX IF NOT EXISTS idx_courses_code ON courses(course_code);
+CREATE INDEX IF NOT EXISTS idx_courses_department ON courses(department);
+CREATE INDEX IF NOT EXISTS idx_courses_level ON courses(level);
+CREATE INDEX IF NOT EXISTS idx_courses_prerequisites ON courses USING GIN (prerequisites);
+CREATE INDEX IF NOT EXISTS idx_courses_semesters ON courses USING GIN (offered_semesters);
+
+CREATE TRIGGER update_courses_updated_at BEFORE UPDATE ON courses
+    FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+
 -- Grant permissions (if using specific roles)
 -- GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO sage_user;
 -- GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO sage_user;

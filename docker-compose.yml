@@ -25,7 +25,7 @@ services:
 
   # ChromaDB Vector Database
   chromadb:
-    image: chromadb/chroma:latest
+    image: chromadb/chroma:0.4.24
     container_name: sage_chromadb
     restart: unless-stopped
     environment:
@@ -112,7 +112,7 @@ services:
       timeout: 10s
       retries: 3
 
-  # Scraper Service
+  # Scraper Service - Runs once to scrape courses
   scraper:
     build:
       context: ./scraper
@@ -127,9 +127,36 @@ services:
     networks:
       - sage_network
     depends_on:
-      - backend
-    profiles:
-      - scraper
+      backend:
+        condition: service_started
+    command: >
+      sh -c "python scrape_multi_semester.py && echo 'Scraping completed!'"
+
+  # Course Worker - Scrapes courses and creates embeddings
+  course_worker:
+    build:
+      context: .
+      dockerfile: Dockerfile.worker
+    container_name: sage_course_worker
+    restart: "no"
+    environment:
+      - DISPLAY=:99
+      - POSTGRES_USER=${POSTGRES_USER:-sage_user}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-sage_password}
+      - POSTGRES_DB=${POSTGRES_DB:-sage_db}
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - CHROMA_HOST=chromadb
+      - CHROMA_PORT=8000
+    volumes:
+      - ./data:/workspace/data
+    networks:
+      - sage_network
+    depends_on:
+      postgres:
+        condition: service_healthy
+      chromadb:
+        condition: service_started
 
   # pgAdmin for Database Management
   pgadmin:

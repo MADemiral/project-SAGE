@@ -5,9 +5,15 @@
     "hours": "2+0+2",
     "credits": "3",
     "ects": "5",
-    "semester": "Fall",
-    "sections": "01, 02, 03, 04",
-    "instructors": "Gökçe Nur Yılmaz , Semihanur Aktay Subaşı",
+    "sections": [
+      "01",
+      "02",
+      "03",
+      "04"
+    ],
+    "instructors": [
+      "Gökçe Nur Yılmaz , Semihanur Aktay Subaşı"
+    ],
     "syllabus_url": "https://cmpe.tedu.edu.tr/en/izlence-detail/50296007",
     "course_code": "CMPE 113",
     "course_title": "Fundamentals of Programming I",
@@ -17,12 +23,39 @@
     "catalog_description": "Variables. Assignment statements. Built-in data types. Conditions. Loops. Arrays. Input and output management.",
     "prerequisites": [],
     "corequisites": [],
+    "instructor": "Gökçe Nur Yılmaz",
     "learning_outcomes": "",
-    "learning_activities": "",
     "assessment_methods": "",
     "textbooks": "",
-    "weekly_schedule": "",
-    "instructor": "Gökçe Nur Yılmaz"
+    "department": "CMPE",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03",
+          "04"
+        ],
+        "instructors": [
+          "Gökçe Nur Yılmaz , Semihanur Aktay Subaşı"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03",
+          "04"
+        ],
+        "instructors": [
+          "Gökçe Nur Yılmaz , Semihanur Aktay Subaşı"
+        ]
+      }
+    }
   },
   {
     "code": "CMPE 114",
@@ -30,9 +63,16 @@
     "hours": "2+0+2",
     "credits": "3",
     "ects": "6",
-    "semester": "Fall",
-    "sections": "01, 02, 03, 04",
-    "instructors": "Eren Ulu, Tansel Dökeroğlu",
+    "sections": [
+      "01",
+      "02",
+      "03",
+      "04"
+    ],
+    "instructors": [
+      "Eren Ulu",
+      "Tansel Dökeroğlu"
+    ],
     "syllabus_url": "https://cmpe.tedu.edu.tr/en/izlence-detail/50296028",
     "course_code": "CMPE 114",
     "course_title": "Fundamentals of Programming II",
@@ -45,12 +85,41 @@
       "CMPE 113"
     ],
     "corequisites": [],
+    "instructor": "Eren Ulu",
     "learning_outcomes": "",
-    "learning_activities": "",
     "assessment_methods": "",
     "textbooks": "",
-    "weekly_schedule": "",
-    "instructor": "Eren Ulu"
+    "department": "CMPE",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03",
+          "04"
+        ],
+        "instructors": [
+          "Eren Ulu",
+          "Tansel Dökeroğlu"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03",
+          "04"
+        ],
+        "instructors": [
+          "Eren Ulu",
+          "Tansel Dökeroğlu"
+        ]
+      }
+    }
   },
   {
     "code": "CMPE 201",
@@ -58,9 +127,15 @@
     "hours": "3+0+0",
     "credits": "3",
     "ects": "6",
-    "semester": "Fall",
-    "sections": "01, 02, 03",
-    "instructors": "Anıl Özdemir, Niyazi Anıl Gezer",
+    "sections": [
+      "01",
+      "02",
+      "03"
+    ],
+    "instructors": [
+      "Anıl Özdemir",
+      "Niyazi Anıl Gezer"
+    ],
     "syllabus_url": "https://cmpe.tedu.edu.tr/en/izlence-detail/50298321",
     "course_code": "CMPE 201",
     "course_title": "Discrete Structures of Mathematics",
@@ -70,12 +145,39 @@
     "catalog_description": "Logic. Theorems and proofs. Set theory. Algorithms and Complexity. Number Theory. Relations. Functions. Mathematical induction. Rules of counting. Permutation and combination. Pigeonhole principle. Discrete probability. Graphs and trees. Boolean Algebra. Theory of Computation.",
     "prerequisites": [],
     "corequisites": [],
+    "instructor": "Anıl Özdemir",
     "learning_outcomes": "Learning Outcomes:\nUpon succesful completion of this course, a student will be able to\n1. Identify the logical statements and argumentation in regular languages\n2. Understand and use common mathematical notation\n3. Express and analyze a problem using set theory constructs\n4. Use basic mathematical proof techniques for proving theorems\n5. Count entities using rules of counting, combination and permutation\n6. Compute the probability of simple and complex events\n7. Identify different types of graphs and trees\n8. Identify and use different types of relations and functions and their properties\n9. Use the pigeonhole principle to solve mathematical problems\n10. Use binomial coefficients to solve problems",
-    "learning_activities": "Telling/Explaining\nDiscussion/Debate\nQuestioning\nReading\nProblem Solving",
     "assessment_methods": "Test / Exam\nQuiz/Homework\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
     "textbooks": "",
-    "weekly_schedule": "",
-    "instructor": "Anıl Özdemir"
+    "department": "CMPE",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03"
+        ],
+        "instructors": [
+          "Anıl Özdemir",
+          "Niyazi Anıl Gezer"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03"
+        ],
+        "instructors": [
+          "Anıl Özdemir",
+          "Niyazi Anıl Gezer"
+        ]
+      }
+    }
   },
   {
     "code": "CMPE 223",
@@ -83,9 +185,14 @@
     "hours": "3+0+0",
     "credits": "3",
     "ects": "6",
-    "semester": "Fall",
-    "sections": "01, 02, 03",
-    "instructors": "Ulaş Güleç",
+    "sections": [
+      "01",
+      "02",
+      "03"
+    ],
+    "instructors": [
+      "Ulaş Güleç"
+    ],
     "syllabus_url": "https://cmpe.tedu.edu.tr/en/izlence-detail/50296046",
     "course_code": "CMPE 223",
     "course_title": "Data Structures and Algorithms I",
@@ -98,12 +205,37 @@
       "CMPE 114"
     ],
     "corequisites": [],
+    "instructor": "Ulaş Güleç",
     "learning_outcomes": "",
-    "learning_activities": "",
     "assessment_methods": "",
     "textbooks": "",
-    "weekly_schedule": "",
-    "instructor": "Ulaş Güleç"
+    "department": "CMPE",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03"
+        ],
+        "instructors": [
+          "Ulaş Güleç"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03"
+        ],
+        "instructors": [
+          "Ulaş Güleç"
+        ]
+      }
+    }
   },
   {
     "code": "CMPE 224",
@@ -111,9 +243,16 @@
     "hours": "3+0+0",
     "credits": "3",
     "ects": "6",
-    "semester": "Fall",
-    "sections": "01, 02, 03, 04",
-    "instructors": "Tolga Kurtuluş Çapın, Mehmet Evren Coşkun",
+    "sections": [
+      "01",
+      "02",
+      "03",
+      "04"
+    ],
+    "instructors": [
+      "Tolga Kurtuluş Çapın",
+      "Mehmet Evren Coşkun"
+    ],
     "syllabus_url": "https://cmpe.tedu.edu.tr/en/izlence-detail/50296061",
     "course_code": "CMPE 224",
     "course_title": "Data Structures and Algorithms II",
@@ -127,12 +266,41 @@
       "CMPE 223"
     ],
     "corequisites": [],
+    "instructor": "Tolga Kurtuluş Çapın",
     "learning_outcomes": "",
-    "learning_activities": "",
     "assessment_methods": "",
     "textbooks": "",
-    "weekly_schedule": "",
-    "instructor": "Tolga Kurtuluş Çapın"
+    "department": "CMPE",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03",
+          "04"
+        ],
+        "instructors": [
+          "Tolga Kurtuluş Çapın",
+          "Mehmet Evren Coşkun"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03",
+          "04"
+        ],
+        "instructors": [
+          "Tolga Kurtuluş Çapın",
+          "Mehmet Evren Coşkun"
+        ]
+      }
+    }
   },
   {
     "code": "CMPE 232",
@@ -140,9 +308,16 @@
     "hours": "3+0+0",
     "credits": "3",
     "ects": "5",
-    "semester": "Fall",
-    "sections": "01, 02, 03, 04",
-    "instructors": "Ayşe Yasemin Seydim, Deniz Cantürk",
+    "sections": [
+      "01",
+      "02",
+      "03",
+      "04"
+    ],
+    "instructors": [
+      "Ayşe Yasemin Seydim",
+      "Deniz Cantürk"
+    ],
     "syllabus_url": "https://cmpe.tedu.edu.tr/en/izlence-detail/50296099",
     "course_code": "CMPE 232",
     "course_title": "Database Systems",
@@ -155,12 +330,41 @@
       "CMPE 113"
     ],
     "corequisites": [],
+    "instructor": "Ayşe Yasemin Seydim",
     "learning_outcomes": "",
-    "learning_activities": "",
     "assessment_methods": "",
     "textbooks": "",
-    "weekly_schedule": "",
-    "instructor": "Ayşe Yasemin Seydim"
+    "department": "CMPE",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03",
+          "04"
+        ],
+        "instructors": [
+          "Ayşe Yasemin Seydim",
+          "Deniz Cantürk"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03",
+          "04"
+        ],
+        "instructors": [
+          "Ayşe Yasemin Seydim",
+          "Deniz Cantürk"
+        ]
+      }
+    }
   },
   {
     "code": "CMPE 322",
@@ -168,9 +372,17 @@
     "hours": "3+0+0",
     "credits": "3",
     "ects": "6",
-    "semester": "Fall",
-    "sections": "01, 02, 03, 04, 05",
-    "instructors": "Fırat Akba, Eren Ulu",
+    "sections": [
+      "01",
+      "02",
+      "03",
+      "04",
+      "05"
+    ],
+    "instructors": [
+      "Fırat Akba",
+      "Eren Ulu"
+    ],
     "syllabus_url": "https://cmpe.tedu.edu.tr/en/izlence-detail/50296150",
     "course_code": "CMPE 322",
     "course_title": "Theory of Computation",
@@ -182,12 +394,43 @@
       "CMPE 242"
     ],
     "corequisites": [],
+    "instructor": "Fırat Akba",
     "learning_outcomes": "Learning Outcomes:\nUpon succesful completion of this course, a student will be able to\n1. understand the functioning of Finite-State Machines, Deterministic Finite-State Automata, Nondeterministic Finite-State Automata and Pushdown Automata;\n2. create Automata to accept strings from various simple languages;\n3. understand Formal Grammars;\n4. discuss the difference between Regular, Context-Free and Context-Sensitive languages;\n5. give grammars to produce strings from specific languages.",
-    "learning_activities": "Telling/Explaining\nDiscussion/Debate\nQuestioning\nReading\nProblem Solving\nOral Presentation\nHands-on Activities\nWeb Searching\nExperiments",
     "assessment_methods": "Test / Exam\nQuiz/Homework\nWritten Project\nPresentation (Oral/Poster)\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
     "textbooks": "",
-    "weekly_schedule": "",
-    "instructor": "Fırat Akba"
+    "department": "CMPE",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "05"
+        ],
+        "instructors": [
+          "Fırat Akba",
+          "Eren Ulu"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "05"
+        ],
+        "instructors": [
+          "Fırat Akba",
+          "Eren Ulu"
+        ]
+      }
+    }
   },
   {
     "code": "CMPE 325",
@@ -195,9 +438,13 @@
     "hours": "3+0+0",
     "credits": "3",
     "ects": "5",
-    "semester": "Fall",
-    "sections": "01, 02",
-    "instructors": "Elif Kurtaran Özbudak",
+    "sections": [
+      "01",
+      "02"
+    ],
+    "instructors": [
+      "Elif Kurtaran Özbudak"
+    ],
     "syllabus_url": "https://cmpe.tedu.edu.tr/en/izlence-detail/50296117",
     "course_code": "CMPE 325",
     "course_title": "Information Security and Cryptography",
@@ -210,12 +457,35 @@
       "CMPE 114"
     ],
     "corequisites": [],
+    "instructor": "Elif Kurtaran Özbudak",
     "learning_outcomes": "",
-    "learning_activities": "",
     "assessment_methods": "",
     "textbooks": "",
-    "weekly_schedule": "",
-    "instructor": "Elif Kurtaran Özbudak"
+    "department": "CMPE",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01",
+          "02"
+        ],
+        "instructors": [
+          "Elif Kurtaran Özbudak"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01",
+          "02"
+        ],
+        "instructors": [
+          "Elif Kurtaran Özbudak"
+        ]
+      }
+    }
   },
   {
     "code": "CMPE 327",
@@ -223,9 +493,17 @@
     "hours": "3+0+0",
     "credits": "3",
     "ects": "6",
-    "semester": "Fall",
-    "sections": "01, 02, 03, 04, 05",
-    "instructors": "Fırat Akba, Eren Ulu",
+    "sections": [
+      "01",
+      "02",
+      "03",
+      "04",
+      "05"
+    ],
+    "instructors": [
+      "Fırat Akba",
+      "Eren Ulu"
+    ],
     "syllabus_url": "https://cmpe.tedu.edu.tr/en/izlence-detail/50296126",
     "course_code": "CMPE 327",
     "course_title": "Theory of Computation",
@@ -238,12 +516,43 @@
       "CMPE 223"
     ],
     "corequisites": [],
+    "instructor": "Fırat Akba",
     "learning_outcomes": "",
-    "learning_activities": "",
     "assessment_methods": "",
     "textbooks": "",
-    "weekly_schedule": "",
-    "instructor": "Fırat Akba"
+    "department": "CMPE",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "05"
+        ],
+        "instructors": [
+          "Fırat Akba",
+          "Eren Ulu"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "05"
+        ],
+        "instructors": [
+          "Fırat Akba",
+          "Eren Ulu"
+        ]
+      }
+    }
   },
   {
     "code": "CMPE 343",
@@ -251,9 +560,16 @@
     "hours": "3+0+0",
     "credits": "3",
     "ects": "6",
-    "semester": "Fall",
-    "sections": "01, 02, 03, 04",
-    "instructors": "Tolga Kurtuluş Çapın, Mehmet Evren Coşkun",
+    "sections": [
+      "01",
+      "02",
+      "03",
+      "04"
+    ],
+    "instructors": [
+      "Tolga Kurtuluş Çapın",
+      "Mehmet Evren Coşkun"
+    ],
     "syllabus_url": "https://cmpe.tedu.edu.tr/en/izlence-detail/50296082",
     "course_code": "CMPE 343",
     "course_title": "Data Structures and Algorithms II",
@@ -266,12 +582,41 @@
       "CMPE 242"
     ],
     "corequisites": [],
+    "instructor": "Tolga Kurtuluş Çapın",
     "learning_outcomes": "",
-    "learning_activities": "",
     "assessment_methods": "",
     "textbooks": "",
-    "weekly_schedule": "",
-    "instructor": "Tolga Kurtuluş Çapın"
+    "department": "CMPE",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03",
+          "04"
+        ],
+        "instructors": [
+          "Tolga Kurtuluş Çapın",
+          "Mehmet Evren Coşkun"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03",
+          "04"
+        ],
+        "instructors": [
+          "Tolga Kurtuluş Çapın",
+          "Mehmet Evren Coşkun"
+        ]
+      }
+    }
   },
   {
     "code": "CMPE 361",
@@ -279,9 +624,16 @@
     "hours": "2+0+2",
     "credits": "3",
     "ects": "6",
-    "semester": "Fall",
-    "sections": "01, 02, 03, 04",
-    "instructors": "Saiful Islam, Mehmet Evren Coşkun",
+    "sections": [
+      "01",
+      "02",
+      "03",
+      "04"
+    ],
+    "instructors": [
+      "Saiful Islam",
+      "Mehmet Evren Coşkun"
+    ],
     "syllabus_url": "https://cmpe.tedu.edu.tr/en/izlence-detail/50296171",
     "course_code": "CMPE 361",
     "course_title": "Computer Organization",
@@ -293,12 +645,41 @@
       "EE 207"
     ],
     "corequisites": [],
+    "instructor": "Saiful Islam",
     "learning_outcomes": "",
-    "learning_activities": "",
     "assessment_methods": "",
     "textbooks": "",
-    "weekly_schedule": "",
-    "instructor": "Saiful Islam"
+    "department": "CMPE",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03",
+          "04"
+        ],
+        "instructors": [
+          "Saiful Islam",
+          "Mehmet Evren Coşkun"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03",
+          "04"
+        ],
+        "instructors": [
+          "Saiful Islam",
+          "Mehmet Evren Coşkun"
+        ]
+      }
+    }
   },
   {
     "code": "CMPE 371",
@@ -306,9 +687,16 @@
     "hours": "3+0+0",
     "credits": "3",
     "ects": "6",
-    "semester": "Fall",
-    "sections": "01, 02, 03, 04",
-    "instructors": "Gökçe Nur Yılmaz, Javad Haghighat",
+    "sections": [
+      "01",
+      "02",
+      "03",
+      "04"
+    ],
+    "instructors": [
+      "Gökçe Nur Yılmaz",
+      "Javad Haghighat"
+    ],
     "syllabus_url": "https://cmpe.tedu.edu.tr/en/izlence-detail/50296193",
     "course_code": "CMPE 371",
     "course_title": "Signals and Systems for Computer Engine",
@@ -320,12 +708,41 @@
       "MATH 203"
     ],
     "corequisites": [],
+    "instructor": "Gökçe Nur Yılmaz",
     "learning_outcomes": "",
-    "learning_activities": "",
     "assessment_methods": "",
     "textbooks": "",
-    "weekly_schedule": "",
-    "instructor": "Gökçe Nur Yılmaz"
+    "department": "CMPE",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03",
+          "04"
+        ],
+        "instructors": [
+          "Gökçe Nur Yılmaz",
+          "Javad Haghighat"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03",
+          "04"
+        ],
+        "instructors": [
+          "Gökçe Nur Yılmaz",
+          "Javad Haghighat"
+        ]
+      }
+    }
   },
   {
     "code": "CMPE 399",
@@ -333,9 +750,12 @@
     "hours": "1+0+0",
     "credits": "1",
     "ects": "2",
-    "semester": "Fall",
-    "sections": "01",
-    "instructors": "Ayşe Yasemin Seydim",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Ayşe Yasemin Seydim"
+    ],
     "syllabus_url": "https://cmpe.tedu.edu.tr/en/izlence-detail/50296211",
     "course_code": "CMPE 399",
     "course_title": "Summer Practice I",
@@ -348,12 +768,33 @@
       "CMPE 114"
     ],
     "corequisites": [],
+    "instructor": "Ayşe Yasemin Seydim",
     "learning_outcomes": "Learning Outcomes:\nUpon succesful completion of this course, a student will be able to",
-    "learning_activities": "Telling/Explaining\nDiscussion/Debate\nQuestioning\nReading\nProblem Solving",
     "assessment_methods": "Oral Project\nWritten Project\nOthers\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
     "textbooks": "",
-    "weekly_schedule": "",
-    "instructor": "Ayşe Yasemin Seydim"
+    "department": "CMPE",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Ayşe Yasemin Seydim"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Ayşe Yasemin Seydim"
+        ]
+      }
+    }
   },
   {
     "code": "CMPE 421",
@@ -361,9 +802,15 @@
     "hours": "3+0+0",
     "credits": "3",
     "ects": "5",
-    "semester": "Fall",
-    "sections": "01, 02, 03, 04",
-    "instructors": "Ali Berkol",
+    "sections": [
+      "01",
+      "02",
+      "03",
+      "04"
+    ],
+    "instructors": [
+      "Ali Berkol"
+    ],
     "syllabus_url": "https://cmpe.tedu.edu.tr/en/izlence-detail/50296214",
     "course_code": "CMPE 421",
     "course_title": "Artificial Intelligence",
@@ -373,12 +820,39 @@
     "catalog_description": "History. Programming languages for AI. Introduction to Lisp programming. Problem solving with computers. Search strategies, game playing. Knowledge and reasoning. Knowledge representation. First-order logic, inference. Learning, inductive and statistical learning methods, Robotics systems.",
     "prerequisites": [],
     "corequisites": [],
+    "instructor": "Ali Berkol",
     "learning_outcomes": "",
-    "learning_activities": "",
     "assessment_methods": "",
     "textbooks": "",
-    "weekly_schedule": "",
-    "instructor": "Ali Berkol"
+    "department": "CMPE",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03",
+          "04"
+        ],
+        "instructors": [
+          "Ali Berkol"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03",
+          "04"
+        ],
+        "instructors": [
+          "Ali Berkol"
+        ]
+      }
+    }
   },
   {
     "code": "CMPE 453",
@@ -386,9 +860,16 @@
     "hours": "2+0+2",
     "credits": "3",
     "ects": "6",
-    "semester": "Fall",
-    "sections": "01, 02, 03, 04",
-    "instructors": "Saiful Islam, Hakkı Gökhan İlk",
+    "sections": [
+      "01",
+      "02",
+      "03",
+      "04"
+    ],
+    "instructors": [
+      "Saiful Islam",
+      "Hakkı Gökhan İlk"
+    ],
     "syllabus_url": "https://cmpe.tedu.edu.tr/en/izlence-detail/50296227",
     "course_code": "CMPE 453",
     "course_title": "Embedded Systems",
@@ -400,12 +881,41 @@
       "EE 207"
     ],
     "corequisites": [],
+    "instructor": "Saiful Islam",
     "learning_outcomes": "",
-    "learning_activities": "",
     "assessment_methods": "",
     "textbooks": "",
-    "weekly_schedule": "",
-    "instructor": "Saiful Islam"
+    "department": "CMPE",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03",
+          "04"
+        ],
+        "instructors": [
+          "Saiful Islam",
+          "Hakkı Gökhan İlk"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03",
+          "04"
+        ],
+        "instructors": [
+          "Saiful Islam",
+          "Hakkı Gökhan İlk"
+        ]
+      }
+    }
   },
   {
     "code": "CMPE 472",
@@ -413,9 +923,13 @@
     "hours": "2+0+2",
     "credits": "3",
     "ects": "6",
-    "semester": "Fall",
-    "sections": "01, 03",
-    "instructors": "Emin Kuğu",
+    "sections": [
+      "01",
+      "03"
+    ],
+    "instructors": [
+      "Emin Kuğu"
+    ],
     "syllabus_url": "https://cmpe.tedu.edu.tr/en/izlence-detail/50296244",
     "course_code": "CMPE 472",
     "course_title": "Computer Networks",
@@ -428,12 +942,35 @@
       "CMPE 113"
     ],
     "corequisites": [],
+    "instructor": "Emin Kuğu",
     "learning_outcomes": "Learning Outcomes:\nUpon succesful completion of this course, a student will be able to",
-    "learning_activities": "Telling/Explaining\nDiscussion/Debate\nQuestioning\nReading\nDemonstrating\nProblem Solving\nHands-on Activities",
     "assessment_methods": "Test / Exam\nQuiz/Homework\nWritten Project\nStudent Workload:\nCourse Readings\n22\nhrs\nLab Applications\n28\nhrs\nHands-on Work\n10\nhrs\nExams/Quizzes\n10\nhrs\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
     "textbooks": "",
-    "weekly_schedule": "",
-    "instructor": "Emin Kuğu"
+    "department": "CMPE",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01",
+          "03"
+        ],
+        "instructors": [
+          "Emin Kuğu"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01",
+          "03"
+        ],
+        "instructors": [
+          "Emin Kuğu"
+        ]
+      }
+    }
   },
   {
     "code": "CMPE 490",
@@ -441,9 +978,12 @@
     "hours": "0+6+0",
     "credits": "3",
     "ects": "6",
-    "semester": "Fall",
-    "sections": "01",
-    "instructors": "Tolga Kurtuluş Çapın",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Tolga Kurtuluş Çapın"
+    ],
     "syllabus_url": "https://cmpe.tedu.edu.tr/en/izlence-detail/50296255",
     "course_code": "CMPE 490",
     "course_title": "Introduction to Research in Computer Eng",
@@ -453,96 +993,198 @@
     "catalog_description": "Introduction to research practices in computer engineering. Working on a research problem as an independent study, under supervision of a faculty member. Preparation of academic papers based on the results of the research study.",
     "prerequisites": [],
     "corequisites": [],
+    "instructor": "Tolga Kurtuluş Çapın",
     "learning_outcomes": "",
-    "learning_activities": "",
     "assessment_methods": "",
     "textbooks": "",
-    "weekly_schedule": "",
-    "instructor": "Tolga Kurtuluş Çapın"
+    "department": "CMPE",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Tolga Kurtuluş Çapın"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Tolga Kurtuluş Çapın"
+        ]
+      }
+    }
   },
   {
     "code": "CMPE 491",
     "name": "Senior Project I",
-    "hours": "1+2+0",
-    "credits": "2",
-    "ects": "5",
-    "semester": "Fall",
-    "sections": "01",
-    "instructors": "Gökçe Nur Yılmaz",
-    "syllabus_url": "https://cmpe.tedu.edu.tr/en/izlence-detail/50296261",
-    "course_code": "CMPE 491",
+    "hours": "1+4+0",
+    "credits": "3",
+    "ects": "8",
+    "sections": [
+      "O_1",
+      "01"
+    ],
+    "instructors": [
+      "Gökçe Nur Yılmaz"
+    ],
+    "syllabus_url": "https://cmpe.tedu.edu.tr/en/izlence-detail/50296258",
+    "course_code": "CMPE 491-O",
     "course_title": "Senior Project I",
     "level": "BS",
-    "credit_hours": "(1+2+0) 2 TEDU Credits, 5 ECTS Credits",
+    "credit_hours": "(1+4+0) 3 TEDU Credits, 8 ECTS Credits",
     "academic_year": "2025",
-    "catalog_description": "Formulation, analysis, and design of solutions to open-ended engineering problems. Detailed technical report on problem specification and design. Technical communication and teamwork skills. Awareness of ethical and professional responsibilities and constraints in engineering.",
+    "catalog_description": "Project proposal. Literature review. Requirement analysis. Design.",
     "prerequisites": [],
     "corequisites": [
       "CMPE 313",
       "SENG 214"
     ],
-    "learning_outcomes": "",
-    "learning_activities": "",
-    "assessment_methods": "",
+    "instructor": "Gökçe Nur Yılmaz",
+    "learning_outcomes": "Learning Outcomes:\nUpon succesful completion of this course, a student will be able to",
+    "assessment_methods": "Test / Exam\nWritten Project\nPresentation (Oral/Poster)\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
     "textbooks": "",
-    "weekly_schedule": "",
-    "instructor": "Gökçe Nur Yılmaz"
+    "department": "CMPE",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "O_1",
+          "01"
+        ],
+        "instructors": [
+          "Gökçe Nur Yılmaz"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "O_1",
+          "01"
+        ],
+        "instructors": [
+          "Gökçe Nur Yılmaz"
+        ]
+      }
+    }
   },
   {
     "code": "CMPE 492",
     "name": "Senior Project II",
-    "hours": "1+8+0",
-    "credits": "5",
-    "ects": "12",
-    "semester": "Fall",
-    "sections": "01",
-    "instructors": "Gökçe Nur Yılmaz",
-    "syllabus_url": "https://cmpe.tedu.edu.tr/en/izlence-detail/50296269",
-    "course_code": "CMPE 492",
+    "hours": "1+4+0",
+    "credits": "3",
+    "ects": "8",
+    "sections": [
+      "O_1",
+      "01"
+    ],
+    "instructors": [
+      "Gökçe Nur Yılmaz"
+    ],
+    "syllabus_url": "https://cmpe.tedu.edu.tr/en/izlence-detail/50296265",
+    "course_code": "CMPE 492-O",
     "course_title": "Senior Project II",
     "level": "BS",
-    "credit_hours": "(1+8+0) 5 TEDU Credits, 12 ECTS Credits",
+    "credit_hours": "(1+4+0) 3 TEDU Credits, 8 ECTS Credits",
     "academic_year": "2025",
-    "catalog_description": "Formulation, analysis, design, and implementation of solutions to open- ended engineering problems. Performance evaluation. Detailed technical report on design, implementation, and performance analysis. Technical communication and teamwork skills. Awareness of ethical and professional responsibilities and constraints in engineering.",
+    "catalog_description": "Testing document. Project implementation. Quality processes (verification and validation).",
     "prerequisites": [
-      "CMPE 491"
+      "CMPE 491-O"
     ],
     "corequisites": [],
-    "learning_outcomes": "",
-    "learning_activities": "",
-    "assessment_methods": "",
+    "instructor": "Gökçe Nur Yılmaz",
+    "learning_outcomes": "Learning Outcomes:\nUpon succesful completion of this course, a student will be able to",
+    "assessment_methods": "Test / Exam\nWritten Project\nPresentation (Oral/Poster)\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
     "textbooks": "",
-    "weekly_schedule": "",
-    "instructor": "Gökçe Nur Yılmaz"
+    "department": "CMPE",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "O_1",
+          "01"
+        ],
+        "instructors": [
+          "Gökçe Nur Yılmaz"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "O_1",
+          "01"
+        ],
+        "instructors": [
+          "Gökçe Nur Yılmaz"
+        ]
+      }
+    }
   },
   {
     "code": "CMPE 499",
     "name": "Summer Practice II",
     "hours": "1+0+0",
     "credits": "1",
-    "ects": "3",
-    "semester": "Fall",
-    "sections": "01",
-    "instructors": "Ayşe Yasemin Seydim",
-    "syllabus_url": "https://cmpe.tedu.edu.tr/en/izlence-detail/50297052",
-    "course_code": "CMPE 499",
+    "ects": "2",
+    "sections": [
+      "O_1",
+      "01"
+    ],
+    "instructors": [
+      "Ayşe Yasemin Seydim"
+    ],
+    "syllabus_url": "https://cmpe.tedu.edu.tr/en/izlence-detail/50296272",
+    "course_code": "CMPE 499-O",
     "course_title": "Summer Practice II",
     "level": "BS",
-    "credit_hours": "(1+0+0) 1 TEDU Credits, 3 ECTS Credits",
+    "credit_hours": "(1+0+0) 1 TEDU Credits, 2 ECTS Credits",
     "academic_year": "2025",
-    "catalog_description": "A 20-day summer internship at a computer firm or IT department, focusing on advanced project development, problem-solving, and collaboration. Design and implementation of complex systems and software solutions. Presentation of experiences and developed projects.",
+    "catalog_description": "Works done and experiences gained throughout the summer internship.",
     "prerequisites": [
       "CMPE 221",
       "CMPE 242",
       "CMPE 223"
     ],
     "corequisites": [],
-    "learning_outcomes": "",
-    "learning_activities": "",
-    "assessment_methods": "",
+    "instructor": "Ayşe Yasemin Seydim",
+    "learning_outcomes": "Learning Outcomes:\nUpon succesful completion of this course, a student will be able to",
+    "assessment_methods": "Oral Project\nWritten Project\nOthers\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
     "textbooks": "",
-    "weekly_schedule": "",
-    "instructor": "Ayşe Yasemin Seydim"
+    "department": "CMPE",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "O_1",
+          "01"
+        ],
+        "instructors": [
+          "Ayşe Yasemin Seydim"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "O_1",
+          "01"
+        ],
+        "instructors": [
+          "Ayşe Yasemin Seydim"
+        ]
+      }
+    }
   },
   {
     "code": "CS 592",
@@ -550,9 +1192,12 @@
     "hours": "0+0+0",
     "credits": "0",
     "ects": "30",
-    "semester": "Fall",
-    "sections": "01",
-    "instructors": "Gökçe Nur Yılmaz",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Gökçe Nur Yılmaz"
+    ],
     "syllabus_url": "https://cmpe.tedu.edu.tr/en/izlence-detail/50298373",
     "course_code": "CS 592",
     "course_title": "Master’s Thesis I",
@@ -562,12 +1207,33 @@
     "catalog_description": "Master’s Thesis performed under supervision of an academic staff. This course must be taken in the semesters where the thesis work commences.",
     "prerequisites": [],
     "corequisites": [],
+    "instructor": "Gökçe Nur Yılmaz",
     "learning_outcomes": "",
-    "learning_activities": "",
     "assessment_methods": "",
     "textbooks": "",
-    "weekly_schedule": "",
-    "instructor": "Gökçe Nur Yılmaz"
+    "department": "CMPE",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Gökçe Nur Yılmaz"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Gökçe Nur Yılmaz"
+        ]
+      }
+    }
   },
   {
     "code": "CS 593",
@@ -575,9 +1241,12 @@
     "hours": "0+0+0",
     "credits": "0",
     "ects": "30",
-    "semester": "Fall",
-    "sections": "01",
-    "instructors": "Gökçe Nur Yılmaz",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Gökçe Nur Yılmaz"
+    ],
     "syllabus_url": "https://cmpe.tedu.edu.tr/en/izlence-detail/50298379",
     "course_code": "CS 593",
     "course_title": "Master’s Thesis II",
@@ -587,38 +1256,32 @@
     "catalog_description": "Master’s Thesis performed under supervision of an academic staff. This course must be taken in the semesters where the thesis work is in progress.",
     "prerequisites": [],
     "corequisites": [],
+    "instructor": "Gökçe Nur Yılmaz",
     "learning_outcomes": "",
-    "learning_activities": "",
     "assessment_methods": "",
     "textbooks": "",
-    "weekly_schedule": "",
-    "instructor": "Gökçe Nur Yılmaz"
-  },
-  {
-    "code": "ENGR 410",
-    "name": "Prompt Engineering",
-    "hours": "3+0+0",
-    "credits": "3",
-    "ects": "5",
-    "semester": "Fall",
-    "sections": "01",
-    "instructors": "Mehmet Kesim",
-    "syllabus_url": "https://cmpe.tedu.edu.tr/en/izlence-detail/50301571",
-    "course_code": "ENGR 410",
-    "course_title": "Prompt Engineering",
-    "level": "BS",
-    "credit_hours": "(3+0+0) 3 TEDU Credits, 5 ECTS Credits",
-    "academic_year": "2025",
-    "catalog_description": "PIntroduction to prompt engineering; relation to artificial intelligence models (LLMs – GPT, Claude, LLaMA). Basic terminologies Token, Context Window. Zero shot, One-shot, Few Shot and Chain-of-Thought prompts. Advanced prompting strategies; Tree of Thoughts (ToT) and ReAct (Reason + Act). Tools and frame works; LangChain, LlamaIndex, AutoGPT, Prompt IDE. Multimodal prompting; ChatGPT + DALL·E, Stable Diffusion, MidJourney. Security, Ethics, and Data Poisoning. Context engineering and context design techniques; Retrieval-Augmented Generation (RAG) systems, Context weighting Real-World Applications and Case Studies. AI Agents and Agentic AI techniques and application fields. Project Presentations and Final Evaluation.",
-    "prerequisites": [
-      "CMPE 113"
+    "department": "CMPE",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
     ],
-    "corequisites": [],
-    "learning_outcomes": "",
-    "learning_activities": "",
-    "assessment_methods": "",
-    "textbooks": "",
-    "weekly_schedule": "",
-    "instructor": "Mehmet Kesim"
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Gökçe Nur Yılmaz"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Gökçe Nur Yılmaz"
+        ]
+      }
+    }
   }
 ]

@@ -1,0 +1,1112 @@
+[
+  {
+    "code": "ENGR 490",
+    "name": "Contemporary Issues in Engineering",
+    "hours": "2+2+0",
+    "credits": "3",
+    "ects": "5",
+    "semester": "Fall 2025",
+    "sections": [
+      "01",
+      "02",
+      "03",
+      "04"
+    ],
+    "instructors": [
+      "Sırma Karakaya",
+      "Mehmet Rüştü Taner",
+      "Kurtuluş Erinç Akdoğan",
+      "Ayşe Çağıl Kandemir"
+    ],
+    "syllabus_url": "https://me.tedu.edu.tr/en/izlence-detail/50297056",
+    "course_code": "ENGR 490",
+    "course_title": "Contemporary Issues in Engineering",
+    "level": "BS",
+    "credit_hours": "(2+2+0) 3 TEDU Credits, 5 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Seminars on engineering topics such as, ethics, life-long education, engineering standards, project management, risk management, change management, entrepreneurship and innovation, sustainable development, effects of engineering applications on health, environment and safety, legal consequences of engineering solutions. A multidisciplinary group work on a selected theme.",
+    "prerequisites": [],
+    "corequisites": [
+      "CMPE 399",
+      "EE 399-O",
+      "IE 399",
+      "ME 399-O",
+      "ME 399",
+      "EE 399"
+    ],
+    "instructor": "Sırma Karakaya",
+    "learning_outcomes": "",
+    "assessment_methods": "",
+    "textbooks": "",
+    "department": "ME"
+  },
+  {
+    "code": "ME 200",
+    "name": "Computer Aided Technical Drawing",
+    "hours": "0+0+4",
+    "credits": "2",
+    "ects": "4",
+    "semester": "Fall 2025",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Şehram Dizeci"
+    ],
+    "syllabus_url": "https://me.tedu.edu.tr/en/izlence-detail/50297894",
+    "course_code": "ME 200",
+    "course_title": "Computer Aided Technical Drawing",
+    "level": "BS",
+    "credit_hours": "(0+0+4) 2 TEDU Credits, 4 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Principles of engineering drawing.Principles of computer aided technical drawing. Design 3D parts with solid modeling, dimensioning and tolerancing. Sectioning and multi-view projections. Assembly modelling and assembling parts. Creating explode view and rendering of assembly drawing. Introduction to animation with Solidworks.",
+    "prerequisites": [],
+    "corequisites": [],
+    "instructor": "Şehram Dizeci",
+    "learning_outcomes": "",
+    "assessment_methods": "Test / Exam\nQuiz/Homework\nOral Project\nLaboratory Work\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
+    "textbooks": "",
+    "department": "ME"
+  },
+  {
+    "code": "ME 211",
+    "name": "Materials Science",
+    "hours": "3+0+0",
+    "credits": "3",
+    "ects": "6",
+    "semester": "Fall 2025",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Ayşe Çağıl Kandemir"
+    ],
+    "syllabus_url": "https://me.tedu.edu.tr/en/izlence-detail/50297899",
+    "course_code": "ME 211",
+    "course_title": "Materials Science",
+    "level": "BS",
+    "credit_hours": "(3+0+0) 3 TEDU Credits, 6 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Materials and properties. Atomic bonding and arrangement. Structural imperfections. Atom movements. Elastic and viscoelastic deformation of materials. Equilibrium diagrams. Metals and their properties. Modification of properties of materials through changes in structure. Advanced materials and their properties.",
+    "prerequisites": [],
+    "corequisites": [],
+    "instructor": "Ayşe Çağıl Kandemir",
+    "learning_outcomes": "Learning Outcomes:\nUpon succesful completion of this course, a student will be able to\n1. look at materials of different sorts as structures on the atomic level, on the microscopic level and on the macroscopic level.\n2. understand why atoms, ions and/or molecules assemble into particular crystal structures.\n3. understand how certain structures dictate certain properties.\n4. select engineering materials  for different applications\n5. identify appropriate materials based on required physical and chemical properties",
+    "assessment_methods": "Test / Exam\nQuiz/Homework\nPresentation (Oral/Poster)\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
+    "textbooks": "",
+    "department": "ME"
+  },
+  {
+    "code": "ME 221",
+    "name": "Manufacturing Processes",
+    "hours": "3+0+0",
+    "credits": "3",
+    "ects": "6",
+    "semester": "Fall 2025",
+    "sections": [
+      "O_01",
+      "01"
+    ],
+    "instructors": [
+      "Şehram Dizeci"
+    ],
+    "syllabus_url": "https://me.tedu.edu.tr/en/izlence-detail/50297907",
+    "course_code": "ME 221-O",
+    "course_title": "Manufacturing Processes",
+    "level": "BS",
+    "credit_hours": "(3+0+0) 3 TEDU Credits, 6 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Fundamentals of manufacturing technologies with a special emphasis on manufacturing of metallic parts. Casting, metal forming and metal cutting processes. Manufacturing processes for non-metallic materials and micro-electronics. Economic process design considerations. Material selection for manufacturing. Manufacturing automation.",
+    "prerequisites": [],
+    "corequisites": [],
+    "instructor": "Şehram Dizeci",
+    "learning_outcomes": "",
+    "assessment_methods": "Test / Exam\nQuiz/Homework\nOral Project\nWritten Project\nObservation\nPresentation (Oral/Poster)\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
+    "textbooks": "",
+    "department": "ME"
+  },
+  {
+    "code": "ME 241",
+    "name": "Introduction to Solid Mechanics",
+    "hours": "3+0+0",
+    "credits": "3",
+    "ects": "6",
+    "semester": "Fall 2025",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Behzat Bahadır Kentel"
+    ],
+    "syllabus_url": "https://me.tedu.edu.tr/en/izlence-detail/50297903",
+    "course_code": "ME 241",
+    "course_title": "Introduction to Solid Mechanics",
+    "level": "BS",
+    "credit_hours": "(3+0+0) 3 TEDU Credits, 6 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "General principles, vector operations, force vectors, equilibrium of a partide, forces and couples, free body diagrams, equilibrium, center of gravity, moment of inertia, introduction to trusses, internal forces, friction, strese-strain, generalized Hooke's law and axial loading",
+    "prerequisites": [
+      "PHYS 101",
+      "PHYS 105"
+    ],
+    "corequisites": [],
+    "instructor": "Behzat Bahadır Kentel",
+    "learning_outcomes": "",
+    "assessment_methods": "Test / Exam\nQuiz/Homework\nWritten Project\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
+    "textbooks": "",
+    "department": "ME"
+  },
+  {
+    "code": "ME 301",
+    "name": "Measurement and Instrumentation",
+    "hours": "2+0+2",
+    "credits": "3",
+    "ects": "5",
+    "semester": "Fall 2025",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Behzat Bahadır Kentel"
+    ],
+    "syllabus_url": "https://me.tedu.edu.tr/en/izlence-detail/50297911",
+    "course_code": "ME 301",
+    "course_title": "Measurement and Instrumentation",
+    "level": "BS",
+    "credit_hours": "(2+0+2) 3 TEDU Credits, 5 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Basic concepts of measurement methods. Laboratory devices and electronic components for measurement and instrumentation. Sensors. Experiment planning, execution, and reporting. Fundamentals of statistical measurement theory and uncertainty analysis.",
+    "prerequisites": [],
+    "corequisites": [],
+    "instructor": "Behzat Bahadır Kentel",
+    "learning_outcomes": "",
+    "assessment_methods": "Test / Exam\nQuiz/Homework\nLaboratory Work\nWritten Project\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
+    "textbooks": "",
+    "department": "ME"
+  },
+  {
+    "code": "ME 345",
+    "name": "Mechanics of Materials",
+    "hours": "3+0+0",
+    "credits": "3",
+    "ects": "5",
+    "semester": "Fall 2025",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Şehram Dizeci"
+    ],
+    "syllabus_url": "https://me.tedu.edu.tr/en/izlence-detail/50297916",
+    "course_code": "ME 345",
+    "course_title": "Mechanics of Materials",
+    "level": "BS",
+    "credit_hours": "(3+0+0) 3 TEDU Credits, 5 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Beam bending. Transverse shear. Torsion. Combined stress due to bending, torsion, shear, and axial load. Stress-strain transformation. Strain rosettes. Deflection of beams and shafts. Energy methods: Virtual work, strain energy.",
+    "prerequisites": [
+      "ME 241"
+    ],
+    "corequisites": [],
+    "instructor": "Şehram Dizeci",
+    "learning_outcomes": "",
+    "assessment_methods": "Test / Exam\nQuiz/Homework\nWritten Project\nPresentation (Oral/Poster)\nStudent Workload:\nReport on a Topic\n10\nhrs\nOral Presentation\n10\nhrs\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
+    "textbooks": "",
+    "department": "ME"
+  },
+  {
+    "code": "ME 353",
+    "name": "Fluid Mechanics",
+    "hours": "3+0+0",
+    "credits": "3",
+    "ects": "5",
+    "semester": "Fall 2025",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Sıtkı Uslu"
+    ],
+    "syllabus_url": "https://me.tedu.edu.tr/en/izlence-detail/50297920",
+    "course_code": "ME 353",
+    "course_title": "Fluid Mechanics",
+    "level": "BS",
+    "credit_hours": "(3+0+0) 3 TEDU Credits, 5 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Fundamental principles of fluid mechanics and their application to engineering problems. Fluid statics. Kinematics of fluid flow. Dynamics of fluids. Differential analysis of fluid flow. Conservation of mass, momentum and energy for fluid flow problems. Flow of viscous fluids, simple laminar flow systems.",
+    "prerequisites": [
+      "ME 241"
+    ],
+    "corequisites": [],
+    "instructor": "Sıtkı Uslu",
+    "learning_outcomes": "",
+    "assessment_methods": "Test / Exam\nQuiz/Homework\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
+    "textbooks": "",
+    "department": "ME"
+  },
+  {
+    "code": "ME 399",
+    "name": "Summer Practice I",
+    "hours": "1+0+0",
+    "credits": "1",
+    "ects": "2",
+    "semester": "Fall 2025",
+    "sections": [
+      "O_01",
+      "01"
+    ],
+    "instructors": [
+      "Ayşe Çağıl Kandemir"
+    ],
+    "syllabus_url": "https://me.tedu.edu.tr/en/izlence-detail/50297923",
+    "course_code": "ME 399-O",
+    "course_title": "Summer Practice I",
+    "level": "BS",
+    "credit_hours": "(1+0+0) 1 TEDU Credits, 2 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Minimum 20 working days of practical work in an organization operating on the design, production, maintenance, management of mechanical or thermal systems.",
+    "prerequisites": [],
+    "corequisites": [],
+    "instructor": "Ayşe Çağıl Kandemir",
+    "learning_outcomes": "",
+    "assessment_methods": "Observation\nPresentation (Oral/Poster)\nOthers\nAssessment Methods and Criteria Others:\nWritten report\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
+    "textbooks": "",
+    "department": "ME"
+  },
+  {
+    "code": "ME 446",
+    "name": "Fundamentals of Composite Materials",
+    "hours": "3+0+0",
+    "credits": "3",
+    "ects": "5",
+    "semester": "Fall 2025",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Ayşe Çağıl Kandemir"
+    ],
+    "syllabus_url": "https://me.tedu.edu.tr/en/izlence-detail/50297936",
+    "course_code": "ME 446",
+    "course_title": "Fundamentals of Composite Materials",
+    "level": "BS",
+    "credit_hours": "(3+0+0) 3 TEDU Credits, 5 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Introduction to composite materials. Classification of composite materials and their applications. Production and characterization methods for composite materials. Structure- mechanical property relationship.",
+    "prerequisites": [
+      "ME 211"
+    ],
+    "corequisites": [],
+    "instructor": "Ayşe Çağıl Kandemir",
+    "learning_outcomes": "",
+    "assessment_methods": "Test / Exam\nQuiz/Homework\nOthers\nAssessment Methods and Criteria Others:\nHomework\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
+    "textbooks": "",
+    "department": "ME"
+  },
+  {
+    "code": "ME 464",
+    "name": "Applied Thermal Systems",
+    "hours": "3+0+0",
+    "credits": "3",
+    "ects": "5",
+    "semester": "Fall 2025",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Onur Baş"
+    ],
+    "syllabus_url": "https://me.tedu.edu.tr/en/izlence-detail/50297939",
+    "course_code": "ME 464",
+    "course_title": "Applied Thermal Systems",
+    "level": "BS",
+    "credit_hours": "(3+0+0) 3 TEDU Credits, 5 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Engineering design and thermal systems. Pipeline systems, pipe networks. Pumps, pump systems and power. Mathematical modeling, analysis and simulation of thermal systems. Optimization of thermal systems. Heat exchangers. Application of thermodynamics principles on thermal energy cycles.",
+    "prerequisites": [
+      "ME 264",
+      "ME 353"
+    ],
+    "corequisites": [],
+    "instructor": "Onur Baş",
+    "learning_outcomes": "",
+    "assessment_methods": "Test / Exam\nQuiz/Homework\nWritten Project\nPresentation (Oral/Poster)\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
+    "textbooks": "",
+    "department": "ME"
+  },
+  {
+    "code": "ME 466",
+    "name": "Propulsion Systems",
+    "hours": "3+0+0",
+    "credits": "3",
+    "ects": "5",
+    "semester": "Fall 2025",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Sıtkı Uslu"
+    ],
+    "syllabus_url": "https://me.tedu.edu.tr/en/izlence-detail/50297942",
+    "course_code": "ME 466",
+    "course_title": "Propulsion Systems",
+    "level": "BS",
+    "credit_hours": "(3+0+0) 3 TEDU Credits, 5 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Introduction to propulsion systems. Aerothermodynamics of ideal air breathing engines. Non-ideal cycle analysis. Performance of propulsion system components. Matching of compressors and turbines.",
+    "prerequisites": [],
+    "corequisites": [],
+    "instructor": "Sıtkı Uslu",
+    "learning_outcomes": "",
+    "assessment_methods": "",
+    "textbooks": "",
+    "department": "ME"
+  },
+  {
+    "code": "ME 499",
+    "name": "Summer Practice II",
+    "hours": "1+0+0",
+    "credits": "1",
+    "ects": "3",
+    "semester": "Fall 2025",
+    "sections": [
+      "O_01"
+    ],
+    "instructors": [
+      "Ayşe Çağıl Kandemir"
+    ],
+    "syllabus_url": "https://me.tedu.edu.tr/en/izlence-detail/50297945",
+    "course_code": "ME 499-O",
+    "course_title": "Summer Practice II",
+    "level": "BS",
+    "credit_hours": "(1+0+0) 1 TEDU Credits, 3 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Minimum 20 working days of practical work in an organization operating on the design, production, maintenance, management of mechanical or thermal systems.",
+    "prerequisites": [
+      "ME 399-O"
+    ],
+    "corequisites": [],
+    "instructor": "Ayşe Çağıl Kandemir",
+    "learning_outcomes": "",
+    "assessment_methods": "Observation\nPresentation (Oral/Poster)\nOthers\nAssessment Methods and Criteria Others:\nWritten report\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
+    "textbooks": "",
+    "department": "ME"
+  },
+  {
+    "code": "ME 591",
+    "name": "Pre-thesis Seminar",
+    "hours": "0+0+0",
+    "credits": "0",
+    "ects": "10",
+    "semester": "Fall 2025",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Behzat Bahadır Kentel"
+    ],
+    "syllabus_url": "https://me.tedu.edu.tr/en/izlence-detail/50297958",
+    "course_code": "ME 591",
+    "course_title": "Pre-thesis Seminar",
+    "level": "MS",
+    "credit_hours": "(0+0+0) 0 TEDU Credits, 10 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Determination of thesis subject, problem and research question definition. Preparatory work for thesis such as literature review, hypothesis generation and research on Methodology. Presentation of thesis proposal as a seminar. Attending seminars organized as part of the program.",
+    "prerequisites": [],
+    "corequisites": [],
+    "instructor": "Behzat Bahadır Kentel",
+    "learning_outcomes": "",
+    "assessment_methods": "",
+    "textbooks": "",
+    "department": "ME"
+  },
+  {
+    "code": "ME 592",
+    "name": "Master’s Thesis I",
+    "hours": "0+0+0",
+    "credits": "0",
+    "ects": "30",
+    "semester": "Fall 2025",
+    "sections": [
+      "02",
+      "05",
+      "06"
+    ],
+    "instructors": [
+      "Sıtkı Uslu",
+      "Onur Baş",
+      "Behzat Bahadır Kentel"
+    ],
+    "syllabus_url": "https://me.tedu.edu.tr/en/izlence-detail/50299080",
+    "course_code": "ME 592",
+    "course_title": "Master’s Thesis I",
+    "level": "MS",
+    "credit_hours": "(0+0+0) 0 TEDU Credits, 30 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "The first step of master’s thesis performed under the supervision of academic staff.",
+    "prerequisites": [
+      "ME 591"
+    ],
+    "corequisites": [],
+    "instructor": "Sıtkı Uslu",
+    "learning_outcomes": "",
+    "assessment_methods": "",
+    "textbooks": "",
+    "department": "ME"
+  },
+  {
+    "code": "ME 593",
+    "name": "Master’s Thesis II",
+    "hours": "0+0+0",
+    "credits": "0",
+    "ects": "30",
+    "semester": "Fall 2025",
+    "sections": [
+      "01",
+      "02",
+      "03",
+      "04",
+      "05",
+      "06"
+    ],
+    "instructors": [
+      "Selin Aradağ Çelebioğlu",
+      "Sıtkı Uslu",
+      "Şehram Dizeci",
+      "Ayşe Çağıl Kandemir",
+      "Onur Baş",
+      "Behzat Bahadır Kentel"
+    ],
+    "syllabus_url": "https://me.tedu.edu.tr/en/izlence-detail/50299099",
+    "course_code": "ME 593",
+    "course_title": "Master’s Thesis II",
+    "level": "MS",
+    "credit_hours": "(0+0+0) 0 TEDU Credits, 30 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Master’s thesis performed under the supervision of academic staff. This course must be taken in the semesters where the thesis work is in progress.",
+    "prerequisites": [
+      "ME 592"
+    ],
+    "corequisites": [],
+    "instructor": "Selin Aradağ Çelebioğlu",
+    "learning_outcomes": "",
+    "assessment_methods": "",
+    "textbooks": "",
+    "department": "ME"
+  },
+  {
+    "code": "ME 692",
+    "name": "Thesis Proposal",
+    "hours": "0+0+0",
+    "credits": "0",
+    "ects": "30",
+    "semester": "Fall 2025",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Behzat Bahadır Kentel"
+    ],
+    "syllabus_url": "https://me.tedu.edu.tr/en/izlence-detail/50299125",
+    "course_code": "ME 692",
+    "course_title": "Thesis Proposal",
+    "level": "Phd",
+    "credit_hours": "(0+0+0) 0 TEDU Credits, 30 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Emphasis on the importance and novelty of dissertation topic. Thesis proposal is defended in front of a thesis monitoring committee during the semester the course is taken.",
+    "prerequisites": [
+      "ME 690"
+    ],
+    "corequisites": [],
+    "instructor": "Behzat Bahadır Kentel",
+    "learning_outcomes": "",
+    "assessment_methods": "",
+    "textbooks": "",
+    "department": "ME"
+  },
+  {
+    "code": "ME 693",
+    "name": "Ph.D. Dissertation I",
+    "hours": "0+0+0",
+    "credits": "0",
+    "ects": "30",
+    "semester": "Fall 2025",
+    "sections": [
+      "03"
+    ],
+    "instructors": [
+      "Onur Baş"
+    ],
+    "syllabus_url": "https://me.tedu.edu.tr/en/izlence-detail/50299136",
+    "course_code": "ME 693",
+    "course_title": "Ph.D. Dissertation I",
+    "level": "Phd",
+    "credit_hours": "(0+0+0) 0 TEDU Credits, 30 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Ph.D. dissertation studies performed under supervision of an academic advisor. This course must be taken when dissertation work commences.",
+    "prerequisites": [
+      "ME 692"
+    ],
+    "corequisites": [],
+    "instructor": "Onur Baş",
+    "learning_outcomes": "",
+    "assessment_methods": "",
+    "textbooks": "",
+    "department": "ME"
+  },
+  {
+    "code": "ENGR 490",
+    "name": "Contemporary Issues in Engineering",
+    "hours": "2+2+0",
+    "credits": "3",
+    "ects": "5",
+    "semester": "Spring 2025",
+    "sections": [
+      "01",
+      "02",
+      "03",
+      "04"
+    ],
+    "instructors": [
+      "Sırma Karakaya",
+      "Mehmet Rüştü Taner",
+      "Kurtuluş Erinç Akdoğan",
+      "Ayşe Çağıl Kandemir"
+    ],
+    "syllabus_url": "https://me.tedu.edu.tr/en/izlence-detail/50297056",
+    "course_code": "ENGR 490",
+    "course_title": "Contemporary Issues in Engineering",
+    "level": "BS",
+    "credit_hours": "(2+2+0) 3 TEDU Credits, 5 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Seminars on engineering topics such as, ethics, life-long education, engineering standards, project management, risk management, change management, entrepreneurship and innovation, sustainable development, effects of engineering applications on health, environment and safety, legal consequences of engineering solutions. A multidisciplinary group work on a selected theme.",
+    "prerequisites": [],
+    "corequisites": [
+      "CMPE 399",
+      "EE 399-O",
+      "IE 399",
+      "ME 399-O",
+      "ME 399",
+      "EE 399"
+    ],
+    "instructor": "Sırma Karakaya",
+    "learning_outcomes": "",
+    "assessment_methods": "",
+    "textbooks": "",
+    "department": "ME"
+  },
+  {
+    "code": "ME 200",
+    "name": "Computer Aided Technical Drawing",
+    "hours": "0+0+4",
+    "credits": "2",
+    "ects": "4",
+    "semester": "Spring 2025",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Şehram Dizeci"
+    ],
+    "syllabus_url": "https://me.tedu.edu.tr/en/izlence-detail/50297894",
+    "course_code": "ME 200",
+    "course_title": "Computer Aided Technical Drawing",
+    "level": "BS",
+    "credit_hours": "(0+0+4) 2 TEDU Credits, 4 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Principles of engineering drawing.Principles of computer aided technical drawing. Design 3D parts with solid modeling, dimensioning and tolerancing. Sectioning and multi-view projections. Assembly modelling and assembling parts. Creating explode view and rendering of assembly drawing. Introduction to animation with Solidworks.",
+    "prerequisites": [],
+    "corequisites": [],
+    "instructor": "Şehram Dizeci",
+    "learning_outcomes": "",
+    "assessment_methods": "Test / Exam\nQuiz/Homework\nOral Project\nLaboratory Work\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
+    "textbooks": "",
+    "department": "ME"
+  },
+  {
+    "code": "ME 211",
+    "name": "Materials Science",
+    "hours": "3+0+0",
+    "credits": "3",
+    "ects": "6",
+    "semester": "Spring 2025",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Ayşe Çağıl Kandemir"
+    ],
+    "syllabus_url": "https://me.tedu.edu.tr/en/izlence-detail/50297899",
+    "course_code": "ME 211",
+    "course_title": "Materials Science",
+    "level": "BS",
+    "credit_hours": "(3+0+0) 3 TEDU Credits, 6 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Materials and properties. Atomic bonding and arrangement. Structural imperfections. Atom movements. Elastic and viscoelastic deformation of materials. Equilibrium diagrams. Metals and their properties. Modification of properties of materials through changes in structure. Advanced materials and their properties.",
+    "prerequisites": [],
+    "corequisites": [],
+    "instructor": "Ayşe Çağıl Kandemir",
+    "learning_outcomes": "Learning Outcomes:\nUpon succesful completion of this course, a student will be able to\n1. look at materials of different sorts as structures on the atomic level, on the microscopic level and on the macroscopic level.\n2. understand why atoms, ions and/or molecules assemble into particular crystal structures.\n3. understand how certain structures dictate certain properties.\n4. select engineering materials  for different applications\n5. identify appropriate materials based on required physical and chemical properties",
+    "assessment_methods": "Test / Exam\nQuiz/Homework\nPresentation (Oral/Poster)\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
+    "textbooks": "",
+    "department": "ME"
+  },
+  {
+    "code": "ME 221",
+    "name": "Manufacturing Processes",
+    "hours": "3+0+0",
+    "credits": "3",
+    "ects": "6",
+    "semester": "Spring 2025",
+    "sections": [
+      "O_01",
+      "01"
+    ],
+    "instructors": [
+      "Şehram Dizeci"
+    ],
+    "syllabus_url": "https://me.tedu.edu.tr/en/izlence-detail/50297907",
+    "course_code": "ME 221-O",
+    "course_title": "Manufacturing Processes",
+    "level": "BS",
+    "credit_hours": "(3+0+0) 3 TEDU Credits, 6 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Fundamentals of manufacturing technologies with a special emphasis on manufacturing of metallic parts. Casting, metal forming and metal cutting processes. Manufacturing processes for non-metallic materials and micro-electronics. Economic process design considerations. Material selection for manufacturing. Manufacturing automation.",
+    "prerequisites": [],
+    "corequisites": [],
+    "instructor": "Şehram Dizeci",
+    "learning_outcomes": "",
+    "assessment_methods": "Test / Exam\nQuiz/Homework\nOral Project\nWritten Project\nObservation\nPresentation (Oral/Poster)\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
+    "textbooks": "",
+    "department": "ME"
+  },
+  {
+    "code": "ME 241",
+    "name": "Introduction to Solid Mechanics",
+    "hours": "3+0+0",
+    "credits": "3",
+    "ects": "6",
+    "semester": "Spring 2025",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Behzat Bahadır Kentel"
+    ],
+    "syllabus_url": "https://me.tedu.edu.tr/en/izlence-detail/50297903",
+    "course_code": "ME 241",
+    "course_title": "Introduction to Solid Mechanics",
+    "level": "BS",
+    "credit_hours": "(3+0+0) 3 TEDU Credits, 6 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "General principles, vector operations, force vectors, equilibrium of a partide, forces and couples, free body diagrams, equilibrium, center of gravity, moment of inertia, introduction to trusses, internal forces, friction, strese-strain, generalized Hooke's law and axial loading",
+    "prerequisites": [
+      "PHYS 101",
+      "PHYS 105"
+    ],
+    "corequisites": [],
+    "instructor": "Behzat Bahadır Kentel",
+    "learning_outcomes": "",
+    "assessment_methods": "Test / Exam\nQuiz/Homework\nWritten Project\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
+    "textbooks": "",
+    "department": "ME"
+  },
+  {
+    "code": "ME 301",
+    "name": "Measurement and Instrumentation",
+    "hours": "2+0+2",
+    "credits": "3",
+    "ects": "5",
+    "semester": "Spring 2025",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Behzat Bahadır Kentel"
+    ],
+    "syllabus_url": "https://me.tedu.edu.tr/en/izlence-detail/50297911",
+    "course_code": "ME 301",
+    "course_title": "Measurement and Instrumentation",
+    "level": "BS",
+    "credit_hours": "(2+0+2) 3 TEDU Credits, 5 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Basic concepts of measurement methods. Laboratory devices and electronic components for measurement and instrumentation. Sensors. Experiment planning, execution, and reporting. Fundamentals of statistical measurement theory and uncertainty analysis.",
+    "prerequisites": [],
+    "corequisites": [],
+    "instructor": "Behzat Bahadır Kentel",
+    "learning_outcomes": "",
+    "assessment_methods": "Test / Exam\nQuiz/Homework\nLaboratory Work\nWritten Project\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
+    "textbooks": "",
+    "department": "ME"
+  },
+  {
+    "code": "ME 345",
+    "name": "Mechanics of Materials",
+    "hours": "3+0+0",
+    "credits": "3",
+    "ects": "5",
+    "semester": "Spring 2025",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Şehram Dizeci"
+    ],
+    "syllabus_url": "https://me.tedu.edu.tr/en/izlence-detail/50297916",
+    "course_code": "ME 345",
+    "course_title": "Mechanics of Materials",
+    "level": "BS",
+    "credit_hours": "(3+0+0) 3 TEDU Credits, 5 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Beam bending. Transverse shear. Torsion. Combined stress due to bending, torsion, shear, and axial load. Stress-strain transformation. Strain rosettes. Deflection of beams and shafts. Energy methods: Virtual work, strain energy.",
+    "prerequisites": [
+      "ME 241"
+    ],
+    "corequisites": [],
+    "instructor": "Şehram Dizeci",
+    "learning_outcomes": "",
+    "assessment_methods": "Test / Exam\nQuiz/Homework\nWritten Project\nPresentation (Oral/Poster)\nStudent Workload:\nReport on a Topic\n10\nhrs\nOral Presentation\n10\nhrs\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
+    "textbooks": "",
+    "department": "ME"
+  },
+  {
+    "code": "ME 353",
+    "name": "Fluid Mechanics",
+    "hours": "3+0+0",
+    "credits": "3",
+    "ects": "5",
+    "semester": "Spring 2025",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Sıtkı Uslu"
+    ],
+    "syllabus_url": "https://me.tedu.edu.tr/en/izlence-detail/50297920",
+    "course_code": "ME 353",
+    "course_title": "Fluid Mechanics",
+    "level": "BS",
+    "credit_hours": "(3+0+0) 3 TEDU Credits, 5 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Fundamental principles of fluid mechanics and their application to engineering problems. Fluid statics. Kinematics of fluid flow. Dynamics of fluids. Differential analysis of fluid flow. Conservation of mass, momentum and energy for fluid flow problems. Flow of viscous fluids, simple laminar flow systems.",
+    "prerequisites": [
+      "ME 241"
+    ],
+    "corequisites": [],
+    "instructor": "Sıtkı Uslu",
+    "learning_outcomes": "",
+    "assessment_methods": "Test / Exam\nQuiz/Homework\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
+    "textbooks": "",
+    "department": "ME"
+  },
+  {
+    "code": "ME 399",
+    "name": "Summer Practice I",
+    "hours": "1+0+0",
+    "credits": "1",
+    "ects": "2",
+    "semester": "Spring 2025",
+    "sections": [
+      "O_01",
+      "01"
+    ],
+    "instructors": [
+      "Ayşe Çağıl Kandemir"
+    ],
+    "syllabus_url": "https://me.tedu.edu.tr/en/izlence-detail/50297923",
+    "course_code": "ME 399-O",
+    "course_title": "Summer Practice I",
+    "level": "BS",
+    "credit_hours": "(1+0+0) 1 TEDU Credits, 2 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Minimum 20 working days of practical work in an organization operating on the design, production, maintenance, management of mechanical or thermal systems.",
+    "prerequisites": [],
+    "corequisites": [],
+    "instructor": "Ayşe Çağıl Kandemir",
+    "learning_outcomes": "",
+    "assessment_methods": "Observation\nPresentation (Oral/Poster)\nOthers\nAssessment Methods and Criteria Others:\nWritten report\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
+    "textbooks": "",
+    "department": "ME"
+  },
+  {
+    "code": "ME 446",
+    "name": "Fundamentals of Composite Materials",
+    "hours": "3+0+0",
+    "credits": "3",
+    "ects": "5",
+    "semester": "Spring 2025",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Ayşe Çağıl Kandemir"
+    ],
+    "syllabus_url": "https://me.tedu.edu.tr/en/izlence-detail/50297936",
+    "course_code": "ME 446",
+    "course_title": "Fundamentals of Composite Materials",
+    "level": "BS",
+    "credit_hours": "(3+0+0) 3 TEDU Credits, 5 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Introduction to composite materials. Classification of composite materials and their applications. Production and characterization methods for composite materials. Structure- mechanical property relationship.",
+    "prerequisites": [
+      "ME 211"
+    ],
+    "corequisites": [],
+    "instructor": "Ayşe Çağıl Kandemir",
+    "learning_outcomes": "",
+    "assessment_methods": "Test / Exam\nQuiz/Homework\nOthers\nAssessment Methods and Criteria Others:\nHomework\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
+    "textbooks": "",
+    "department": "ME"
+  },
+  {
+    "code": "ME 464",
+    "name": "Applied Thermal Systems",
+    "hours": "3+0+0",
+    "credits": "3",
+    "ects": "5",
+    "semester": "Spring 2025",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Onur Baş"
+    ],
+    "syllabus_url": "https://me.tedu.edu.tr/en/izlence-detail/50297939",
+    "course_code": "ME 464",
+    "course_title": "Applied Thermal Systems",
+    "level": "BS",
+    "credit_hours": "(3+0+0) 3 TEDU Credits, 5 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Engineering design and thermal systems. Pipeline systems, pipe networks. Pumps, pump systems and power. Mathematical modeling, analysis and simulation of thermal systems. Optimization of thermal systems. Heat exchangers. Application of thermodynamics principles on thermal energy cycles.",
+    "prerequisites": [
+      "ME 264",
+      "ME 353"
+    ],
+    "corequisites": [],
+    "instructor": "Onur Baş",
+    "learning_outcomes": "",
+    "assessment_methods": "Test / Exam\nQuiz/Homework\nWritten Project\nPresentation (Oral/Poster)\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
+    "textbooks": "",
+    "department": "ME"
+  },
+  {
+    "code": "ME 466",
+    "name": "Propulsion Systems",
+    "hours": "3+0+0",
+    "credits": "3",
+    "ects": "5",
+    "semester": "Spring 2025",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Sıtkı Uslu"
+    ],
+    "syllabus_url": "https://me.tedu.edu.tr/en/izlence-detail/50297942",
+    "course_code": "ME 466",
+    "course_title": "Propulsion Systems",
+    "level": "BS",
+    "credit_hours": "(3+0+0) 3 TEDU Credits, 5 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Introduction to propulsion systems. Aerothermodynamics of ideal air breathing engines. Non-ideal cycle analysis. Performance of propulsion system components. Matching of compressors and turbines.",
+    "prerequisites": [],
+    "corequisites": [],
+    "instructor": "Sıtkı Uslu",
+    "learning_outcomes": "",
+    "assessment_methods": "",
+    "textbooks": "",
+    "department": "ME"
+  },
+  {
+    "code": "ME 499",
+    "name": "Summer Practice II",
+    "hours": "1+0+0",
+    "credits": "1",
+    "ects": "3",
+    "semester": "Spring 2025",
+    "sections": [
+      "O_01"
+    ],
+    "instructors": [
+      "Ayşe Çağıl Kandemir"
+    ],
+    "syllabus_url": "https://me.tedu.edu.tr/en/izlence-detail/50297945",
+    "course_code": "ME 499-O",
+    "course_title": "Summer Practice II",
+    "level": "BS",
+    "credit_hours": "(1+0+0) 1 TEDU Credits, 3 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Minimum 20 working days of practical work in an organization operating on the design, production, maintenance, management of mechanical or thermal systems.",
+    "prerequisites": [
+      "ME 399-O"
+    ],
+    "corequisites": [],
+    "instructor": "Ayşe Çağıl Kandemir",
+    "learning_outcomes": "",
+    "assessment_methods": "Observation\nPresentation (Oral/Poster)\nOthers\nAssessment Methods and Criteria Others:\nWritten report\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
+    "textbooks": "",
+    "department": "ME"
+  },
+  {
+    "code": "ME 591",
+    "name": "Pre-thesis Seminar",
+    "hours": "0+0+0",
+    "credits": "0",
+    "ects": "10",
+    "semester": "Spring 2025",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Behzat Bahadır Kentel"
+    ],
+    "syllabus_url": "https://me.tedu.edu.tr/en/izlence-detail/50297958",
+    "course_code": "ME 591",
+    "course_title": "Pre-thesis Seminar",
+    "level": "MS",
+    "credit_hours": "(0+0+0) 0 TEDU Credits, 10 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Determination of thesis subject, problem and research question definition. Preparatory work for thesis such as literature review, hypothesis generation and research on Methodology. Presentation of thesis proposal as a seminar. Attending seminars organized as part of the program.",
+    "prerequisites": [],
+    "corequisites": [],
+    "instructor": "Behzat Bahadır Kentel",
+    "learning_outcomes": "",
+    "assessment_methods": "",
+    "textbooks": "",
+    "department": "ME"
+  },
+  {
+    "code": "ME 592",
+    "name": "Master’s Thesis I",
+    "hours": "0+0+0",
+    "credits": "0",
+    "ects": "30",
+    "semester": "Spring 2025",
+    "sections": [
+      "02",
+      "05",
+      "06"
+    ],
+    "instructors": [
+      "Sıtkı Uslu",
+      "Onur Baş",
+      "Behzat Bahadır Kentel"
+    ],
+    "syllabus_url": "https://me.tedu.edu.tr/en/izlence-detail/50299080",
+    "course_code": "ME 592",
+    "course_title": "Master’s Thesis I",
+    "level": "MS",
+    "credit_hours": "(0+0+0) 0 TEDU Credits, 30 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "The first step of master’s thesis performed under the supervision of academic staff.",
+    "prerequisites": [
+      "ME 591"
+    ],
+    "corequisites": [],
+    "instructor": "Sıtkı Uslu",
+    "learning_outcomes": "",
+    "assessment_methods": "",
+    "textbooks": "",
+    "department": "ME"
+  },
+  {
+    "code": "ME 593",
+    "name": "Master’s Thesis II",
+    "hours": "0+0+0",
+    "credits": "0",
+    "ects": "30",
+    "semester": "Spring 2025",
+    "sections": [
+      "01",
+      "02",
+      "03",
+      "04",
+      "05",
+      "06"
+    ],
+    "instructors": [
+      "Selin Aradağ Çelebioğlu",
+      "Sıtkı Uslu",
+      "Şehram Dizeci",
+      "Ayşe Çağıl Kandemir",
+      "Onur Baş",
+      "Behzat Bahadır Kentel"
+    ],
+    "syllabus_url": "https://me.tedu.edu.tr/en/izlence-detail/50299099",
+    "course_code": "ME 593",
+    "course_title": "Master’s Thesis II",
+    "level": "MS",
+    "credit_hours": "(0+0+0) 0 TEDU Credits, 30 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Master’s thesis performed under the supervision of academic staff. This course must be taken in the semesters where the thesis work is in progress.",
+    "prerequisites": [
+      "ME 592"
+    ],
+    "corequisites": [],
+    "instructor": "Selin Aradağ Çelebioğlu",
+    "learning_outcomes": "",
+    "assessment_methods": "",
+    "textbooks": "",
+    "department": "ME"
+  },
+  {
+    "code": "ME 692",
+    "name": "Thesis Proposal",
+    "hours": "0+0+0",
+    "credits": "0",
+    "ects": "30",
+    "semester": "Spring 2025",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Behzat Bahadır Kentel"
+    ],
+    "syllabus_url": "https://me.tedu.edu.tr/en/izlence-detail/50299125",
+    "course_code": "ME 692",
+    "course_title": "Thesis Proposal",
+    "level": "Phd",
+    "credit_hours": "(0+0+0) 0 TEDU Credits, 30 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Emphasis on the importance and novelty of dissertation topic. Thesis proposal is defended in front of a thesis monitoring committee during the semester the course is taken.",
+    "prerequisites": [
+      "ME 690"
+    ],
+    "corequisites": [],
+    "instructor": "Behzat Bahadır Kentel",
+    "learning_outcomes": "",
+    "assessment_methods": "",
+    "textbooks": "",
+    "department": "ME"
+  },
+  {
+    "code": "ME 693",
+    "name": "Ph.D. Dissertation I",
+    "hours": "0+0+0",
+    "credits": "0",
+    "ects": "30",
+    "semester": "Spring 2025",
+    "sections": [
+      "03"
+    ],
+    "instructors": [
+      "Onur Baş"
+    ],
+    "syllabus_url": "https://me.tedu.edu.tr/en/izlence-detail/50299136",
+    "course_code": "ME 693",
+    "course_title": "Ph.D. Dissertation I",
+    "level": "Phd",
+    "credit_hours": "(0+0+0) 0 TEDU Credits, 30 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Ph.D. dissertation studies performed under supervision of an academic advisor. This course must be taken when dissertation work commences.",
+    "prerequisites": [
+      "ME 692"
+    ],
+    "corequisites": [],
+    "instructor": "Onur Baş",
+    "learning_outcomes": "",
+    "assessment_methods": "",
+    "textbooks": "",
+    "department": "ME"
+  }
+]

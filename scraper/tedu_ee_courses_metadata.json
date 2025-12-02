@@ -1,0 +1,1018 @@
+[
+  {
+    "code": "EE 201",
+    "name": "Circuit Theory I",
+    "hours": "3+0+2",
+    "credits": "4",
+    "ects": "8",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Ali Nezih Güven"
+    ],
+    "syllabus_url": "https://ee.tedu.edu.tr/en/izlence-detail/50296520",
+    "course_code": "EE 201",
+    "course_title": "Circuit Theory I",
+    "level": "BS",
+    "credit_hours": "(3+0+2) 4 TEDU Credits, 8 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Fundamentals of electric circuits, variables, and lumped circuit elements. Kirchhoff's laws. Resistive circuits. Methods of circuit analysis. Operational amplifiers (op amps). Energy storage elements. Analysis of first and second-order circuits. Experiments on resistive circuits, first and second-order circuits, and op amp circuits.",
+    "prerequisites": [
+      "(PHYS 101",
+      "PHYS 105) AND MATH 101"
+    ],
+    "corequisites": [],
+    "instructor": "Ali Nezih Güven",
+    "learning_outcomes": "",
+    "assessment_methods": "Test / Exam\nQuiz/Homework\nLaboratory Work\nOthers\nAssessment Methods and Criteria Others:\nActive Learning Exercises\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
+    "textbooks": "",
+    "department": "EE",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Ali Nezih Güven"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Ali Nezih Güven"
+        ]
+      }
+    }
+  },
+  {
+    "code": "EE 205",
+    "name": "Software Tools for Electrical Engineering",
+    "hours": "0+0+3",
+    "credits": "1",
+    "ects": "4",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Aykut Yıldız"
+    ],
+    "syllabus_url": "https://ee.tedu.edu.tr/en/izlence-detail/50296541",
+    "course_code": "EE 205",
+    "course_title": "Software Tools for Electrical Engineering",
+    "level": "BS",
+    "credit_hours": "(0+0+3) 1 TEDU Credits, 4 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "MATLAB Environment, Built-in MATLAB Functions, Manipulating Matrices, Plotting, User Defined Functions, User Controlled Input and Outputs, Logical Functions, Repetition Structures, Matrix Algebra.",
+    "prerequisites": [],
+    "corequisites": [],
+    "instructor": "Aykut Yıldız",
+    "learning_outcomes": "",
+    "assessment_methods": "Test / Exam\nLaboratory Work\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
+    "textbooks": "",
+    "department": "EE",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Aykut Yıldız"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Aykut Yıldız"
+        ]
+      }
+    }
+  },
+  {
+    "code": "EE 207",
+    "name": "Electrical Circuits and Logic Design",
+    "hours": "2+0+2",
+    "credits": "3",
+    "ects": "6",
+    "sections": [
+      "01",
+      "02",
+      "03",
+      "04"
+    ],
+    "instructors": [
+      "Serkan Şahin",
+      "Kurtuluş Erinç Akdoğan"
+    ],
+    "syllabus_url": "https://ee.tedu.edu.tr/en/izlence-detail/50296525",
+    "course_code": "EE 207",
+    "course_title": "Electrical Circuits and Logic Design",
+    "level": "BS",
+    "credit_hours": "(2+0+2) 3 TEDU Credits, 6 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Number systems, conversions, data representation, and Boolean Algebra. Binary logic and gates. Combinatorial and sequential circuit design. Experiments on registers, counters, and programmable logic.",
+    "prerequisites": [],
+    "corequisites": [],
+    "instructor": "Serkan Şahin",
+    "learning_outcomes": "",
+    "assessment_methods": "Test / Exam\nQuiz/Homework\nLaboratory Work\nWritten Project\nPerformance Project\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
+    "textbooks": "",
+    "department": "EE",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03",
+          "04"
+        ],
+        "instructors": [
+          "Serkan Şahin",
+          "Kurtuluş Erinç Akdoğan"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03",
+          "04"
+        ],
+        "instructors": [
+          "Serkan Şahin",
+          "Kurtuluş Erinç Akdoğan"
+        ]
+      }
+    }
+  },
+  {
+    "code": "EE 301",
+    "name": "Introduction to MATLAB Programming",
+    "hours": "0+0+3",
+    "credits": "1",
+    "ects": "4",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Aykut Yıldız"
+    ],
+    "syllabus_url": "https://ee.tedu.edu.tr/en/izlence-detail/50296544",
+    "course_code": "EE 301",
+    "course_title": "Introduction to MATLAB Programming",
+    "level": "BS",
+    "credit_hours": "(0+0+3) 1 TEDU Credits, 4 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "MATLAB environment. Built-in MATLAB functions. Manipulating matrices. Plotting. User-defined functions. User-controlled input and outputs. Logical functions. Repetition structures. Matrix algebra. Introduction to Simulink.",
+    "prerequisites": [],
+    "corequisites": [],
+    "instructor": "Aykut Yıldız",
+    "learning_outcomes": "",
+    "assessment_methods": "Test / Exam\nLaboratory Work\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
+    "textbooks": "",
+    "department": "EE",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Aykut Yıldız"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Aykut Yıldız"
+        ]
+      }
+    }
+  },
+  {
+    "code": "EE 309",
+    "name": "Fundamentals of Electrical and Electronics Engineering",
+    "hours": "2+0+2",
+    "credits": "3",
+    "ects": "4",
+    "sections": [
+      "O_01",
+      "01"
+    ],
+    "instructors": [
+      "Erdem Yazgan"
+    ],
+    "syllabus_url": "https://ee.tedu.edu.tr/en/izlence-detail/50296549",
+    "course_code": "EE 309-O",
+    "course_title": "Fundamentals of Electrical and Electronics Engineering",
+    "level": "BS",
+    "credit_hours": "(2+0+2) 3 TEDU Credits, 4 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Basic electrical and electronic components and circuits. Circuit analysis. Analysis of first-order circuits. Phasors. Steady-state alternating current analysis. Fundamentals of electromechanical energy conversion. Alternating current power. Three-phase power. Transformers. (Offered for non-EE students.)",
+    "prerequisites": [],
+    "corequisites": [],
+    "instructor": "Erdem Yazgan",
+    "learning_outcomes": "",
+    "assessment_methods": "Test / Exam\nLaboratory Work\nOthers\nAssessment Methods and Criteria Others:\nActive Learning Exercises\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
+    "textbooks": "",
+    "department": "EE",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "O_01",
+          "01"
+        ],
+        "instructors": [
+          "Erdem Yazgan"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "O_01",
+          "01"
+        ],
+        "instructors": [
+          "Erdem Yazgan"
+        ]
+      }
+    }
+  },
+  {
+    "code": "EE 311",
+    "name": "Signals and Systems",
+    "hours": "3+0+0",
+    "credits": "3",
+    "ects": "5",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Hüseyin Uğur Yıldız"
+    ],
+    "syllabus_url": "https://ee.tedu.edu.tr/en/izlence-detail/50296559",
+    "course_code": "EE 311",
+    "course_title": "Signals and Systems",
+    "level": "BS",
+    "credit_hours": "(3+0+0) 3 TEDU Credits, 5 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Continuous-time and discrete-time signals and systems. Linear time-invariant systems. Fourier series representation of periodic signals. Continuous-time Fourier transform. Discrete-time Fourier transform. Sampling theorem.",
+    "prerequisites": [
+      "MATH 203"
+    ],
+    "corequisites": [],
+    "instructor": "Hüseyin Uğur Yıldız",
+    "learning_outcomes": "",
+    "assessment_methods": "Test / Exam\nOthers\nAssessment Methods and Criteria Others:\nActive Learning Exercises\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
+    "textbooks": "",
+    "department": "EE",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Hüseyin Uğur Yıldız"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Hüseyin Uğur Yıldız"
+        ]
+      }
+    }
+  },
+  {
+    "code": "EE 312",
+    "name": "Communication Systems I",
+    "hours": "3+0+0",
+    "credits": "3",
+    "ects": "5",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Serkan Şahin"
+    ],
+    "syllabus_url": "https://ee.tedu.edu.tr/en/izlence-detail/50296563",
+    "course_code": "EE 312",
+    "course_title": "Communication Systems I",
+    "level": "BS",
+    "credit_hours": "(3+0+0) 3 TEDU Credits, 5 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Basic elements of communication systems. Fourier theory and communication signals. Filters. Low-pass and band-pass signals. Amplitude modulation: double-sideband-suppressed-carrier and single-sideband modulation methods. Frequency-division multiplexing. Angle modulation: phase and frequency modulation (FM). Phase-locked loop. Nonlinear effects in FM. Random variables and processes. Power spectral density. Transmission of a random signal through a linear filter. Effects of noise on the performance of analog modulation techniques.",
+    "prerequisites": [
+      "EE 311"
+    ],
+    "corequisites": [],
+    "instructor": "Serkan Şahin",
+    "learning_outcomes": "",
+    "assessment_methods": "Test / Exam\nQuiz/Homework\nPerformance Project\nOthers\nAssessment Methods and Criteria Others:\nActive Learning Exercises\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
+    "textbooks": "",
+    "department": "EE",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Serkan Şahin"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Serkan Şahin"
+        ]
+      }
+    }
+  },
+  {
+    "code": "EE 341",
+    "name": "Electromagnetic Theory I",
+    "hours": "3+0+0",
+    "credits": "3",
+    "ects": "5",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Erdem Yazgan"
+    ],
+    "syllabus_url": "https://ee.tedu.edu.tr/en/izlence-detail/50296567",
+    "course_code": "EE 341",
+    "course_title": "Electromagnetic Theory I",
+    "level": "BS",
+    "credit_hours": "(3+0+0) 3 TEDU Credits, 5 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Review of vector analysis. Static electric fields due to discrete and continuous charge distributions. Gauss's law, divergence, and Stokes' theorems. Electric potential. Dielectric materials in static electric fields. Boundary conditions. Laplace's equation and boundary value problems. Capacitance. Electrostatic force and energy. Image method. Steady electric currents. Static magnetic fields: Biot-Savart law and Ampere's law. Magnetic materials in magnetic fields. Vector magnetic potential. Inductance. Magnetic force and energy. Time-independent Maxwell's equations.",
+    "prerequisites": [
+      "MATH 204"
+    ],
+    "corequisites": [],
+    "instructor": "Erdem Yazgan",
+    "learning_outcomes": "",
+    "assessment_methods": "Test / Exam\nQuiz/Homework\nWritten Project\nPortfolio\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
+    "textbooks": "",
+    "department": "EE",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Erdem Yazgan"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Erdem Yazgan"
+        ]
+      }
+    }
+  },
+  {
+    "code": "EE 351",
+    "name": "Analog Circuit Design",
+    "hours": "3+0+2",
+    "credits": "4",
+    "ects": "8",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Çiçek Hatice Boztuğ Yerci"
+    ],
+    "syllabus_url": "https://ee.tedu.edu.tr/en/izlence-detail/50296573",
+    "course_code": "EE 351",
+    "course_title": "Analog Circuit Design",
+    "level": "BS",
+    "credit_hours": "(3+0+2) 4 TEDU Credits, 8 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Basic single-stage transistor amplifiers. Low and high-frequency response of amplifiers. Multi-stage amplifiers. Differential amplifiers. Current mirrors. Feedback and stability in amplifiers. Power amplifiers. Experiments on single- and multi-stage amplifiers, the frequency response of amplifiers, differential amplifiers, power amplifiers, and metal-oxide-semiconductor field-effect transistor (MOSFET) current sources.",
+    "prerequisites": [
+      "EE 252"
+    ],
+    "corequisites": [],
+    "instructor": "Çiçek Boztuğ Yerci",
+    "learning_outcomes": "",
+    "assessment_methods": "Test / Exam\nQuiz/Homework\nLaboratory Work\nPeer Evaluation\nPerformance Project\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
+    "textbooks": "",
+    "department": "EE",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Çiçek Hatice Boztuğ Yerci"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Çiçek Hatice Boztuğ Yerci"
+        ]
+      }
+    }
+  },
+  {
+    "code": "EE 361",
+    "name": "Electromechanical Energy Conversion",
+    "hours": "2+0+2",
+    "credits": "3",
+    "ects": "5",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Javad Haghighat"
+    ],
+    "syllabus_url": "https://ee.tedu.edu.tr/en/izlence-detail/50296577",
+    "course_code": "EE 361",
+    "course_title": "Electromechanical Energy Conversion",
+    "level": "BS",
+    "credit_hours": "(2+0+2) 3 TEDU Credits, 5 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Magnetic circuits. Transformers. Electromechanical energy conversion principles. Direct current (DC) machines and generators. Principles of alternating current (AC) machine operation. Synchronous machines and generators. Induction machines. Single-phase machines. Special machines. Experiments on transformers, DC, AC, and related special-purpose motors as well as generators.",
+    "prerequisites": [
+      "EE 202-O",
+      "EE 202"
+    ],
+    "corequisites": [],
+    "instructor": "Javad Haghighat",
+    "learning_outcomes": "",
+    "assessment_methods": "Test / Exam\nQuiz/Homework\nLaboratory Work\nOthers\nAssessment Methods and Criteria Others:\nActive Learning Exercises\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
+    "textbooks": "",
+    "department": "EE",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Javad Haghighat"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Javad Haghighat"
+        ]
+      }
+    }
+  },
+  {
+    "code": "EE 399",
+    "name": "Summer Practice I",
+    "hours": "1+0+0",
+    "credits": "1",
+    "ects": "2",
+    "sections": [
+      "O_01",
+      "01"
+    ],
+    "instructors": [
+      "Ali Nezih Güven"
+    ],
+    "syllabus_url": "https://ee.tedu.edu.tr/en/izlence-detail/50296581",
+    "course_code": "EE 399-O",
+    "course_title": "Summer Practice I",
+    "level": "BS",
+    "credit_hours": "(1+0+0) 1 TEDU Credits, 2 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Minimum 20 working days of practical work in an organization operating on the design, production, maintenance, management of electrical or electronics systems.",
+    "prerequisites": [
+      "EE 201-O",
+      "EE 201"
+    ],
+    "corequisites": [],
+    "instructor": "Ali Nezih Güven",
+    "learning_outcomes": "",
+    "assessment_methods": "Presentation (Oral/Poster)\nPerformance Project\nOthers\nAssessment Methods and Criteria Others:\nTrainee Evaluation Form\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
+    "textbooks": "",
+    "department": "EE",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "O_01",
+          "01"
+        ],
+        "instructors": [
+          "Ali Nezih Güven"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "O_01",
+          "01"
+        ],
+        "instructors": [
+          "Ali Nezih Güven"
+        ]
+      }
+    }
+  },
+  {
+    "code": "EE 413",
+    "name": "Communication Systems II",
+    "hours": "2+0+2",
+    "credits": "3",
+    "ects": "5",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Hüseyin Uğur Yıldız"
+    ],
+    "syllabus_url": "https://ee.tedu.edu.tr/en/izlence-detail/50296588",
+    "course_code": "EE 413",
+    "course_title": "Communication Systems II",
+    "level": "BS",
+    "credit_hours": "(2+0+2) 3 TEDU Credits, 5 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Sampling theorem. Pulse amplitude modulation. Quantization. Pulse code modulation. Baseband transmission of digital signals. Matched filter detection. Probability of error due to the noise. Intersymbol interference. Geometric representation of signal waveforms. Optimal receiver structure in additive white Gaussian noise (AWGN) channels. Graphical interpretation of decision regions. Union bound on the probability of error. Multidimensional digital modulation methods. Introduction to information theory. Entropy. Source-coding theorem. Lossless data compression. Experiments on quantization, probability of error analysis, bandpass transmission, and lossless data compression.",
+    "prerequisites": [
+      "EE 312"
+    ],
+    "corequisites": [],
+    "instructor": "Hüseyin Uğur Yıldız",
+    "learning_outcomes": "",
+    "assessment_methods": "Test / Exam\nLaboratory Work\nOthers\nAssessment Methods and Criteria Others:\nActive Learning Exercises\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
+    "textbooks": "",
+    "department": "EE",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Hüseyin Uğur Yıldız"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Hüseyin Uğur Yıldız"
+        ]
+      }
+    }
+  },
+  {
+    "code": "EE 441",
+    "name": "Microwave Engineering",
+    "hours": "2+0+2",
+    "credits": "3",
+    "ects": "5",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Erdem Yazgan"
+    ],
+    "syllabus_url": "https://ee.tedu.edu.tr/en/izlence-detail/50296592",
+    "course_code": "EE 441",
+    "course_title": "Microwave Engineering",
+    "level": "BS",
+    "credit_hours": "(2+0+2) 3 TEDU Credits, 5 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Transmission lines. Rectangular waveguides. Impedance transformations and matching techniques. Scattering matrix and impedance matrix. Experiments on microwave measurements and microwave matching circuits.",
+    "prerequisites": [
+      "EE 341-O",
+      "EE 341"
+    ],
+    "corequisites": [],
+    "instructor": "Erdem Yazgan",
+    "learning_outcomes": "",
+    "assessment_methods": "Test / Exam\nQuiz/Homework\nLaboratory Work\nWritten Project\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
+    "textbooks": "",
+    "department": "EE",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Erdem Yazgan"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Erdem Yazgan"
+        ]
+      }
+    }
+  },
+  {
+    "code": "EE 451",
+    "name": "Digital Electronics",
+    "hours": "2+0+2",
+    "credits": "3",
+    "ects": "5",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Çiçek Hatice Boztuğ Yerci"
+    ],
+    "syllabus_url": "https://ee.tedu.edu.tr/en/izlence-detail/50296597",
+    "course_code": "EE 451",
+    "course_title": "Digital Electronics",
+    "level": "BS",
+    "credit_hours": "(2+0+2) 3 TEDU Credits, 5 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Diode and transistor models used in logic gates. Dynamic behavior of logic gates: fall-time, rise-time, propagation delay. n-type metal–oxide–semiconductor (NMOS)-based and complementary metal–oxide–semiconductor (CMOS)-based logic gates: inverters, Not-AND (NAND), and Not-OR (NOR) gates. Static and dynamic memory circuits. Bipolar junction transistor- (BJT-) based logic gates: Emitter-coupled logic (ECL) and transistor-transistor logic (TTL). Digital-to-analog (D/A) converters. Experiments on diode- and NMOS-based logic gates, timer circuits, and TTL.",
+    "prerequisites": [
+      "EE 252"
+    ],
+    "corequisites": [],
+    "instructor": "Çiçek Boztuğ Yerci",
+    "learning_outcomes": "",
+    "assessment_methods": "Test / Exam\nLaboratory Work\nOthers\nAssessment Methods and Criteria Others:\nActive Learning Exercises\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
+    "textbooks": "",
+    "department": "EE",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Çiçek Hatice Boztuğ Yerci"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Çiçek Hatice Boztuğ Yerci"
+        ]
+      }
+    }
+  },
+  {
+    "code": "EE 462",
+    "name": "Power System Analysis",
+    "hours": "3+0+0",
+    "credits": "3",
+    "ects": "5",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Ali Nezih Güven"
+    ],
+    "syllabus_url": "https://ee.tedu.edu.tr/en/izlence-detail/50296601",
+    "course_code": "EE 462",
+    "course_title": "Power System Analysis",
+    "level": "BS",
+    "credit_hours": "(3+0+0) 3 TEDU Credits, 5 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Structure and characteristics of electrical power systems. Smart grids. Renewable energy sources. Electrical modeling of transmission lines, transformers and generators. Representation of power systems. Bus admittance and bus impedance matrices. Load flow analysis. Symmetrical three-phase fault analysis.",
+    "prerequisites": [
+      "EE 361-O",
+      "EE 361"
+    ],
+    "corequisites": [],
+    "instructor": "Ali Nezih Güven",
+    "learning_outcomes": "",
+    "assessment_methods": "Test / Exam\nWritten Project\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
+    "textbooks": "",
+    "department": "EE",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Ali Nezih Güven"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Ali Nezih Güven"
+        ]
+      }
+    }
+  },
+  {
+    "code": "EE 491",
+    "name": "Senior Project I",
+    "hours": "1+0+4",
+    "credits": "3",
+    "ects": "7",
+    "sections": [
+      "01",
+      "02"
+    ],
+    "instructors": [
+      "Aykut Yıldız",
+      "Hüseyin Uğur Yıldız"
+    ],
+    "syllabus_url": "https://ee.tedu.edu.tr/en/izlence-detail/50296605",
+    "course_code": "EE 491",
+    "course_title": "Senior Project I",
+    "level": "BS",
+    "credit_hours": "(1+0+4) 3 TEDU Credits, 7 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Design, implementation, and integration of a comprehensive electrical and electronics engineering system. Identification of needs and constraints for the design problem. Investigation of possible solutions to the design problem. Identification of preliminary design choices and parameters. Performing a preliminary design for the design problem. Determination of preliminary design parameters. Preparation of a detailed report documenting the preliminary design. Technical communication and teamwork skills.",
+    "prerequisites": [
+      "24 EE Credits"
+    ],
+    "corequisites": [],
+    "instructor": "Aykut Yıldız",
+    "learning_outcomes": "",
+    "assessment_methods": "Performance Project\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
+    "textbooks": "",
+    "department": "EE",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01",
+          "02"
+        ],
+        "instructors": [
+          "Aykut Yıldız",
+          "Hüseyin Uğur Yıldız"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01",
+          "02"
+        ],
+        "instructors": [
+          "Aykut Yıldız",
+          "Hüseyin Uğur Yıldız"
+        ]
+      }
+    }
+  },
+  {
+    "code": "EE 492",
+    "name": "Senior Project II",
+    "hours": "1+0+4",
+    "credits": "3",
+    "ects": "10",
+    "sections": [
+      "O_01"
+    ],
+    "instructors": [
+      "Javad Haghighat"
+    ],
+    "syllabus_url": "https://ee.tedu.edu.tr/en/izlence-detail/50296613",
+    "course_code": "EE 492-O",
+    "course_title": "Senior Project II",
+    "level": "BS",
+    "credit_hours": "(1+0+4) 3 TEDU Credits, 10 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Continuation of EE 491 – Senior Project I. Development of a software or hardware prototype given a preliminary design. Examination and testing of the design choices and parameters using the prototype. Investigation of the impact of different design choices and parameters. Iterative updates of the design choices and parameters; making observations and interpretations at each iteration. Final design decision resulting from iterations. Preparation of a detailed report documenting the entire project. Technical communication and teamwork skills.",
+    "prerequisites": [
+      "EE 491"
+    ],
+    "corequisites": [],
+    "instructor": "Javad Haghighat",
+    "learning_outcomes": "",
+    "assessment_methods": "Presentation (Oral/Poster)\nPerformance Project\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
+    "textbooks": "",
+    "department": "EE",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "O_01"
+        ],
+        "instructors": [
+          "Javad Haghighat"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "O_01"
+        ],
+        "instructors": [
+          "Javad Haghighat"
+        ]
+      }
+    }
+  },
+  {
+    "code": "EE 499",
+    "name": "Summer Practice II",
+    "hours": "1+0+0",
+    "credits": "1",
+    "ects": "2",
+    "sections": [
+      "O_01",
+      "01"
+    ],
+    "instructors": [
+      "Çiçek Hatice Boztuğ Yerci , Ali Nezih Güven"
+    ],
+    "syllabus_url": "https://ee.tedu.edu.tr/en/izlence-detail/50297070",
+    "course_code": "EE 499-O",
+    "course_title": "Summer Practice II",
+    "level": "BS",
+    "credit_hours": "(1+0+0) 1 TEDU Credits, 2 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Minimum 20 working days of practical work in an organization operating on the design, production, maintenance, management of electrical or electronics systems.",
+    "prerequisites": [
+      "EE 399-O"
+    ],
+    "corequisites": [],
+    "instructor": "Çiçek Boztuğ Yerci",
+    "learning_outcomes": "",
+    "assessment_methods": "Presentation (Oral/Poster)\nPerformance Project\nAssessment Methods and Criteria Others:\nTrainee Evaluation Form\nDipnot\nClarification Text on Personal Data Processing\nDisclaimer\nCorporate Identity\nOpen Consent Statement\n© TED University. Ziya Gökalp Caddesi No:48 06420, Kolej Çankaya - Ankara",
+    "textbooks": "",
+    "department": "EE",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "O_01",
+          "01"
+        ],
+        "instructors": [
+          "Çiçek Hatice Boztuğ Yerci , Ali Nezih Güven"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "O_01",
+          "01"
+        ],
+        "instructors": [
+          "Çiçek Hatice Boztuğ Yerci , Ali Nezih Güven"
+        ]
+      }
+    }
+  },
+  {
+    "code": "ENGR 490",
+    "name": "Contemporary Issues in Engineering",
+    "hours": "2+2+0",
+    "credits": "3",
+    "ects": "5",
+    "sections": [
+      "01",
+      "02",
+      "03",
+      "04"
+    ],
+    "instructors": [
+      "Sırma Karakaya",
+      "Mehmet Rüştü Taner",
+      "Kurtuluş Erinç Akdoğan",
+      "Ayşe Çağıl Kandemir"
+    ],
+    "syllabus_url": "https://ee.tedu.edu.tr/en/izlence-detail/50297056",
+    "course_code": "ENGR 490",
+    "course_title": "Contemporary Issues in Engineering",
+    "level": "BS",
+    "credit_hours": "(2+2+0) 3 TEDU Credits, 5 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Seminars on engineering topics such as, ethics, life-long education, engineering standards, project management, risk management, change management, entrepreneurship and innovation, sustainable development, effects of engineering applications on health, environment and safety, legal consequences of engineering solutions. A multidisciplinary group work on a selected theme.",
+    "prerequisites": [],
+    "corequisites": [
+      "CMPE 399",
+      "EE 399-O",
+      "IE 399",
+      "ME 399-O",
+      "ME 399",
+      "EE 399"
+    ],
+    "instructor": "Sırma Karakaya",
+    "learning_outcomes": "",
+    "assessment_methods": "",
+    "textbooks": "",
+    "department": "EE",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03",
+          "04"
+        ],
+        "instructors": [
+          "Sırma Karakaya",
+          "Mehmet Rüştü Taner",
+          "Kurtuluş Erinç Akdoğan",
+          "Ayşe Çağıl Kandemir"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03",
+          "04"
+        ],
+        "instructors": [
+          "Sırma Karakaya",
+          "Mehmet Rüştü Taner",
+          "Kurtuluş Erinç Akdoğan",
+          "Ayşe Çağıl Kandemir"
+        ]
+      }
+    }
+  }
+]

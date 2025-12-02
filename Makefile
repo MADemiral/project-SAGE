@@ -20,10 +20,29 @@ setup: ## Initial setup - create directories and env files
 
 up: ## Start all services
 	@echo "Starting SAGE services..."
-	@docker-compose up -d
+	@docker-compose up -d postgres chromadb backend frontend nginx pgadmin
 	@echo "✅ Services started!"
 	@echo "Frontend: http://localhost"
 	@echo "API Docs: http://localhost/api/v1/docs"
+	@echo ""
+	@echo "⚠️  Course data not initialized yet."
+	@echo "To initialize course data, run: make init-courses"
+
+up-with-courses: ## Start all services and initialize course data
+	@echo "Starting SAGE services with course initialization..."
+	@docker-compose up -d postgres chromadb backend frontend nginx pgadmin
+	@echo "Waiting for services to be ready..."
+	@sleep 10
+	@echo "Running course worker (scraping + embeddings)..."
+	@docker-compose up course_worker
+	@echo "✅ All services started and course data initialized!"
+	@echo "Frontend: http://localhost"
+	@echo "API Docs: http://localhost/api/v1/docs"
+
+init-courses: ## Initialize course data (scrape + create embeddings)
+	@echo "Initializing course data..."
+	@docker-compose up course_worker
+	@echo "✅ Course data initialized!"
 
 down: ## Stop all services
 	@echo "Stopping SAGE services..."
@@ -117,3 +136,20 @@ health: ## Check health of all services
 	@curl -f http://localhost:8001/api/v1/heartbeat || echo "❌ ChromaDB failed"
 	@docker-compose exec postgres pg_isready -U sage_user || echo "❌ PostgreSQL failed"
 	@echo "✅ Health check complete!"
+
+scrape-courses: ## Run course scraper for all departments and semesters
+	@echo "Scraping courses from TED University..."
+	@cd scraper && python scrape_multi_semester.py
+	@echo "✅ Scraping complete! Check tedu_*_courses_metadata.json files"
+
+create-embeddings: ## Generate embeddings and populate ChromaDB + PostgreSQL
+	@echo "Creating course embeddings..."
+	@docker-compose exec backend python scripts/create_course_embeddings.py
+	@echo "✅ Embeddings created and stored!"
+
+setup-courses: scrape-courses create-embeddings ## Full course setup: scrape + create embeddings
+
+check-embeddings: ## Check embedding system status
+	@echo "Checking embeddings status..."
+	@curl -s http://localhost/api/v1/courses/status | python -m json.tool
+

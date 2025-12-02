@@ -1,0 +1,772 @@
+[
+  {
+    "code": "SENG 214",
+    "name": "Software Engineering",
+    "hours": "3+0+0",
+    "credits": "3",
+    "ects": "6",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Mehmet Evren Coşkun"
+    ],
+    "syllabus_url": "https://seng.tedu.edu.tr/en/izlence-detail/50301534",
+    "course_code": "SENG 214",
+    "course_title": "Software Engineering",
+    "level": "BS",
+    "credit_hours": "(3+0+0) 3 TEDU Credits, 6 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Software Engineering: introduction, basic terminology, principles and ethics. Software Processes: process models, activities. Agile Development: agile methodology, scrum. Software Requirements: eliciting requirements, developing use cases, modeling with scenario-based methods, modeling with class-based methods, UML models and sequence diagrams. Design Concepts: patterns, software architecture, and object- oriented design. Architectural Design: software architectures and styles. Software Quality: concepts, quality assurance, achieving software quality. Software Testing: strategies, conventional, object oriented application testing. Software Maintenance.",
+    "prerequisites": [
+      "CMPE 211",
+      "CMPE 114"
+    ],
+    "corequisites": [],
+    "instructor": "Evren Coşkun",
+    "learning_outcomes": "",
+    "assessment_methods": "",
+    "textbooks": "",
+    "department": "SENG",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Mehmet Evren Coşkun"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Mehmet Evren Coşkun"
+        ]
+      }
+    }
+  },
+  {
+    "code": "SENG 261",
+    "name": "Computer Organization",
+    "hours": "2+0+2",
+    "credits": "3",
+    "ects": "6",
+    "sections": [
+      "01",
+      "02"
+    ],
+    "instructors": [
+      "Kasım Murat Karakaya"
+    ],
+    "syllabus_url": "https://seng.tedu.edu.tr/en/izlence-detail/50297842",
+    "course_code": "SENG 261",
+    "course_title": "Computer Organization",
+    "level": "BS",
+    "credit_hours": "(2+0+2) 3 TEDU Credits, 6 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Introduction to digital design, including number systems, Boolean Algebra, and logic gates. Design and optimization of combinational and sequential circuits. Fundamentals of computer organization, focusing on MIPS architecture, instruction sets, and registers. Branching, loops, procedure calls, addressing modes, and memory management.",
+    "prerequisites": [],
+    "corequisites": [],
+    "instructor": "Kasım Murat Karakaya",
+    "learning_outcomes": "",
+    "assessment_methods": "",
+    "textbooks": "",
+    "department": "SENG",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01",
+          "02"
+        ],
+        "instructors": [
+          "Kasım Murat Karakaya"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01",
+          "02"
+        ],
+        "instructors": [
+          "Kasım Murat Karakaya"
+        ]
+      }
+    }
+  },
+  {
+    "code": "SENG 311",
+    "name": "Software Validation and Verification",
+    "hours": "3+0+0",
+    "credits": "3",
+    "ects": "5",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Tansel Dökeroğlu"
+    ],
+    "syllabus_url": "https://seng.tedu.edu.tr/en/izlence-detail/50297850",
+    "course_code": "SENG 311",
+    "course_title": "Software Validation and Verification",
+    "level": "BS",
+    "credit_hours": "(3+0+0) 3 TEDU Credits, 5 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "The concepts of software quality assurance; Test driven development; Unit testing; Integration testing; System and acceptance techniques; Regression testing; Mutation testing; Agile software testing; Test maturity model integration.",
+    "prerequisites": [
+      "CMPE 114"
+    ],
+    "corequisites": [],
+    "instructor": "Tansel Dökeroğlu",
+    "learning_outcomes": "",
+    "assessment_methods": "",
+    "textbooks": "",
+    "department": "SENG",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Tansel Dökeroğlu"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Tansel Dökeroğlu"
+        ]
+      }
+    }
+  },
+  {
+    "code": "SENG 313",
+    "name": "Software Project Management",
+    "hours": "3+0+0",
+    "credits": "3",
+    "ects": "5",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Elif Kurtaran Özbudak"
+    ],
+    "syllabus_url": "https://seng.tedu.edu.tr/en/izlence-detail/50297870",
+    "course_code": "SENG 313",
+    "course_title": "Software Project Management",
+    "level": "BS",
+    "credit_hours": "(3+0+0) 3 TEDU Credits, 5 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Software project management: introduction to project planning, team organization, software cost estimation, software metrics, risk analysis and management, resource management, project monitoring and control, contract management, personnel management, software quality assurance, software configuration management, software project management tools, project management processes, assessing development standards.",
+    "prerequisites": [
+      "CMPE 114"
+    ],
+    "corequisites": [],
+    "instructor": "Elif Kurtaran Özbudak",
+    "learning_outcomes": "",
+    "assessment_methods": "",
+    "textbooks": "",
+    "department": "SENG",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Elif Kurtaran Özbudak"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Elif Kurtaran Özbudak"
+        ]
+      }
+    }
+  },
+  {
+    "code": "SENG 315",
+    "name": "Software Architectures",
+    "hours": "3+0+0",
+    "credits": "3",
+    "ects": "6",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Deniz Cantürk"
+    ],
+    "syllabus_url": "https://seng.tedu.edu.tr/en/izlence-detail/50297858",
+    "course_code": "SENG 315",
+    "course_title": "Software Architectures",
+    "level": "BS",
+    "credit_hours": "(3+0+0) 3 TEDU Credits, 6 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Introduction to software architectures, architectural types, modeling of software architectures, architectural evaluation methods, software production lines, model-driven architectures, service-driven architectures, architectural display languages, pattern-based development, interface-based development, contemporary software architectures, microservise architectures, cloud computing services.",
+    "prerequisites": [
+      "CMPE 114"
+    ],
+    "corequisites": [],
+    "instructor": "Deniz Cantürk",
+    "learning_outcomes": "",
+    "assessment_methods": "",
+    "textbooks": "",
+    "department": "SENG",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Deniz Cantürk"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Deniz Cantürk"
+        ]
+      }
+    }
+  },
+  {
+    "code": "SENG 399",
+    "name": "Internship I",
+    "hours": "1+0+0",
+    "credits": "1",
+    "ects": "2",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Tansel Dökeroğlu"
+    ],
+    "syllabus_url": "https://seng.tedu.edu.tr/en/izlence-detail/50297873",
+    "course_code": "SENG 399",
+    "course_title": "Internship I",
+    "level": "BS",
+    "credit_hours": "(1+0+0) 1 TEDU Credits, 2 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Summer internship done over 20 consecutive working days at a computer firm or an IT department. Presentation of experiences, and systems and software developed over the internship.",
+    "prerequisites": [
+      "CMPE 114"
+    ],
+    "corequisites": [],
+    "instructor": "Tansel Dökeroğlu",
+    "learning_outcomes": "",
+    "assessment_methods": "",
+    "textbooks": "",
+    "department": "SENG",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Tansel Dökeroğlu"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Tansel Dökeroğlu"
+        ]
+      }
+    }
+  },
+  {
+    "code": "SENG 451",
+    "name": "Software Architectures",
+    "hours": "3+0+0",
+    "credits": "3",
+    "ects": "5",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Deniz Cantürk"
+    ],
+    "syllabus_url": "https://seng.tedu.edu.tr/en/izlence-detail/50297866",
+    "course_code": "SENG 451",
+    "course_title": "Software Architectures",
+    "level": "BS",
+    "credit_hours": "(3+0+0) 3 TEDU Credits, 5 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Introduction to software architectures. Architectural types. Modeling of software architectures. Architectural evaluation methods. Software production lines. Model-driven architectures. Service-driven architectures. Architectural display languages. Pattern-based development. Interface-based development. Contemporary software architectures. Micro-service architectures. Cloud computing services.",
+    "prerequisites": [
+      "CMPE 313",
+      "SENG 214"
+    ],
+    "corequisites": [],
+    "instructor": "Deniz Cantürk",
+    "learning_outcomes": "",
+    "assessment_methods": "",
+    "textbooks": "",
+    "department": "SENG",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Deniz Cantürk"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Deniz Cantürk"
+        ]
+      }
+    }
+  },
+  {
+    "code": "SENG 453",
+    "name": "Software Validation and Verification",
+    "hours": "2+0+2",
+    "credits": "3",
+    "ects": "5",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Tansel Dökeroğlu"
+    ],
+    "syllabus_url": "https://seng.tedu.edu.tr/en/izlence-detail/50297854",
+    "course_code": "SENG 453",
+    "course_title": "Software Validation and Verification",
+    "level": "BS",
+    "credit_hours": "(2+0+2) 3 TEDU Credits, 5 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Challenges in software testing. Specification-based testing. Structural testing. Syntax-based testing. Model-based testing. Fault-based testing. Regression testing. Static and dynamic validation techniques. Run-time verification. Test documentation. Management of the testing process. Automated testing tools. Code inspection.",
+    "prerequisites": [
+      "CMPE 313",
+      "SENG 214"
+    ],
+    "corequisites": [],
+    "instructor": "Tansel Dökeroğlu",
+    "learning_outcomes": "",
+    "assessment_methods": "",
+    "textbooks": "",
+    "department": "SENG",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Tansel Dökeroğlu"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Tansel Dökeroğlu"
+        ]
+      }
+    }
+  },
+  {
+    "code": "SENG 456",
+    "name": "Software Project Management",
+    "hours": "3+0+0",
+    "credits": "3",
+    "ects": "5",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Elif Kurtaran Özbudak"
+    ],
+    "syllabus_url": "https://seng.tedu.edu.tr/en/izlence-detail/50297862",
+    "course_code": "SENG 456",
+    "course_title": "Software Project Management",
+    "level": "BS",
+    "credit_hours": "(3+0+0) 3 TEDU Credits, 5 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Software project management: introduction to project planning. Team organization. Software cost estimation. Software metrics. Risk analysis and management. Resource management. Project monitoring and control. Contract management. Personnel management. Software quality assurance. Software configuration management. Software project management tools. Project management processes. Assessing development standards.",
+    "prerequisites": [],
+    "corequisites": [],
+    "instructor": "Elif Kurtaran Özbudak",
+    "learning_outcomes": "",
+    "assessment_methods": "",
+    "textbooks": "",
+    "department": "SENG",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Elif Kurtaran Özbudak"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Elif Kurtaran Özbudak"
+        ]
+      }
+    }
+  },
+  {
+    "code": "SENG 472",
+    "name": "Large Language Models (LLM) Powered Software",
+    "hours": "3+0+0",
+    "credits": "3",
+    "ects": "5",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Kasım Murat Karakaya"
+    ],
+    "syllabus_url": "https://seng.tedu.edu.tr/en/izlence-detail/50297876",
+    "course_code": "SENG 472",
+    "course_title": "Large Language Models (LLM) Powered Software",
+    "level": "BS",
+    "credit_hours": "(3+0+0) 3 TEDU Credits, 5 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Introduction to Large Language Models (LLM). LLMs for AI-Powered Applications. The copilot system, frameworks. Choosing an LLM for Application. Closed & Open Models, Prompt Engineering. Embedding LLMs within Applications. Building Conversational Applications. Developing the front-end.",
+    "prerequisites": [
+      "CMPE 442 AND CMPE 223"
+    ],
+    "corequisites": [],
+    "instructor": "Kasım Murat Karakaya",
+    "learning_outcomes": "",
+    "assessment_methods": "",
+    "textbooks": "",
+    "department": "SENG",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Kasım Murat Karakaya"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Kasım Murat Karakaya"
+        ]
+      }
+    }
+  },
+  {
+    "code": "SENG 483",
+    "name": "Secure Software Engineering",
+    "hours": "3+0+0",
+    "credits": "3",
+    "ects": "5",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Onur Aktaş"
+    ],
+    "syllabus_url": "https://seng.tedu.edu.tr/en/izlence-detail/50301020",
+    "course_code": "SENG 483",
+    "course_title": "Secure Software Engineering",
+    "level": "BS",
+    "credit_hours": "(3+0+0) 3 TEDU Credits, 5 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Software vulnerability fundamentals. Concepts for developing secure code. Software design fundamentals refresher. Memory, language, file system coding issues. Top secure coding standards for software systems. Secure coding practices. Defensive coding. Analysis of software for security. Techniques for adding security to deployed software systems. Mobile device and applications security.",
+    "prerequisites": [],
+    "corequisites": [],
+    "instructor": "Onur Aktaş",
+    "learning_outcomes": "",
+    "assessment_methods": "",
+    "textbooks": "",
+    "department": "SENG",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Onur Aktaş"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Onur Aktaş"
+        ]
+      }
+    }
+  },
+  {
+    "code": "SENG 484",
+    "name": "Ethical Hacking and Countermeasures",
+    "hours": "2+0+2",
+    "credits": "3",
+    "ects": "5",
+    "sections": [
+      "01",
+      "02"
+    ],
+    "instructors": [
+      "Ozan Zorlu"
+    ],
+    "syllabus_url": "https://seng.tedu.edu.tr/en/izlence-detail/50300726",
+    "course_code": "SENG 484",
+    "course_title": "Ethical Hacking and Countermeasures",
+    "level": "BS",
+    "credit_hours": "(2+0+2) 3 TEDU Credits, 5 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Introduction to the principles for penetration testing or ethical hacking. Ethics of hacking and cracking. Reconnaissance. Scanning tools. Pentesting tools. Sniffers. TCP/IP Vulnerabilities. Encryption and password cracking. Spoofing. Session hijacking. Hacking network devices. Trojan horses. Denial-of-Service attacks. Buffer overflows. Programming exploits. Mail vulnerabilities. Web application vulnerabilities. Windows exploits and vulnerabilities. Linux, Mac exploits and vulnerabilities. Open-source tools used in ethical hacking and penetration testing. Commercial alternatives to open-source tools. Physical attacks and defenses. Honeynets/honeypots. New hacker tools and platforms.",
+    "prerequisites": [],
+    "corequisites": [],
+    "instructor": "Ozan Zorlu",
+    "learning_outcomes": "",
+    "assessment_methods": "",
+    "textbooks": "",
+    "department": "SENG",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01",
+          "02"
+        ],
+        "instructors": [
+          "Ozan Zorlu"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01",
+          "02"
+        ],
+        "instructors": [
+          "Ozan Zorlu"
+        ]
+      }
+    }
+  },
+  {
+    "code": "SENG 491",
+    "name": "Senior Project I",
+    "hours": "1+4+0",
+    "credits": "3",
+    "ects": "8",
+    "sections": [
+      "O_1",
+      "01"
+    ],
+    "instructors": [
+      "Emin Kuğu"
+    ],
+    "syllabus_url": "https://seng.tedu.edu.tr/en/izlence-detail/50297880",
+    "course_code": "SENG 491-O",
+    "course_title": "Senior Project I",
+    "level": "BS",
+    "credit_hours": "(1+4+0) 3 TEDU Credits, 8 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Formulation, analysis, and design of solutions to open-ended engineering problems. Detailed technical report on problem specification and design. Technical communication and teamwork skills. Awareness of ethical and professional responsibilities and constraints in engineering.",
+    "prerequisites": [
+      "SENG 218",
+      "SENG 214"
+    ],
+    "corequisites": [],
+    "instructor": "Emin Kuğu",
+    "learning_outcomes": "",
+    "assessment_methods": "",
+    "textbooks": "",
+    "department": "SENG",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "O_1",
+          "01"
+        ],
+        "instructors": [
+          "Emin Kuğu"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "O_1",
+          "01"
+        ],
+        "instructors": [
+          "Emin Kuğu"
+        ]
+      }
+    }
+  },
+  {
+    "code": "SENG 492",
+    "name": "Senior Project II",
+    "hours": "1+4+0",
+    "credits": "3",
+    "ects": "8",
+    "sections": [
+      "O_1"
+    ],
+    "instructors": [
+      "Emin Kuğu"
+    ],
+    "syllabus_url": "https://seng.tedu.edu.tr/en/izlence-detail/50297887",
+    "course_code": "SENG 492-O",
+    "course_title": "Senior Project II",
+    "level": "BS",
+    "credit_hours": "(1+4+0) 3 TEDU Credits, 8 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Development, and creation of solutions for complex, undefined engineering challenges. Technical documentation covering problem definition and solution design. Proficiency in technical communication and collaborative teamwork. Understanding of ethical and professional obligations and limitations in the engineering field.",
+    "prerequisites": [
+      "SENG 491-O"
+    ],
+    "corequisites": [],
+    "instructor": "Emin Kuğu",
+    "learning_outcomes": "",
+    "assessment_methods": "",
+    "textbooks": "",
+    "department": "SENG",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "O_1"
+        ],
+        "instructors": [
+          "Emin Kuğu"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "O_1"
+        ],
+        "instructors": [
+          "Emin Kuğu"
+        ]
+      }
+    }
+  },
+  {
+    "code": "SENG 499",
+    "name": "Internship II",
+    "hours": "1+0+0",
+    "credits": "1",
+    "ects": "4",
+    "sections": [
+      "01"
+    ],
+    "instructors": [
+      "Tansel Dökeroğlu"
+    ],
+    "syllabus_url": "https://seng.tedu.edu.tr/en/izlence-detail/50297890",
+    "course_code": "SENG 499",
+    "course_title": "Internship II",
+    "level": "BS",
+    "credit_hours": "(1+0+0) 1 TEDU Credits, 4 ECTS Credits",
+    "academic_year": "2025",
+    "catalog_description": "Summer internship done over 30 consecutive working days at a computer firm or an Information Technologies department. Presentation of experiences, and systems and software developed over the internship.",
+    "prerequisites": [
+      "SENG 399"
+    ],
+    "corequisites": [],
+    "instructor": "Tansel Dökeroğlu",
+    "learning_outcomes": "",
+    "assessment_methods": "",
+    "textbooks": "",
+    "department": "SENG",
+    "offered_semesters": [
+      "Fall 2025",
+      "Spring 2025"
+    ],
+    "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Tansel Dökeroğlu"
+        ]
+      },
+      "Spring 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Tansel Dökeroğlu"
+        ]
+      }
+    }
+  }
+]
