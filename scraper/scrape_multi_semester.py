@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 """
 Multi-semester course scraper for TED University
-Scrapes courses from the last 6 semesters
+Scrapes courses from the last 6 semesters with PDF syllabus extraction
 """
 
 import json
 import time
 import re
+import os
+import tempfile
 from typing import Dict, Optional, List
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -14,6 +16,8 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import Select
 from webdriver_manager.chrome import ChromeDriverManager
+import requests
+import pdfplumber
 
 # Semesters to scrape
 SEMESTERS = [
@@ -44,11 +48,55 @@ DEPARTMENTS = {
     }
 }
 
+def extract_pdf_text(pdf_url: str, max_pages: int = 10) -> Optional[str]:
+    """
+    Download and extract text from a PDF file
+    
+    Args:
+        pdf_url: URL of the PDF file
+        max_pages: Maximum number of pages to extract (to avoid huge files)
+    
+    Returns:
+        Extracted text or None if extraction fails
+    """
+    try:
+        # Download PDF
+        print(f"         → Downloading PDF from: {pdf_url}")
+        response = requests.get(pdf_url, timeout=30)
+        response.raise_for_status()
+        
+        # Save to temporary file
+        with tempfile.NamedTemporaryFile(delete=False, suffix='.pdf') as tmp_file:
+            tmp_file.write(response.content)
+            tmp_path = tmp_file.name
+        
+        # Extract text using pdfplumber
+        extracted_text = []
+        with pdfplumber.open(tmp_path) as pdf:
+            num_pages = min(len(pdf.pages), max_pages)
+            print(f"         → Extracting text from {num_pages} pages...")
+            
+            for i, page in enumerate(pdf.pages[:max_pages]):
+                text = page.extract_text()
+                if text:
+                    extracted_text.append(text)
+        
+        # Clean up temp file
+        os.unlink(tmp_path)
+        
+        full_text = "\n\n".join(extracted_text)
+        print(f"         → ✓ Extracted {len(full_text)} characters")
+        return full_text[:10000]  # Limit to 10k chars to avoid huge metadata
+        
+    except Exception as e:
+        print(f"         → ✗ PDF extraction failed: {e}")
+        return None
+
 def scrape_syllabus_detail(driver, syllabus_url: str):
-    """Scrape detailed course information from syllabus page."""
+    """Scrape detailed course information from syllabus page and extract PDF if available."""
     try:
         driver.get(syllabus_url)
-        time.sleep(0.2)
+        time.sleep(0.3)
         
         detail_info = {
             "course_code": "",
@@ -62,10 +110,31 @@ def scrape_syllabus_detail(driver, syllabus_url: str):
             "instructor": "",
             "learning_outcomes": "",
             "assessment_methods": "",
-            "textbooks": ""
+            "textbooks": "",
+            "syllabus_pdf_url": "",
+            "syllabus_pdf_text": ""
         }
         
         page_text = driver.find_element(By.TAG_NAME, "body").text
+        
+        # Check for PDF file link
+        try:
+            # Look for "Syllabus File:" link or any PDF link
+            pdf_links = driver.find_elements(By.XPATH, "//a[contains(@href, '.pdf')]")
+            if pdf_links:
+                pdf_url = pdf_links[0].get_attribute('href')
+                detail_info["syllabus_pdf_url"] = pdf_url
+                print(f"         → Found PDF: {pdf_url}")
+                
+                # Extract PDF text
+                pdf_text = extract_pdf_text(pdf_url)
+                if pdf_text:
+                    detail_info["syllabus_pdf_text"] = pdf_text
+                    # Use PDF text to enhance catalog description if it's more detailed
+                    if len(pdf_text) > len(detail_info.get("catalog_description", "")):
+                        detail_info["catalog_description"] = pdf_text[:2000]
+        except Exception as e:
+            print(f"         → No PDF found or extraction failed: {e}")
         
         # Extract information using regex
         code_match = re.search(r'Course Code & Number:\s*([^\n]+)', page_text, re.IGNORECASE)

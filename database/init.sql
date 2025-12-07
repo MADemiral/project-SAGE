@@ -153,6 +153,8 @@ CREATE TABLE IF NOT EXISTS courses (
     assessment_methods TEXT,
     textbooks TEXT,
     syllabus_url VARCHAR(512),
+    syllabus_pdf_url VARCHAR(512),
+    syllabus_pdf_text TEXT,
     offered_semesters JSONB DEFAULT '[]'::jsonb,
     semester_data JSONB DEFAULT '{}'::jsonb,
     metadata JSONB DEFAULT '{}'::jsonb,

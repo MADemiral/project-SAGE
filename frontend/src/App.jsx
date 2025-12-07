@@ -8,6 +8,7 @@ import Register from './pages/Register'
 import Dashboard from './pages/Dashboard'
 import Documents from './pages/Documents'
 import Users from './pages/Users'
+import Courses from './pages/Courses'
 
 function App() {
   return (
@@ -41,6 +42,16 @@ function App() {
               <ProtectedRoute>
                 <Layout>
                   <Users />
+                </Layout>
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/courses"
+            element={
+              <ProtectedRoute>
+                <Layout>
+                  <Courses />
                 </Layout>
               </ProtectedRoute>
             }

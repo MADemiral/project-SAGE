@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X, FileText, BarChart3, Home, Sparkles, LogOut, User, MessageSquare, Calendar, BookOpen, Users } from 'lucide-react'
+import { Menu, X, FileText, BarChart3, Home, Sparkles, LogOut, User, MessageSquare, Calendar, BookOpen, Users, Search } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useAuth } from '../context/AuthContext'
 
@@ -12,6 +12,7 @@ const Layout = ({ children }) => {
   const navigation = [
     { name: 'AI Assistant', href: '/', icon: MessageSquare },
     { name: 'My Courses', href: '/documents', icon: BookOpen },
+    { name: 'Course Search', href: '/courses', icon: Search },
     { name: 'Users', href: '/users', icon: Users, adminOnly: true },
   ]
 

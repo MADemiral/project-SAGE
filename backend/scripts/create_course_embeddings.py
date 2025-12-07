@@ -39,15 +39,26 @@ def load_course_metadata(file_path: str) -> List[Dict]:
         return json.load(f)
 
 def create_course_text(course: Dict) -> str:
-    """Create searchable text representation of a course"""
+    """Create searchable text representation of a course with emphasis on course code"""
+    code = course.get('code', '')
+    title = course.get('course_title', course.get('name', ''))
+    
+    # Repeat course code multiple times to boost exact matches
     parts = [
-        f"Course Code: {course.get('code', '')}",
-        f"Course Title: {course.get('course_title', course.get('name', ''))}",
+        f"Course Code: {code}",
+        f"{code}",  # Standalone code
+        f"{code}",  # Repeated for emphasis
+        f"Course Title: {title}",
+        f"{code} - {title}",  # Code with title
         f"Department: {course.get('department', '')}",
         f"Level: {course.get('level', '')}",
         f"Credits: {course.get('credits', '')} TEDU Credits, {course.get('ects', '')} ECTS",
         f"Description: {course.get('catalog_description', '')}",
     ]
+    
+    # Add PDF syllabus text if available (high priority for search)
+    if course.get('syllabus_pdf_text'):
+        parts.append(f"Full Syllabus Content: {course['syllabus_pdf_text'][:3000]}")
     
     # Add prerequisites
     if course.get('prerequisites'):
@@ -121,9 +132,9 @@ def setup_chromadb(reset: bool = False):
     # Get or create collection (safer method for newer ChromaDB versions)
     collection = client.get_or_create_collection(
         name="tedu_courses",
-        metadata={"description": "TED University course catalog"}
+        metadata={"hnsw:space": "cosine"}  # Use cosine similarity for better semantic search
     )
-    print("✓ ChromaDB collection ready: tedu_courses")
+    print("✓ ChromaDB collection ready: tedu_courses (cosine distance)")
     
     return collection
 
@@ -158,6 +169,8 @@ def setup_postgres():
             assessment_methods TEXT,
             textbooks TEXT,
             syllabus_url VARCHAR(512),
+            syllabus_pdf_url VARCHAR(512),
+            syllabus_pdf_text TEXT,
             offered_semesters JSONB,
             semester_data JSONB,
             metadata JSONB,
@@ -190,9 +203,10 @@ def store_in_postgres(conn, course: Dict):
             course_code, course_title, department, level, credits, ects, hours,
             catalog_description, prerequisites, corequisites, instructor,
             learning_outcomes, assessment_methods, textbooks, syllabus_url,
+            syllabus_pdf_url, syllabus_pdf_text,
             offered_semesters, semester_data, metadata
         ) VALUES (
-            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
         )
         ON CONFLICT (course_code) 
         DO UPDATE SET
@@ -200,6 +214,8 @@ def store_in_postgres(conn, course: Dict):
             department = EXCLUDED.department,
             catalog_description = EXCLUDED.catalog_description,
             prerequisites = EXCLUDED.prerequisites,
+            syllabus_pdf_url = EXCLUDED.syllabus_pdf_url,
+            syllabus_pdf_text = EXCLUDED.syllabus_pdf_text,
             offered_semesters = EXCLUDED.offered_semesters,
             semester_data = EXCLUDED.semester_data,
             metadata = EXCLUDED.metadata,
@@ -220,6 +236,8 @@ def store_in_postgres(conn, course: Dict):
         course.get('assessment_methods'),
         course.get('textbooks'),
         course.get('syllabus_url'),
+        course.get('syllabus_pdf_url'),
+        course.get('syllabus_pdf_text'),
         Json(course.get('offered_semesters', [])),
         Json(course.get('semester_data', {})),
         Json(course)  # Store full metadata
@@ -304,6 +322,7 @@ def process_courses(metadata_files: List[str], reset: bool = False):
             "ects": str(course.get('ects', '')),
             "instructor": course.get('instructor', ''),
             "syllabus_url": course.get('syllabus_url', ''),
+            "syllabus_pdf_url": course.get('syllabus_pdf_url', ''),
         }
         
         # Add to ChromaDB

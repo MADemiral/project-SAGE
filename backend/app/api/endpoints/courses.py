@@ -5,6 +5,7 @@ import chromadb
 from sentence_transformers import SentenceTransformer
 import psycopg2
 import os
+import re
 
 router = APIRouter()
 
@@ -40,7 +41,7 @@ def get_chroma_collection():
         )
         chroma_collection = chroma_client.get_or_create_collection(
             name="tedu_courses",
-            metadata={"description": "TED University course catalog"}
+            metadata={"hnsw:space": "cosine"}  # Use cosine similarity
         )
     return chroma_collection
 
@@ -71,6 +72,7 @@ class CourseResponse(BaseModel):
     prerequisites: List[str]
     instructor: str
     syllabus_url: str
+    syllabus_pdf_url: Optional[str] = None
     similarity_score: Optional[float] = None
 
 class CourseDetailResponse(BaseModel):
@@ -96,15 +98,60 @@ class CourseDetailResponse(BaseModel):
 @router.post("/search", response_model=List[CourseResponse])
 async def search_courses(request: CourseSearchRequest):
     """
-    Search courses using semantic similarity
+    Search courses using semantic similarity with exact code matching priority
     """
     try:
         # Get embedding model and ChromaDB collection
         model = get_model()
         collection = get_chroma_collection()
         
-        # Create query embedding
-        query_embedding = model.encode([request.query])[0].tolist()
+        # Check if query looks like a course code (e.g., "CMPE 224", "cmpe224", "CMPE224")
+        query_upper = request.query.upper().replace(" ", "")
+        is_code_query = bool(re.match(r'^[A-Z]{2,4}\s*\d{3}$', request.query.upper()))
+        
+        # If it's a course code query, try exact match first
+        exact_match = None
+        if is_code_query:
+            # Try to get by exact code from PostgreSQL
+            try:
+                conn = get_db_connection()
+                cursor = conn.cursor()
+                cursor.execute("""
+                    SELECT course_code, course_title, department, level, 
+                           credits, ects, catalog_description, prerequisites, 
+                           instructor, syllabus_url, syllabus_pdf_url
+                    FROM courses
+                    WHERE REPLACE(course_code, ' ', '') = %s
+                """, (query_upper,))
+                row = cursor.fetchone()
+                conn.close()
+                
+                if row:
+                    exact_match = CourseResponse(
+                        course_code=row[0],
+                        course_title=row[1],
+                        department=row[2],
+                        level=row[3] or '',
+                        credits=str(row[4]) if row[4] else '',
+                        ects=str(row[5]) if row[5] else '',
+                        catalog_description=row[6] or '',
+                        prerequisites=row[7] or [],
+                        instructor=row[8] or '',
+                        syllabus_url=row[9] or '',
+                        syllabus_pdf_url=row[10] or '',
+                        similarity_score=1.0  # Perfect match
+                    )
+            except Exception as e:
+                print(f"Exact match search error: {e}")
+        
+        # Create query embedding with boosted code
+        if is_code_query:
+            # Repeat the code multiple times to emphasize it in the query
+            enhanced_query = f"{request.query} {request.query} {request.query} course"
+        else:
+            enhanced_query = request.query
+            
+        query_embedding = model.encode([enhanced_query])[0].tolist()
         
         # Build where filter for department if specified
         where_filter = None
@@ -112,20 +159,35 @@ async def search_courses(request: CourseSearchRequest):
             where_filter = {"department": request.department}
         
         # Search in ChromaDB
+        search_limit = request.top_k if not exact_match else request.top_k - 1
         results = collection.query(
             query_embeddings=[query_embedding],
-            n_results=request.top_k,
+            n_results=max(search_limit, 1),  # At least 1 result
             where=where_filter
         )
         
         # Format results
         courses = []
+        
+        # Add exact match first if found
+        if exact_match:
+            courses.append(exact_match)
+        
         for idx in range(len(results['ids'][0])):
             metadata = results['metadatas'][0][idx]
             distance = results['distances'][0][idx] if 'distances' in results else None
             
-            # Convert distance to similarity score (1 - distance for cosine)
-            similarity_score = 1 - distance if distance is not None else None
+            # Skip if this is the exact match we already added
+            if exact_match and metadata.get('course_code') == exact_match.course_code:
+                continue
+            
+            # Convert distance to similarity score
+            # For cosine distance: similarity = 1 - distance (ranges from 0 to 1)
+            # Negative distances can occur with ChromaDB, so clamp to valid range
+            if distance is not None:
+                similarity_score = max(0.0, min(1.0, 1 - distance))
+            else:
+                similarity_score = None
             
             courses.append(CourseResponse(
                 course_code=metadata.get('course_code', ''),
@@ -138,6 +200,7 @@ async def search_courses(request: CourseSearchRequest):
                 prerequisites=[],  # Will be filled from DB if needed
                 instructor=metadata.get('instructor', ''),
                 syllabus_url=metadata.get('syllabus_url', ''),
+                syllabus_pdf_url=metadata.get('syllabus_pdf_url', ''),
                 similarity_score=similarity_score
             ))
         
