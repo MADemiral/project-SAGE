@@ -1,7 +1,9 @@
 from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi.responses import StreamingResponse
 from sqlalchemy.orm import Session
 from sqlalchemy import func
 from typing import List
+import json
 from app.core.database import get_db
 from app.models.user import User
 from app.models.conversation import Conversation, Message
@@ -14,8 +16,12 @@ from app.schemas.conversation import (
     ConversationWithMessageCount
 )
 from app.api.endpoints.auth import get_current_active_user
+from app.services.groq_service import GroqAcademicService
 
 router = APIRouter()
+
+# Initialize Groq service
+groq_service = GroqAcademicService()
 
 
 @router.get("", response_model=List[ConversationResponse])
@@ -134,7 +140,7 @@ async def add_message(
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_active_user)
 ):
-    """Add a message to a conversation"""
+    """Add a message to a conversation and get AI response"""
     conversation = db.query(Conversation).filter(
         Conversation.id == conversation_id,
         Conversation.user_id == current_user.id
@@ -146,6 +152,7 @@ async def add_message(
             detail="Conversation not found"
         )
     
+    # Save user message
     db_message = Message(
         conversation_id=conversation_id,
         role=message.role,
@@ -154,14 +161,137 @@ async def add_message(
     
     db.add(db_message)
     
-    # Update conversation title from first message if needed
+    # Update conversation title from first user message if needed
     if conversation.title == "New conversation" and message.role == "user":
         conversation.title = message.content[:50] + "..." if len(message.content) > 50 else message.content
     
     db.commit()
     db.refresh(db_message)
     
+    # Generate AI response for academic assistant
+    if message.role == "user" and conversation.assistant_type == "academic":
+        try:
+            # Get conversation history (excluding the current user message we just added)
+            history_messages = db.query(Message).filter(
+                Message.conversation_id == conversation_id
+            ).order_by(Message.created_at.asc()).all()
+            
+            # Format history for Groq (include all messages except the last one we just added)
+            conversation_history = [
+                {"role": msg.role, "content": msg.content}
+                for msg in history_messages[:-1]  # Exclude the just-added message
+            ]
+            
+            # Get AI response
+            ai_response = groq_service.chat(
+                user_message=message.content,
+                conversation_history=conversation_history,
+                include_courses=True
+            )
+            
+            # Save AI response
+            ai_message = Message(
+                conversation_id=conversation_id,
+                role="assistant",
+                content=ai_response
+            )
+            
+            db.add(ai_message)
+            db.commit()
+            db.refresh(ai_message)
+            
+            return ai_message
+            
+        except Exception as e:
+            print(f"Error generating AI response: {e}")
+            # If AI fails, still return user message
+            pass
+    
     return db_message
+
+
+@router.post("/{conversation_id}/messages/stream")
+async def add_message_stream(
+    conversation_id: int,
+    message: MessageCreate,
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_active_user)
+):
+    """Add a message and stream AI response (for real-time chat)"""
+    conversation = db.query(Conversation).filter(
+        Conversation.id == conversation_id,
+        Conversation.user_id == current_user.id
+    ).first()
+    
+    if not conversation:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Conversation not found"
+        )
+    
+    # Save user message
+    db_message = Message(
+        conversation_id=conversation_id,
+        role=message.role,
+        content=message.content
+    )
+    
+    db.add(db_message)
+    
+    # Update conversation title from first user message
+    if conversation.title == "New conversation" and message.role == "user":
+        conversation.title = message.content[:50] + "..." if len(message.content) > 50 else message.content
+    
+    db.commit()
+    
+    # Stream AI response for academic assistant
+    if message.role == "user" and conversation.assistant_type == "academic":
+        try:
+            # Get conversation history
+            history_messages = db.query(Message).filter(
+                Message.conversation_id == conversation_id
+            ).order_by(Message.created_at.asc()).limit(20).all()
+            
+            conversation_history = [
+                {"role": msg.role, "content": msg.content}
+                for msg in history_messages[:-1]
+            ]
+            
+            async def generate():
+                full_response = ""
+                
+                for chunk in groq_service.chat_stream(
+                    user_message=message.content,
+                    conversation_history=conversation_history,
+                    include_courses=True
+                ):
+                    full_response += chunk
+                    yield f"data: {json.dumps({'content': chunk})}\n\n"
+                
+                # Save complete AI response to database
+                ai_message = Message(
+                    conversation_id=conversation_id,
+                    role="assistant",
+                    content=full_response
+                )
+                db.add(ai_message)
+                db.commit()
+                
+                yield f"data: {json.dumps({'done': True})}\n\n"
+            
+            return StreamingResponse(
+                generate(),
+                media_type="text/event-stream"
+            )
+            
+        except Exception as e:
+            print(f"Error streaming AI response: {e}")
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail=f"Error generating response: {str(e)}"
+            )
+    
+    return {"message": "Message saved", "id": db_message.id}
 
 
 @router.get("/stats/user", response_model=dict)

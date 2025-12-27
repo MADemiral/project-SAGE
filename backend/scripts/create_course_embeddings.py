@@ -28,7 +28,7 @@ POSTGRES_USER = os.getenv("POSTGRES_USER", "sage_user")
 POSTGRES_PASSWORD = os.getenv("POSTGRES_PASSWORD", "sage_password")
 
 # Embedding model
-MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
+MODEL_NAME = "intfloat/e5-large-v2"
 
 # Similarity threshold for duplicate detection (86%)
 SIMILARITY_THRESHOLD = 0.86
@@ -68,9 +68,28 @@ def create_course_text(course: Dict) -> str:
     if course.get('learning_outcomes'):
         parts.append(f"Learning Outcomes: {course['learning_outcomes']}")
     
-    # Add instructor
+    # Add instructors (handle both singular and plural fields)
+    instructors = []
     if course.get('instructor'):
-        parts.append(f"Instructor: {course['instructor']}")
+        instructors.append(course['instructor'])
+    if course.get('instructors'):
+        for inst_list in course['instructors']:
+            # Handle comma-separated instructors in a single string
+            if isinstance(inst_list, str):
+                instructors.extend([i.strip() for i in inst_list.split(',')])
+            else:
+                instructors.append(str(inst_list))
+    
+    # Remove duplicates while preserving order
+    unique_instructors = []
+    seen = set()
+    for inst in instructors:
+        if inst and inst not in seen:
+            unique_instructors.append(inst)
+            seen.add(inst)
+    
+    if unique_instructors:
+        parts.append(f"Instructors: {', '.join(unique_instructors)}")
     
     return "\n".join(parts)
 
@@ -198,6 +217,21 @@ def store_in_postgres(conn, course: Dict):
     """Store course in PostgreSQL"""
     cursor = conn.cursor()
     
+    # Prepare instructors list
+    instructors = []
+    if course.get('instructor'):
+        instructors.append(course['instructor'])
+    if course.get('instructors'):
+        for inst_list in course['instructors']:
+            if isinstance(inst_list, str):
+                instructors.extend([i.strip() for i in inst_list.split(',')])
+            else:
+                instructors.append(str(inst_list))
+    
+    # Remove duplicates
+    unique_instructors = list(dict.fromkeys([i for i in instructors if i]))
+    instructor_str = ', '.join(unique_instructors) if unique_instructors else None
+    
     cursor.execute("""
         INSERT INTO courses (
             course_code, course_title, department, level, credits, ects, hours,
@@ -214,6 +248,7 @@ def store_in_postgres(conn, course: Dict):
             department = EXCLUDED.department,
             catalog_description = EXCLUDED.catalog_description,
             prerequisites = EXCLUDED.prerequisites,
+            instructor = EXCLUDED.instructor,
             syllabus_pdf_url = EXCLUDED.syllabus_pdf_url,
             syllabus_pdf_text = EXCLUDED.syllabus_pdf_text,
             offered_semesters = EXCLUDED.offered_semesters,
@@ -231,7 +266,7 @@ def store_in_postgres(conn, course: Dict):
         course.get('catalog_description'),
         Json(course.get('prerequisites', [])),
         Json(course.get('corequisites', [])),
-        course.get('instructor'),
+        instructor_str,
         course.get('learning_outcomes'),
         course.get('assessment_methods'),
         course.get('textbooks'),
@@ -312,6 +347,25 @@ def process_courses(metadata_files: List[str], reset: bool = False):
             print(f"   ⊘ Skipping {course_code}: {similarity*100:.1f}% similar to {similar_code}")
             continue
         
+        # Prepare instructors list for metadata
+        instructors = []
+        if course.get('instructor'):
+            instructors.append(course['instructor'])
+        if course.get('instructors'):
+            for inst_list in course['instructors']:
+                if isinstance(inst_list, str):
+                    instructors.extend([i.strip() for i in inst_list.split(',')])
+                else:
+                    instructors.append(str(inst_list))
+        
+        # Remove duplicates
+        unique_instructors = list(dict.fromkeys([i for i in instructors if i]))
+        instructor_str = ', '.join(unique_instructors) if unique_instructors else ''
+        
+        # Debug output for courses with multiple instructors
+        if len(unique_instructors) > 1:
+            print(f"   → {course_code}: Multiple instructors found: {instructor_str}")
+        
         # Prepare metadata for ChromaDB
         metadata = {
             "course_code": course_code,
@@ -320,7 +374,7 @@ def process_courses(metadata_files: List[str], reset: bool = False):
             "level": course.get('level', ''),
             "credits": str(course.get('credits', '')),
             "ects": str(course.get('ects', '')),
-            "instructor": course.get('instructor', ''),
+            "instructor": instructor_str,
             "syllabus_url": course.get('syllabus_url', ''),
             "syllabus_pdf_url": course.get('syllabus_pdf_url', ''),
         }

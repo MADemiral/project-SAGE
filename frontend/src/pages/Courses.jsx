@@ -94,7 +94,7 @@ export default function Courses() {
               <div>
                 <span className="text-gray-600 dark:text-gray-400">Model:</span>
                 <span className="ml-2 font-medium text-gray-900 dark:text-white text-xs">
-                  all-MiniLM-L6-v2
+                  intfloat/e5-large-v2
                 </span>
               </div>
             </div>

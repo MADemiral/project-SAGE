@@ -75,7 +75,7 @@ The system currently supports:
 - **Departments**: CMPE, SENG, ME, EE
 - **Semesters**: Fall 2025, Spring 2025
 - **Total Courses**: ~74 unique courses
-- **Embedding Model**: sentence-transformers/all-MiniLM-L6-v2 (384 dimensions)
+- **Embedding Model**: intfloat/e5-large-v2 (1024 dimensions)
 
 ### Course Information Includes:
 - Course code and title
@@ -154,7 +154,7 @@ GET /api/v1/courses/status
 
 1. **Web Scraping**: Selenium scrapes course pages from TED University
 2. **Data Processing**: Extracts structured information (code, title, description, etc.)
-3. **Embedding Creation**: Converts course text to 384-dim vectors using sentence-transformers
+3. **Embedding Creation**: Converts course text to 1024-dim vectors using intfloat/e5-large-v2
 4. **Deduplication**: Checks 86% similarity threshold to skip duplicate courses
 5. **Storage**: Saves vectors to ChromaDB, metadata to PostgreSQL
 6. **Search**: User queries → embedding → ChromaDB similarity search → ranked results

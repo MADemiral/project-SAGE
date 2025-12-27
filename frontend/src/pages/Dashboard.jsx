@@ -1,5 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { 
   Send, 
   BookOpen, 
@@ -165,8 +167,8 @@ export default function Dashboard() {
     setIsLoading(true);
 
     try {
-      // Add user message to database
-      await conversationService.addMessage(activeConversationId, 'user', userMessageContent);
+      // Add user message to database - backend will automatically generate AI response
+      const responseMessage = await conversationService.addMessage(activeConversationId, 'user', userMessageContent);
 
       // Update local state with user message
       const userMessage = {
@@ -185,19 +187,13 @@ export default function Dashboard() {
         )
       }));
 
-      // Simulate AI response (in production, this would call your LLM)
-      setTimeout(async () => {
-        const aiContent = getAIResponse(activeAssistant, userMessageContent);
-        
-        // Add AI message to database
-        await conversationService.addMessage(activeConversationId, 'assistant', aiContent);
-
-        // Update local state with AI message
+      // If backend returned an AI response (for academic assistant), use it
+      if (responseMessage && responseMessage.role === 'assistant') {
         const aiMessage = {
-          id: Date.now() + 1,
+          id: responseMessage.id,
           role: 'assistant',
-          content: aiContent,
-          timestamp: new Date()
+          content: responseMessage.content,
+          timestamp: new Date(responseMessage.created_at)
         };
 
         setConversations(prev => ({
@@ -212,9 +208,36 @@ export default function Dashboard() {
               : conv
           )
         }));
+      } else {
+        // For other assistants (calendar, social), use mock response
+        const aiContent = getAIResponse(activeAssistant, userMessageContent);
+        
+        // Add AI message to database
+        const aiResponseMessage = await conversationService.addMessage(activeConversationId, 'assistant', aiContent);
 
-        setIsLoading(false);
-      }, 1000 + Math.random() * 1000);
+        // Update local state with AI message
+        const aiMessage = {
+          id: aiResponseMessage.id,
+          role: 'assistant',
+          content: aiContent,
+          timestamp: new Date(aiResponseMessage.created_at)
+        };
+
+        setConversations(prev => ({
+          ...prev,
+          [activeAssistant]: prev[activeAssistant].map(conv =>
+            conv.id === activeConversationId
+              ? { 
+                  ...conv, 
+                  messages: [...conv.messages, aiMessage],
+                  title: conv.messages.length === 0 ? userMessageContent.slice(0, 30) + (userMessageContent.length > 30 ? '...' : '') : conv.title
+                }
+              : conv
+          )
+        }));
+      }
+
+      setIsLoading(false);
     } catch (error) {
       console.error('Error sending message:', error);
       setIsLoading(false);
@@ -536,10 +559,40 @@ export default function Dashboard() {
                         {message.timestamp.toLocaleTimeString()}
                       </span>
                     </div>
-                    <div className="prose prose-sm max-w-none">
-                      <p className={`whitespace-pre-wrap leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-800'}`}>
-                        {message.content}
-                      </p>
+                    <div className={`prose prose-sm max-w-none ${isDark ? 'prose-invert' : ''}`}>
+                      {message.role === 'assistant' ? (
+                        <ReactMarkdown 
+                          remarkPlugins={[remarkGfm]}
+                          className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-800'}`}
+                          components={{
+                            // Style headers
+                            h1: ({node, ...props}) => <h1 className={`text-2xl font-bold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`} {...props} />,
+                            h2: ({node, ...props}) => <h2 className={`text-xl font-bold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`} {...props} />,
+                            h3: ({node, ...props}) => <h3 className={`text-lg font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`} {...props} />,
+                            // Style lists
+                            ul: ({node, ...props}) => <ul className="list-disc pl-5 space-y-1 mb-3" {...props} />,
+                            ol: ({node, ...props}) => <ol className="list-decimal pl-5 space-y-1 mb-3" {...props} />,
+                            li: ({node, ...props}) => <li className={`${isDark ? 'text-gray-300' : 'text-gray-800'}`} {...props} />,
+                            // Style paragraphs
+                            p: ({node, ...props}) => <p className="mb-3 leading-relaxed" {...props} />,
+                            // Style strong/bold
+                            strong: ({node, ...props}) => <strong className={`font-bold ${isDark ? 'text-white' : 'text-gray-900'}`} {...props} />,
+                            // Style code
+                            code: ({node, inline, ...props}) => 
+                              inline ? 
+                                <code className={`px-1.5 py-0.5 rounded text-sm font-mono ${isDark ? 'bg-gray-800 text-blue-400' : 'bg-gray-100 text-blue-600'}`} {...props} /> :
+                                <code className={`block p-3 rounded-lg text-sm font-mono ${isDark ? 'bg-gray-800 text-gray-300' : 'bg-gray-100 text-gray-800'}`} {...props} />,
+                            // Style links
+                            a: ({node, ...props}) => <a className="text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer" {...props} />
+                          }}
+                        >
+                          {message.content}
+                        </ReactMarkdown>
+                      ) : (
+                        <p className={`whitespace-pre-wrap leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-800'}`}>
+                          {message.content}
+                        </p>
+                      )}
                     </div>
                   </div>
                 </div>

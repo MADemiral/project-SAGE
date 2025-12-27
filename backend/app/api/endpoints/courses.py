@@ -19,7 +19,7 @@ POSTGRES_USER = os.getenv("POSTGRES_USER", "sage_user")
 POSTGRES_PASSWORD = os.getenv("POSTGRES_PASSWORD", "sage_password")
 
 # Embedding model
-MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
+MODEL_NAME = "intfloat/e5-large-v2"
 model = None
 chroma_client = None
 chroma_collection = None
@@ -144,12 +144,12 @@ async def search_courses(request: CourseSearchRequest):
             except Exception as e:
                 print(f"Exact match search error: {e}")
         
-        # Create query embedding with boosted code
+        # Create query embedding with E5 model (add "query: " prefix for better retrieval)
         if is_code_query:
             # Repeat the code multiple times to emphasize it in the query
-            enhanced_query = f"{request.query} {request.query} {request.query} course"
+            enhanced_query = f"query: {request.query} {request.query} {request.query} course"
         else:
-            enhanced_query = request.query
+            enhanced_query = f"query: {request.query}"
             
         query_embedding = model.encode([enhanced_query])[0].tolist()
         
