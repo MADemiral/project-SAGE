@@ -192,8 +192,9 @@ def store_in_chromadb(events: list, model: SentenceTransformer):
                 'event_type': str(event.get('event_type', ''))[:100],
                 'venue_name': str(event.get('venue_name', ''))[:255],
                 'venue_address': str(event.get('venue_address', ''))[:500],
-                'event_url': str(event.get('event_url', ''))[:1000],
-                'price_info': str(event.get('price_info', ''))[:255],
+                'ticket_url': str(event.get('event_url', ''))[:1000],  # Changed from event_url to ticket_url
+                'price': str(event.get('price', ''))[:50],  # Numeric price (e.g., "2200")
+                'price_info': str(event.get('price_info', ''))[:255],  # Price with currency (e.g., "2200.0 TL")
                 'source': str(event.get('source', 'bubilet'))
             }
             

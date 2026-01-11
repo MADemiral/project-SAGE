@@ -559,10 +559,13 @@ CRITICAL FORMATTING RULES:
   * For distances under 1 km: Show in METERS (e.g., "150 meters", "800 meters")
   * For distances 1 km or more: Show in KM with 1 decimal (e.g., "1.2 km", "2.5 km")
   * ALWAYS use the exact distance provided in the venue data
-- **PRICE DISPLAY**: 
+- **PRICE DISPLAY FOR VENUES**: 
   * Use ₺ symbols ONLY (₺ to ₺₺₺₺₺)
   * ₺ = very cheap, ₺₺ = cheap, ₺₺₺ = moderate, ₺₺₺₺ = expensive, ₺₺₺₺₺ = very expensive
   * NEVER write "price range" or text descriptions, ONLY show ₺ symbols
+- **PRICE DISPLAY FOR EVENTS**: 
+  * Show the actual ticket price in Turkish Lira (e.g., "400 TL", "2200 TL")
+  * Use the price_info field which includes currency
 - **When user specifies a category** (e.g., "suggest cafes", "any arcades"), prioritize venues matching that category
 
 RESPONSE RULES:
