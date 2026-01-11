@@ -390,40 +390,75 @@ SPECIAL NOTES:
     
     # ============== SOCIAL ASSISTANT METHODS ==============
     
-    def get_restaurant_context(self, query: str, top_k: int = 5) -> str:
+    def get_restaurant_context(self, query: str, top_k: int = 10) -> str:
         """
         Get relevant restaurant information using embeddings and semantic search
+        Searches both dining_places and entertainment_places collections
         """
         try:
-            # Get the restaurant collection from ChromaDB
-            collection = self.chroma_client.get_collection("restaurants")
+            all_results = []
             
-            # Create query embedding using E5 model
-            query_text = f"query: {query}"
-            query_embedding = self.embedding_model.encode([query_text])[0].tolist()
+            # Search dining places collection
+            try:
+                dining_collection = self.chroma_client.get_collection("dining_places")
+                query_text = f"query: {query}"
+                query_embedding = self.embedding_model.encode([query_text])[0].tolist()
+                
+                dining_results = dining_collection.query(
+                    query_embeddings=[query_embedding],
+                    n_results=top_k
+                )
+                
+                if dining_results['ids'] and len(dining_results['ids'][0]) > 0:
+                    for idx in range(len(dining_results['ids'][0])):
+                        all_results.append({
+                            'metadata': dining_results['metadatas'][0][idx],
+                            'document': dining_results['documents'][0][idx],
+                            'distance': dining_results['distances'][0][idx] if 'distances' in dining_results else None
+                        })
+            except Exception as e:
+                print(f"Error searching dining_places: {e}")
             
-            # Search in ChromaDB
-            results = collection.query(
-                query_embeddings=[query_embedding],
-                n_results=top_k
-            )
+            # Search entertainment places collection
+            try:
+                entertainment_collection = self.chroma_client.get_collection("entertainment_places")
+                query_text = f"query: {query}"
+                query_embedding = self.embedding_model.encode([query_text])[0].tolist()
+                
+                entertainment_results = entertainment_collection.query(
+                    query_embeddings=[query_embedding],
+                    n_results=top_k
+                )
+                
+                if entertainment_results['ids'] and len(entertainment_results['ids'][0]) > 0:
+                    for idx in range(len(entertainment_results['ids'][0])):
+                        all_results.append({
+                            'metadata': entertainment_results['metadatas'][0][idx],
+                            'document': entertainment_results['documents'][0][idx],
+                            'distance': entertainment_results['distances'][0][idx] if 'distances' in entertainment_results else None
+                        })
+            except Exception as e:
+                print(f"Error searching entertainment_places: {e}")
             
-            if not results['ids'] or len(results['ids'][0]) == 0:
+            if not all_results:
                 return ""
             
-            # Sort results by distance from campus (closest first)
-            sorted_indices = sorted(
-                range(len(results['ids'][0])),
-                key=lambda i: float(results['metadatas'][0][i].get('distance_from_campus', 999.0))
+            if not all_results:
+                return ""
+            
+            # Sort all results by distance from campus (closest first)
+            sorted_results = sorted(
+                all_results,
+                key=lambda r: float(r['metadata'].get('distance_from_campus', 999.0))
             )
             
             # Build restaurant context
-            context_parts = ["NEARBY RESTAURANTS:\n"]
+            context_parts = ["NEARBY VENUES (from database):\n"]
             
-            for idx in sorted_indices:
-                metadata = results['metadatas'][0][idx]
-                document = results['documents'][0][idx]
-                distance = results['distances'][0][idx] if 'distances' in results else None
+            for result in sorted_results[:top_k]:  # Limit to top_k results
+                metadata = result['metadata']
+                document = result['document']
+                distance = result['distance']
                 
                 similarity = 1.0 - distance if distance is not None else 0.0
                 
@@ -571,7 +606,9 @@ CRITICAL FORMATTING RULES:
 RESPONSE RULES:
 - Always respond in English
 - Use friendly and social language
-- Utilize provided restaurant and event information
+- **CRITICAL: ONLY recommend venues that are provided in the context data below**
+- **NEVER make up or hallucinate venue names, addresses, or details**
+- **If you don't have venues matching the request, say "I don't have information about that type of venue in my database"**
 - Mention distances and price ranges using the exact formats above
 - Prioritize student-friendly places
 - Provide dates and venue information for events
@@ -584,6 +621,7 @@ CONTENT POLICY:
 - Only suggest safe and legal activities
 - Mention age restrictions for venues serving alcohol (18+)
 - **YOU CAN AND SHOULD provide event URLs** - they are part of the venue information database
+- **YOU MUST NOT invent or suggest venues that are not in the provided context data**
 
 SPECIAL NOTES:
 - Know venues near Kolej Campus in Ankara
@@ -600,11 +638,25 @@ EXAMPLE RESPONSES:
 
 "There's a Turkish Culinary Academy Street Food Workshop on January 15th. You can find more details and register here: [event URL]. It's a great hands-on experience!"
 
-IMPORTANT NOTES:
-- Event URLs in the database are real and should be shared
-- When an event has a URL (ticket_url field), ALWAYS include it in your response
-- These are official event pages for registration and ticket purchase
-- Don't hesitate to share URLs - they're provided specifically for this purpose"""
+CRITICAL INSTRUCTIONS - READ CAREFULLY:
+1. **ONLY use venues from the "NEARBY RESTAURANTS" or "UPCOMING EVENTS" sections provided in the context**
+2. **If the context is empty or doesn't contain relevant venues, respond with**: "I don't have any [category] venues in my database near campus. My data might be limited."
+3. **NEVER suggest venues like "Sözen Cafe", "Campus Cafe", or any generic names not in the context**
+4. **Always check the context data before making recommendations**
+5. **Use exact venue names, distances, and details from the context data**
+6. Event URLs in the database are real and should be shared
+7. When an event has a URL (ticket_url field), ALWAYS include it in your response
+8. These are official event pages for registration and ticket purchase
+9. Don't hesitate to share URLs - they're provided specifically for this purpose
+
+EXAMPLE OF CORRECT BEHAVIOR:
+User: "Any cafes near campus?"
+If context shows "Off Cafe - 130 meters" → Recommend Off Cafe
+If context is empty → Say "I don't have any cafes in my database near campus"
+
+EXAMPLE OF INCORRECT BEHAVIOR (DON'T DO THIS):
+User: "Any cafes near campus?"
+Response: "Try Sözen Cafe or Campus Cafe" ← WRONG! These are not in the database!"""
     
     def chat_social(self,
                    user_message: str,
