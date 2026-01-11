@@ -1,7 +1,7 @@
 """
-Groq API Service for Academic Assistant with RAG
+Groq API Service for Academic and Social Assistants with RAG
 Supports Turkish and English responses based on user query language
-Uses Jina embeddings for semantic search of documents and courses
+Uses E5 embeddings for semantic search of documents, courses, restaurants, and events
 """
 
 import os
@@ -81,7 +81,7 @@ class GroqAcademicService:
         
         except Exception as e:
             print(f"Error fetching project context: {e}")
-            return "Project: SAGE - Student Academic Guidance and Engagement system for TED University"
+            return "Project: SAGE - Student Academic Guidance and Engagement system for Kolej Campus"
     
     def get_course_context_with_embeddings(self, query: str, top_k: int = 3) -> str:
         """
@@ -213,7 +213,7 @@ KURALLAR:
 
         else:  # English
             return f"""You are the academic assistant for SAGE (Student Academic Guidance and Engagement) system.
-You help students at TED University with academic matters.
+You help students at Kolej Campus with academic matters.
 
 {project_context}
 
@@ -241,7 +241,7 @@ CONTENT POLICY:
 - Only engage in conversations focused on education and academic development
 
 SPECIAL NOTES:
-- Provide specialized information for TED University Computer Engineering department
+- Provide specialized information for Kolej Campus Computer Engineering department
 - Know courses from CMPE, SENG, ME, EE departments
 - Suggest courses aligned with students' career goals"""
     
@@ -387,3 +387,287 @@ SPECIAL NOTES:
                 yield "Üzgünüm, şu anda yanıt oluşturamıyorum. Lütfen daha sonra tekrar deneyin."
             else:
                 yield "I'm sorry, I cannot generate a response at the moment. Please try again later."
+    
+    # ============== SOCIAL ASSISTANT METHODS ==============
+    
+    def get_restaurant_context(self, query: str, top_k: int = 5) -> str:
+        """
+        Get relevant restaurant information using embeddings and semantic search
+        """
+        try:
+            # Get the restaurant collection from ChromaDB
+            collection = self.chroma_client.get_collection("restaurants")
+            
+            # Create query embedding using E5 model
+            query_text = f"query: {query}"
+            query_embedding = self.embedding_model.encode([query_text])[0].tolist()
+            
+            # Search in ChromaDB
+            results = collection.query(
+                query_embeddings=[query_embedding],
+                n_results=top_k
+            )
+            
+            if not results['ids'] or len(results['ids'][0]) == 0:
+                return ""
+            
+            # Sort results by distance from campus (closest first)
+            sorted_indices = sorted(
+                range(len(results['ids'][0])),
+                key=lambda i: float(results['metadatas'][0][i].get('distance_from_campus', 999.0))
+            )
+            
+            # Build restaurant context
+            context_parts = ["NEARBY RESTAURANTS:\n"]
+            
+            for idx in sorted_indices:
+                metadata = results['metadatas'][0][idx]
+                document = results['documents'][0][idx]
+                distance = results['distances'][0][idx] if 'distances' in results else None
+                
+                similarity = 1.0 - distance if distance is not None else 0.0
+                
+                context_parts.append(
+                    f"\n[Relevance: {similarity*100:.1f}%] {metadata['name']}"
+                )
+                
+                # Show category (restaurant, cafe, fast_food, bar, pub)
+                if metadata.get('category'):
+                    context_parts.append(f"Category: {metadata['category']}")
+                
+                if metadata.get('cuisine_type'):
+                    context_parts.append(f"Cuisine: {metadata['cuisine_type']}")
+                
+                if metadata.get('distance_from_campus'):
+                    # Convert km to meters for display
+                    dist_km = float(metadata['distance_from_campus'])
+                    if dist_km < 1.0:
+                        # Show in meters for distances less than 1 km
+                        dist_meters = int(dist_km * 1000)
+                        context_parts.append(f"Distance: {dist_meters} meters from campus")
+                    else:
+                        # Show in km for distances 1 km and above
+                        context_parts.append(f"Distance: {dist_km:.1f} km from campus")
+                
+                if metadata.get('price'):
+                    # Price is already formatted as ₺₺ symbols
+                    context_parts.append(f"Price: {metadata['price']}")
+                
+                if metadata.get('address'):
+                    context_parts.append(f"Address: {metadata['address']}")
+                
+                if metadata.get('tags'):
+                    context_parts.append(f"Features: {metadata['tags']}")
+                
+                if metadata.get('phone'):
+                    context_parts.append(f"Phone: {metadata['phone']}")
+                
+                context_parts.append("")  # Empty line between restaurants
+            
+            return "\n".join(context_parts)
+        
+        except Exception as e:
+            print(f"Error in restaurant search: {e}")
+            return ""
+    
+    def get_event_context(self, query: str, top_k: int = 5) -> str:
+        """
+        Get relevant event information using embeddings and semantic search
+        """
+        try:
+            # Get the event collection from ChromaDB
+            collection = self.chroma_client.get_collection("events")
+            
+            # Create query embedding
+            query_text = f"query: {query}"
+            query_embedding = self.embedding_model.encode([query_text])[0].tolist()
+            
+            # Search in ChromaDB
+            results = collection.query(
+                query_embeddings=[query_embedding],
+                n_results=top_k
+            )
+            
+            if not results['ids'] or len(results['ids'][0]) == 0:
+                return ""
+            
+            # Build event context
+            context_parts = ["UPCOMING EVENTS IN ANKARA:\n"]
+            
+            for idx in range(len(results['ids'][0])):
+                metadata = results['metadatas'][0][idx]
+                document = results['documents'][0][idx]
+                distance = results['distances'][0][idx] if 'distances' in results else None
+                
+                similarity = 1.0 - distance if distance is not None else 0.0
+                
+                context_parts.append(
+                    f"\n[Relevance: {similarity*100:.1f}%] {metadata['title']}"
+                )
+                
+                # Show category (music, theater, workshop, comedy, other)
+                if metadata.get('category'):
+                    context_parts.append(f"Category: {metadata['category']}")
+                
+                if metadata.get('event_type'):
+                    context_parts.append(f"Type: {metadata['event_type']}")
+                
+                if metadata.get('event_date'):
+                    context_parts.append(f"Date: {metadata['event_date']}")
+                
+                if metadata.get('venue_name'):
+                    context_parts.append(f"Venue: {metadata['venue_name']}")
+                
+                if metadata.get('price_info'):
+                    context_parts.append(f"Price: {metadata['price_info']}")
+                
+                if metadata.get('ticket_url'):
+                    context_parts.append(f"Ticket URL: {metadata['ticket_url']}")
+                
+                context_parts.append("")  # Empty line between events
+            
+            return "\n".join(context_parts)
+        
+        except Exception as e:
+            print(f"Error in event search: {e}")
+            return ""
+    
+    def create_social_system_prompt(self, language: str) -> str:
+        """Create system prompt for social assistant"""
+        
+        return """You are the social assistant for SAGE (Student Academic Guidance and Engagement) system.
+You help Kolej Campus students discover restaurants, cafes, and events around campus and in Ankara.
+
+YOUR RESPONSIBILITIES:
+1. Recommend restaurants and cafes near campus
+2. Inform about events in Ankara (concerts, theater, exhibitions, sports, etc.)
+3. Suggest budget-friendly places for students
+4. Provide recommendations for different cuisines and special diets (vegetarian, vegan, halal)
+5. Share information about walking-distance or public transport accessible venues
+
+VENUE CATEGORIES:
+- **restaurant**: Full-service restaurants
+- **cafe**: Cafes and coffee shops
+- **dessert_shop**: Dessert shops, ice cream parlors
+- **cafeteria**: Cafeterias, canteens
+- **dining_drinking**: General dining and drinking establishments
+- **arcade**: Game arcades, entertainment centers
+- **art_gallery**: Art galleries, cultural spaces
+
+CRITICAL FORMATTING RULES:
+- **DISTANCE DISPLAY**: 
+  * For distances under 1 km: Show in METERS (e.g., "150 meters", "800 meters")
+  * For distances 1 km or more: Show in KM with 1 decimal (e.g., "1.2 km", "2.5 km")
+  * ALWAYS use the exact distance provided in the venue data
+- **PRICE DISPLAY**: 
+  * Use ₺ symbols ONLY (₺ to ₺₺₺₺₺)
+  * ₺ = very cheap, ₺₺ = cheap, ₺₺₺ = moderate, ₺₺₺₺ = expensive, ₺₺₺₺₺ = very expensive
+  * NEVER write "price range" or text descriptions, ONLY show ₺ symbols
+- **When user specifies a category** (e.g., "suggest cafes", "any arcades"), prioritize venues matching that category
+
+RESPONSE RULES:
+- Always respond in English
+- Use friendly and social language
+- Utilize provided restaurant and event information
+- Mention distances and price ranges using the exact formats above
+- Prioritize student-friendly places
+- Provide dates and venue information for events
+- **ALWAYS share event URLs when provided in the venue data** - these are official event pages
+- Track conversation history and maintain context
+
+CONTENT POLICY:
+- ONLY help with social activities, dining venues, and local events
+- DO NOT respond to inappropriate or offensive content
+- Only suggest safe and legal activities
+- Mention age restrictions for venues serving alcohol (18+)
+- **YOU CAN AND SHOULD provide event URLs** - they are part of the venue information database
+
+SPECIAL NOTES:
+- Know venues near Kolej Campus in Ankara
+- Prioritize budget-friendly (₺ to ₺₺₺) places for students
+- Consider public transportation connections
+- Know Ankara's popular event venues (Congresium, CSO, Jolly Joker, etc.)
+
+EXAMPLE RESPONSES:
+"Off Cafe is a great choice! It's only 130 meters from campus and has a moderate price range (₺₺₺). They serve excellent coffee and pastries."
+
+"I found Torku Döner for you - it's 140 meters away (₺₺) and serves delicious Turkish doner kebab."
+
+"Action internet arcade is very close at just 130 meters from campus. Perfect for gaming with friends!"
+
+"There's a Turkish Culinary Academy Street Food Workshop on January 15th. You can find more details and register here: [event URL]. It's a great hands-on experience!"
+
+IMPORTANT NOTES:
+- Event URLs in the database are real and should be shared
+- When an event has a URL (ticket_url field), ALWAYS include it in your response
+- These are official event pages for registration and ticket purchase
+- Don't hesitate to share URLs - they're provided specifically for this purpose"""
+    
+    def chat_social(self,
+                   user_message: str,
+                   conversation_history: List[Dict[str, str]] = None) -> str:
+        """
+        Generate social assistant response using Groq with restaurant and event RAG
+        
+        Args:
+            user_message: User's query
+            conversation_history: Previous messages
+        
+        Returns:
+            Assistant's response
+        """
+        
+        # Detect language
+        language = self.detect_language(user_message)
+        
+        # Get restaurant and event context using semantic search
+        restaurant_context = self.get_restaurant_context(user_message)
+        event_context = self.get_event_context(user_message)
+        
+        # Build system prompt for social assistant
+        system_prompt = self.create_social_system_prompt(language)
+        
+        # Build messages for API
+        messages = [{"role": "system", "content": system_prompt}]
+        
+        # Add conversation history
+        if conversation_history:
+            messages.extend(conversation_history[-10:])
+        
+        # Enhance user message with context
+        enhanced_message = user_message
+        context_parts = []
+        
+        if restaurant_context:
+            context_parts.append(restaurant_context)
+        
+        if event_context:
+            context_parts.append(event_context)
+        
+        if context_parts:
+            enhanced_message = f"{user_message}\n\n" + "\n\n".join(context_parts)
+        
+        messages.append({"role": "user", "content": enhanced_message})
+        
+        # Call Groq API
+        try:
+            response = self.client.chat.completions.create(
+                model=self.model,
+                messages=messages,
+                temperature=0.8,  # Slightly higher for more creative social responses
+                max_tokens=2000,
+                top_p=0.9,
+                stream=False
+            )
+            
+            return response.choices[0].message.content
+        
+        except Exception as e:
+            error_msg = f"Error calling Groq API: {str(e)}"
+            print(error_msg)
+            
+            if language == 'tr':
+                return "Üzgünüm, şu anda yanıt oluşturamıyorum. Lütfen daha sonra tekrar deneyin."
+            else:
+                return "I'm sorry, I cannot generate a response at the moment. Please try again later."
+

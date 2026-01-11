@@ -207,6 +207,44 @@ async def add_message(
             # If AI fails, still return user message
             pass
     
+    # Generate AI response for social assistant
+    elif message.role == "user" and conversation.assistant_type == "social":
+        try:
+            # Get conversation history
+            history_messages = db.query(Message).filter(
+                Message.conversation_id == conversation_id
+            ).order_by(Message.created_at.asc()).all()
+            
+            # Format history for Groq
+            conversation_history = [
+                {"role": msg.role, "content": msg.content}
+                for msg in history_messages[:-1]
+            ]
+            
+            # Get AI response using social assistant
+            ai_response = groq_service.chat_social(
+                user_message=message.content,
+                conversation_history=conversation_history
+            )
+            
+            # Save AI response
+            ai_message = Message(
+                conversation_id=conversation_id,
+                role="assistant",
+                content=ai_response
+            )
+            
+            db.add(ai_message)
+            db.commit()
+            db.refresh(ai_message)
+            
+            return ai_message
+            
+        except Exception as e:
+            print(f"Error generating social AI response: {e}")
+            # If AI fails, still return user message
+            pass
+    
     return db_message
 
 

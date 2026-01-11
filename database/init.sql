@@ -171,6 +171,73 @@ CREATE INDEX IF NOT EXISTS idx_courses_semesters ON courses USING GIN (offered_s
 CREATE TRIGGER update_courses_updated_at BEFORE UPDATE ON courses
     FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
 
+-- Create places table for social assistant (uses Foursquare data - dining & entertainment)
+CREATE TABLE IF NOT EXISTS places (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    venue_type VARCHAR(50) NOT NULL,  -- 'dining' or 'entertainment'
+    cuisine_type VARCHAR(100),
+    category TEXT[],  -- Array of search categories that found this venue
+    address TEXT,
+    latitude DOUBLE PRECISION NOT NULL,
+    longitude DOUBLE PRECISION NOT NULL,
+    phone VARCHAR(50),
+    website VARCHAR(512),
+    opening_hours TEXT,
+    price_range INTEGER,
+    rating DOUBLE PRECISION,
+    distance_from_campus DOUBLE PRECISION,
+    tags TEXT[],
+    amenities JSONB,
+    fsq_id VARCHAR(100) UNIQUE NOT NULL,
+    source VARCHAR(50) DEFAULT 'foursquare',
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE
+);
+
+-- Create indexes for places
+CREATE INDEX IF NOT EXISTS idx_places_venue_type ON places(venue_type);
+CREATE INDEX IF NOT EXISTS idx_places_category ON places(category);
+CREATE INDEX IF NOT EXISTS idx_places_cuisine ON places(cuisine_type);
+CREATE INDEX IF NOT EXISTS idx_places_location ON places(latitude, longitude);
+CREATE INDEX IF NOT EXISTS idx_places_distance ON places(distance_from_campus);
+CREATE INDEX IF NOT EXISTS idx_places_fsq_id ON places(fsq_id);
+CREATE INDEX IF NOT EXISTS idx_places_source ON places(source);
+
+CREATE TRIGGER update_places_updated_at BEFORE UPDATE ON places
+    FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+
+-- Create events table for social assistant
+CREATE TABLE IF NOT EXISTS events (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    venue_name VARCHAR(255),
+    venue_address TEXT,
+    event_date TIMESTAMP WITH TIME ZONE,
+    end_date TIMESTAMP WITH TIME ZONE,
+    price DOUBLE PRECISION,
+    price_info VARCHAR(100),
+    category VARCHAR(50),  -- music, theater, workshop, comedy, other
+    image_url VARCHAR(512),
+    ticket_url VARCHAR(512),
+    external_id VARCHAR(100) UNIQUE NOT NULL,
+    source VARCHAR(50) DEFAULT 'bubilet',
+    is_active BOOLEAN DEFAULT TRUE,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE
+);
+
+-- Create indexes for events
+CREATE INDEX IF NOT EXISTS idx_events_category ON events(category);
+CREATE INDEX IF NOT EXISTS idx_events_date ON events(event_date);
+CREATE INDEX IF NOT EXISTS idx_events_venue ON events(venue_name);
+CREATE INDEX IF NOT EXISTS idx_events_active ON events(is_active);
+CREATE INDEX IF NOT EXISTS idx_events_source ON events(source, external_id);
+
+CREATE TRIGGER update_events_updated_at BEFORE UPDATE ON events
+    FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+
 -- Grant permissions (if using specific roles)
 -- GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO sage_user;
 -- GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO sage_user;

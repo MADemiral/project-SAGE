@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from app.api.endpoints import documents, health, auth, users, conversations, embeddings, courses
+from app.api.endpoints import documents, health, auth, users, conversations, embeddings, courses, restaurants, events
 
 router = APIRouter()
 
@@ -9,4 +9,6 @@ router.include_router(conversations.router, prefix="/conversations", tags=["conv
 router.include_router(documents.router, prefix="/documents", tags=["documents"])
 router.include_router(embeddings.router, prefix="/ai", tags=["embeddings"])
 router.include_router(courses.router, prefix="/courses", tags=["courses"])
+router.include_router(restaurants.router, prefix="/restaurants", tags=["restaurants"])
+router.include_router(events.router, prefix="/events", tags=["events"])
 router.include_router(health.router, prefix="/health", tags=["health"])

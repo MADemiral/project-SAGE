@@ -114,7 +114,7 @@ export default function Dashboard() {
             title: conv.title,
             messages: conv.messages?.map(msg => ({
               ...msg,
-              timestamp: new Date(msg.timestamp)
+              timestamp: new Date(msg.created_at || msg.timestamp)
             })) || [],
             created_at: new Date(conv.created_at)
           });
@@ -187,7 +187,7 @@ export default function Dashboard() {
         )
       }));
 
-      // If backend returned an AI response (for academic assistant), use it
+      // If backend returned an AI response (for academic or social assistant), use it
       if (responseMessage && responseMessage.role === 'assistant') {
         const aiMessage = {
           id: responseMessage.id,
@@ -208,8 +208,8 @@ export default function Dashboard() {
               : conv
           )
         }));
-      } else {
-        // For other assistants (calendar, social), use mock response
+      } else if (activeAssistant === 'calendar') {
+        // For calendar assistant, use mock response (not yet implemented with backend)
         const aiContent = getAIResponse(activeAssistant, userMessageContent);
         
         // Add AI message to database
