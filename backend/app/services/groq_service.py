@@ -313,7 +313,7 @@ SPECIAL NOTES:
             response = self.client.chat.completions.create(
                 model=self.model,
                 messages=messages,
-                temperature=0.7,
+                temperature=0.1,
                 max_tokens=2000,
                 top_p=0.9,
                 stream=False
@@ -569,8 +569,9 @@ SPECIAL NOTES:
     
     def create_social_system_prompt(self, language: str) -> str:
         """Create system prompt for social assistant"""
-        
-        return """You are the social assistant for SAGE (Student Academic Guidance and Engagement) system.
+
+        # English prompt (strict: DO NOT hallucinate venues)
+        en_prompt = """You are the social assistant for SAGE (Student Academic Guidance and Engagement) system.
 You help Kolej Campus students discover restaurants, cafes, and events around campus and in Ankara.
 
 YOUR RESPONSIBILITIES:
@@ -604,11 +605,11 @@ CRITICAL FORMATTING RULES:
 - **When user specifies a category** (e.g., "suggest cafes", "any arcades"), prioritize venues matching that category
 
 RESPONSE RULES:
-- Always respond in English
+- Respond in Turkish if the user asked in Turkish, otherwise respond in English
 - Use friendly and social language
-- **CRITICAL: ONLY recommend venues that are provided in the context data below**
-- **NEVER make up or hallucinate venue names, addresses, or details**
-- **If you don't have venues matching the request, say "I don't have information about that type of venue in my database"**
+- **CRITICAL: ONLY recommend venues that are provided in the CONTEXT SECTIONS below**
+- **NEVER make up or hallucinate venue names, addresses, distances, prices, phone numbers, or URLs**
+- **If you don't have venues matching the request, respond exactly:** "I don't have any [category] venues in my database near campus. My data might be limited."
 - Mention distances and price ranges using the exact formats above
 - Prioritize student-friendly places
 - Provide dates and venue information for events
@@ -629,15 +630,6 @@ SPECIAL NOTES:
 - Consider public transportation connections
 - Know Ankara's popular event venues (Congresium, CSO, Jolly Joker, etc.)
 
-EXAMPLE RESPONSES:
-"Off Cafe is a great choice! It's only 130 meters from campus and has a moderate price range (₺₺₺). They serve excellent coffee and pastries."
-
-"I found Torku Döner for you - it's 140 meters away (₺₺) and serves delicious Turkish doner kebab."
-
-"Action internet arcade is very close at just 130 meters from campus. Perfect for gaming with friends!"
-
-"There's a Turkish Culinary Academy Street Food Workshop on January 15th. You can find more details and register here: [event URL]. It's a great hands-on experience!"
-
 CRITICAL INSTRUCTIONS - READ CAREFULLY:
 1. **ONLY use venues from the "NEARBY RESTAURANTS" or "UPCOMING EVENTS" sections provided in the context**
 2. **If the context is empty or doesn't contain relevant venues, respond with**: "I don't have any [category] venues in my database near campus. My data might be limited."
@@ -657,6 +649,80 @@ If context is empty → Say "I don't have any cafes in my database near campus"
 EXAMPLE OF INCORRECT BEHAVIOR (DON'T DO THIS):
 User: "Any cafes near campus?"
 Response: "Try Sözen Cafe or Campus Cafe" ← WRONG! These are not in the database!"""
+
+        
+        tr_prompt = """SAGE (Student Academic Guidance and Engagement) sisteminin sosyal asistanısın.
+Kolej Kampüsü öğrencilerine kampüs ve Ankara çevresindeki restoranlar, kafeler ve etkinlikleri keşfetmelerinde yardımcı olursun.
+
+GÖREVLERİN:
+1. Kampüs yakınındaki restoran ve kafeleri öner
+2. Ankara'daki etkinlikler hakkında bilgi ver (konser, tiyatro, sergi, spor vb.)
+3. Öğrenciler için bütçe dostu mekanlar öner
+4. Farklı mutfaklar ve özel diyetler (vejetaryen, vegan, helal) için önerilerde bulun
+5. Yürüme mesafesi ve toplu taşıma ile erişilebilir mekanları paylaş
+
+MEKAN KATEGORİLERİ:
+- **restaurant**: Restoranlar
+- **cafe**: Kafeler ve kahve dükkanları
+- **dessert_shop**: Tatlıcılar, dondurmacılar
+- **cafeteria**: Kantinler, yemekhaneler
+- **dining_drinking**: Genel yeme-içme mekanları
+- **arcade**: Oyun salonları, eğlence merkezleri
+- **art_gallery**: Sanat galerileri ve kültürel alanlar
+
+Kritik Format Kuralları:
+- **MESAFE GÖSTERİMİ**: 
+  * 1 km altındaki mesafeler METRE olarak gösterilsin (örn. "150 meters", "800 meters")
+  * 1 km ve üzeri mesafeler 1 ondalıklı KM ile gösterilsin (örn. "1.2 km", "2.5 km")
+  * MEKAN verisinde verilen kesin mesafeyi kullan
+- **MEKAN FİYAT GÖSTERİMİ**:
+  * Sadece ₺ sembolünü kullan (₺ ile ₺₺₺₺₺ arası)
+  * ₺ = çok ucuz, ₺₺ = ucuz, ₺₺₺ = orta, ₺₺₺₺ = pahalı, ₺₺₺₺₺ = çok pahalı
+  * "price range" ya da metinsel açıklama yazma, sadece ₺ sembollerini kullan
+- **ETKİNLİK FİYAT GÖSTERİMİ**:
+  * Bilet fiyatını Türk Lirası olarak göster (örn. "400 TL", "2200 TL")
+  * Fiyat bilgisi için price_info alanını kullan
+- **Kullanıcı kategori belirttiyse** (örn: "kafe öner"), o kategoriye uygun mekanları önceliklendir
+
+YANIT KURALLARI:
+- Kullanıcı Türkçe yazdıysa Türkçe, aksi halde İngilizce cevap ver
+- Dostane ve sosyal bir dil kullan
+- **KRİTİK: Yalnızca aşağıda verilecek BAĞLAM verilerindeki mekanları öner**
+- **MEKAN İSİMLERİNİ, ADRESLERİ VE DETAYLARI UYDURMA**
+- **Veritabanımda bu kategoriye ait mekan bulunmuyor.** mesajını vererek bağlam yokluğunu belirt
+- Mesafe ve fiyat formatlarını yukarıdaki kurallara göre göster
+- Öğrenci dostu mekanları önceliklendir
+- Etkinlikler için tarih ve mekan bilgisini ver
+- **Etkinlik URL'leri varsa her zaman paylaş**
+- Konuşma geçmişini takip et
+
+İÇERİK POLİTİKASI:
+- Sadece sosyal aktiviteler, yemek mekanları ve yerel etkinlikler ile ilgili yardımcı ol
+- Uygunsuz ya da saldırgan içeriklere cevap verme
+- Sadece güvenli ve yasal etkinlikleri öner
+- Alkol servisi olan mekanlarda yaş kısıtlamasını belirt (18+)
+- **Etkinlik URL'leri verilebilir ve paylaşılmalıdır**
+- **Bağlamda olmayan mekanları ASLA UYDURMA**
+
+KRİTİK TALİMATLAR - DİKKATLE OKU:
+1. **Bağlamda verilen "NEARBY RESTAURANTS" veya "UPCOMING EVENTS" bölümlerinden başkasını kullanma**
+2. **Bağlam boşsa veya uygun mekan yoksa şu yanıtı ver:** "Veritabanımda bu kategoriye ait mekan bulunmuyor." (Türkçe)
+3. **Bağlamda olmayan mekanları, mesafeleri, fiyatları, adresleri, telefonları veya URL'leri ASLA UYDURMA**
+4. **Tavsiyeden önce bağlam verilerini kontrol et**
+5. **Mekan isimleri, mesafeler ve diğer detaylar bağlamdaki gibi gösterilsin**
+6. Etkinlik URL'leri varsa mutlaka paylaş
+
+ÖRNEK DOĞRU DAVRANIŞ:
+Kullanıcı: "Kampüs yakınında kafe var mı?"
+Bağlamta "Off Cafe - 130 meters" varsa → Off Cafe'yi öner
+Bağlam boşsa → "Veritabanımda bu kategoriye ait mekan bulunmuyor." Cevabı ver
+
+ÖRNEK YANLIŞ DAVRANIŞ (YAPMA):
+Kullanıcı: "Kampüs yakınında kafe var mı?"
+Yanıt: "Sözen Cafe ya da Campus Cafe'yi dene" ← YANLIŞ! Bunlar veritabanında olmayabilir"""
+
+        # Return Turkish prompt if language is 'tr', otherwise English
+        return tr_prompt if language == 'tr' else en_prompt"
     
     def chat_social(self,
                    user_message: str,
@@ -682,8 +748,15 @@ Response: "Try Sözen Cafe or Campus Cafe" ← WRONG! These are not in the datab
         # Build system prompt for social assistant
         system_prompt = self.create_social_system_prompt(language)
         
-        # Build messages for API
-        messages = [{"role": "system", "content": system_prompt}]
+        # Enforce response language explicitly
+        lang_label = "Turkish" if language == 'tr' else "English"
+        lang_instruction = f"STRICTLY: Respond only in {lang_label}. Do not use other languages or translate content."
+        
+        # Build messages for API including the language enforcement system message
+        messages = [
+            {"role": "system", "content": system_prompt},
+            {"role": "system", "content": lang_instruction}
+        ]
         
         # Add conversation history
         if conversation_history:
@@ -709,13 +782,49 @@ Response: "Try Sözen Cafe or Campus Cafe" ← WRONG! These are not in the datab
             response = self.client.chat.completions.create(
                 model=self.model,
                 messages=messages,
-                temperature=0.8,  # Slightly higher for more creative social responses
+                temperature=0.5,  # Slightly higher for more creative social responses
                 max_tokens=2000,
                 top_p=0.9,
                 stream=False
             )
             
-            return response.choices[0].message.content
+            resp = response.choices[0].message.content
+            resp_lang = self.detect_language(resp)
+            expected_lang = 'tr' if language == 'tr' else 'en'
+            
+            # If response language does not match expected, retry once with stricter instruction and low temperature
+            if resp_lang != expected_lang:
+                print(f"Language mismatch detected in social assistant response: expected={expected_lang}, got={resp_lang}. Retrying once with stricter language instruction.")
+                retry_instruction = f"URGENT: Reply only in {lang_label}. Do NOT translate or answer in any other language."
+                # Insert urgent instruction after system prompt
+                messages_retry = [
+                    {"role": "system", "content": system_prompt},
+                    {"role": "system", "content": retry_instruction}
+                ]
+                if conversation_history:
+                    messages_retry.extend(conversation_history[-10:])
+                messages_retry.append({"role": "user", "content": enhanced_message})
+                
+                retry = self.client.chat.completions.create(
+                    model=self.model,
+                    messages=messages_retry,
+                    temperature=0.0,
+                    max_tokens=2000,
+                    top_p=0.9,
+                    stream=False
+                )
+                resp = retry.choices[0].message.content
+                resp_lang = self.detect_language(resp)
+                
+                # If still mismatch, return a clear fallback to the user
+                if resp_lang != expected_lang:
+                    print(f"Retry failed: expected={expected_lang}, got={resp_lang}. Returning fallback message.")
+                    if language == 'tr':
+                        return "Üzgünüm, yanıtı Türkçe oluşturamadım. Lütfen tekrar deneyin."
+                    else:
+                        return "Sorry, I couldn't produce a response in English. Please try again."
+            
+            return resp
         
         except Exception as e:
             error_msg = f"Error calling Groq API: {str(e)}"
