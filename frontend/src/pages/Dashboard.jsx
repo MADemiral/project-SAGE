@@ -25,6 +25,7 @@ import { useAuth } from '../context/AuthContext';
 import { useTheme } from '../context/ThemeContext';
 import { useNavigate } from 'react-router-dom';
 import { conversationService } from '../services/conversations';
+import CalendarPage from './CalendarPage';
 
 const assistants = [
   {
@@ -359,18 +360,20 @@ export default function Dashboard() {
                 </div>
               </div>
 
-              {/* New Chat Button */}
-              <button
-                onClick={createNewConversation}
-                className={`w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg border transition-colors ${
-                  isDark 
-                    ? 'border-gray-700 hover:bg-gray-800 text-gray-300' 
-                    : 'border-gray-300 hover:bg-gray-100 text-gray-700'
-                }`}
-              >
-                <Plus className="w-4 h-4" />
-                <span className="font-medium">New Chat</span>
-              </button>
+              {/* New Chat Button - Only show for Academic and Social assistants */}
+              {activeAssistant !== 'calendar' && (
+                <button
+                  onClick={createNewConversation}
+                  className={`w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg border transition-colors ${
+                    isDark 
+                      ? 'border-gray-700 hover:bg-gray-800 text-gray-300' 
+                      : 'border-gray-300 hover:bg-gray-100 text-gray-700'
+                  }`}
+                >
+                  <Plus className="w-4 h-4" />
+                  <span className="font-medium">New Chat</span>
+                </button>
+              )}
             </div>
 
             {/* Assistant Tabs */}
@@ -397,46 +400,61 @@ export default function Dashboard() {
               ))}
             </div>
 
-            {/* Conversations List */}
-            <div className="flex-1 overflow-y-auto">
-              {loadingConversations ? (
-                <div className="flex items-center justify-center p-8">
-                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-                </div>
-              ) : (
-                <div className="p-2 space-y-1">
-                  {currentConversations.map((conv) => (
-                    <div
-                      key={conv.id}
-                      className={`group flex items-center gap-2 px-3 py-2.5 rounded-lg cursor-pointer transition-colors ${
-                        activeConversationId === conv.id
-                          ? isDark 
-                            ? 'bg-gray-800 text-white' 
-                            : 'bg-gray-200 text-gray-900'
-                          : isDark
-                            ? 'hover:bg-gray-800 text-gray-300'
-                            : 'hover:bg-gray-100 text-gray-700'
-                      }`}
-                      onClick={() => setActiveConversationId(conv.id)}
-                    >
-                      <MessageSquare className="w-4 h-4 flex-shrink-0" />
-                      <span className="flex-1 text-sm truncate">{conv.title}</span>
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          deleteConversation(conv.id);
-                        }}
-                        className={`opacity-0 group-hover:opacity-100 p-1 rounded ${
-                          isDark ? 'hover:bg-gray-700' : 'hover:bg-gray-300'
+            {/* Conversations List - Only show for Academic and Social assistants */}
+            {activeAssistant !== 'calendar' ? (
+              <div className="flex-1 overflow-y-auto">
+                {loadingConversations ? (
+                  <div className="flex items-center justify-center p-8">
+                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+                  </div>
+                ) : (
+                  <div className="p-2 space-y-1">
+                    {currentConversations.map((conv) => (
+                      <div
+                        key={conv.id}
+                        className={`group flex items-center gap-2 px-3 py-2.5 rounded-lg cursor-pointer transition-colors ${
+                          activeConversationId === conv.id
+                            ? isDark 
+                              ? 'bg-gray-800 text-white' 
+                              : 'bg-gray-200 text-gray-900'
+                            : isDark
+                              ? 'hover:bg-gray-800 text-gray-300'
+                              : 'hover:bg-gray-100 text-gray-700'
                         }`}
+                        onClick={() => setActiveConversationId(conv.id)}
                       >
-                        <Trash2 className="w-3.5 h-3.5" />
-                      </button>
-                    </div>
-                  ))}
+                        <MessageSquare className="w-4 h-4 flex-shrink-0" />
+                        <span className="flex-1 text-sm truncate">{conv.title}</span>
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            deleteConversation(conv.id);
+                          }}
+                          className={`opacity-0 group-hover:opacity-100 p-1 rounded ${
+                            isDark ? 'hover:bg-gray-700' : 'hover:bg-gray-300'
+                          }`}
+                        >
+                          <Trash2 className="w-3.5 h-3.5" />
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ) : (
+              /* Calendar Assistant - Show helpful info instead of conversations */
+              <div className="flex-1 flex items-center justify-center p-6">
+                <div className="text-center">
+                  <CalendarIcon className={`w-12 h-12 mx-auto mb-3 ${isDark ? 'text-gray-600' : 'text-gray-400'}`} />
+                  <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+                    Calendar & Email Manager
+                  </p>
+                  <p className={`text-xs mt-1 ${isDark ? 'text-gray-500' : 'text-gray-500'}`}>
+                    Sign in with Gmail to manage your calendar
+                  </p>
                 </div>
-              )}
-            </div>
+              </div>
+            )}
 
             {/* User Section */}
             <div className={`p-4 border-t ${isDark ? 'border-gray-800' : 'border-gray-200'}`}>
@@ -493,31 +511,40 @@ export default function Dashboard() {
 
       {/* Main Chat Area */}
       <div className="flex-1 flex flex-col">
-        {/* Header */}
-        <div className={`border-b ${isDark ? 'border-gray-800 bg-gray-900' : 'border-gray-200 bg-white'} px-4 py-4`}>
-          <div className="flex items-center gap-3">
-            {!sidebarOpen && (
-              <button
-                onClick={() => setSidebarOpen(true)}
-                className={`p-2 rounded-lg ${isDark ? 'hover:bg-gray-800 text-gray-400' : 'hover:bg-gray-100 text-gray-600'}`}
-              >
-                <Menu className="w-5 h-5" />
-              </button>
-            )}
-            <div className={`w-10 h-10 rounded-full bg-gradient-to-r ${currentAssistant.gradient} flex items-center justify-center`}>
-              <currentAssistant.icon className="w-5 h-5 text-white" />
-            </div>
-            <div className="flex-1">
-              <h1 className={`text-lg font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                {currentAssistant.name}
-              </h1>
-              <p className="text-sm text-gray-400">{currentAssistant.description}</p>
-            </div>
+        {/* Conditional Rendering: Calendar Page or Chat Interface */}
+        {activeAssistant === 'calendar' ? (
+          /* Calendar Assistant - Show CalendarPage Component */
+          <div className="flex-1 overflow-hidden">
+            <CalendarPage />
           </div>
-        </div>
+        ) : (
+          /* Academic & Social Assistants - Show Chat Interface */
+          <>
+            {/* Header */}
+            <div className={`border-b ${isDark ? 'border-gray-800 bg-gray-900' : 'border-gray-200 bg-white'} px-4 py-4`}>
+              <div className="flex items-center gap-3">
+                {!sidebarOpen && (
+                  <button
+                    onClick={() => setSidebarOpen(true)}
+                    className={`p-2 rounded-lg ${isDark ? 'hover:bg-gray-800 text-gray-400' : 'hover:bg-gray-100 text-gray-600'}`}
+                  >
+                    <Menu className="w-5 h-5" />
+                  </button>
+                )}
+                <div className={`w-10 h-10 rounded-full bg-gradient-to-r ${currentAssistant.gradient} flex items-center justify-center`}>
+                  <currentAssistant.icon className="w-5 h-5 text-white" />
+                </div>
+                <div className="flex-1">
+                  <h1 className={`text-lg font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                    {currentAssistant.name}
+                  </h1>
+                  <p className="text-sm text-gray-400">{currentAssistant.description}</p>
+                </div>
+              </div>
+            </div>
 
-        {/* Messages Area */}
-        <div className={`flex-1 overflow-y-auto ${isDark ? 'bg-gray-950' : 'bg-white'}`}>
+            {/* Messages Area */}
+            <div className={`flex-1 overflow-y-auto ${isDark ? 'bg-gray-950' : 'bg-white'}`}>
           {messages.length === 0 ? (
             /* Welcome Screen */
             <div className="h-full flex flex-col items-center justify-center p-8">
@@ -619,10 +646,10 @@ export default function Dashboard() {
               <div ref={messagesEndRef} />
             </div>
           )}
-        </div>
+            </div>
 
-        {/* Input Area */}
-        <div className={`border-t ${isDark ? 'border-gray-800 bg-gray-900' : 'border-gray-200 bg-white'} p-4`}>
+            {/* Input Area */}
+            <div className={`border-t ${isDark ? 'border-gray-800 bg-gray-900' : 'border-gray-200 bg-white'} p-4`}>
           <div className="max-w-4xl mx-auto">
             <div className="flex gap-3 items-end">
               <div className="flex-1 relative">
@@ -659,7 +686,9 @@ export default function Dashboard() {
               SAGE can make mistakes. Check important information.
             </p>
           </div>
-        </div>
+            </div>
+          </>
+        )}
       </div>
 
       {/* User Profile Modal */}

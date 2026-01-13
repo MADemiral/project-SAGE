@@ -31,9 +31,21 @@
     "syllabus_pdf_text": "",
     "department": "CMPE",
     "offered_semesters": [
+      "Fall 2025",
       "Spring 2025"
     ],
     "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03",
+          "04"
+        ],
+        "instructors": [
+          "Gökçe Nur Yılmaz , Semihanur Aktay Subaşı"
+        ]
+      },
       "Spring 2025": {
         "sections": [
           "01",
@@ -83,9 +95,22 @@
     "syllabus_pdf_text": "",
     "department": "CMPE",
     "offered_semesters": [
+      "Fall 2025",
       "Spring 2025"
     ],
     "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03",
+          "04"
+        ],
+        "instructors": [
+          "Eren Ulu",
+          "Tansel Dökeroğlu"
+        ]
+      },
       "Spring 2025": {
         "sections": [
           "01",
@@ -132,9 +157,21 @@
     "syllabus_pdf_text": "",
     "department": "CMPE",
     "offered_semesters": [
+      "Fall 2025",
       "Spring 2025"
     ],
     "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03"
+        ],
+        "instructors": [
+          "Anıl Özdemir",
+          "Niyazi Anıl Gezer"
+        ]
+      },
       "Spring 2025": {
         "sections": [
           "01",
@@ -182,9 +219,20 @@
     "syllabus_pdf_text": "",
     "department": "CMPE",
     "offered_semesters": [
+      "Fall 2025",
       "Spring 2025"
     ],
     "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03"
+        ],
+        "instructors": [
+          "Ulaş Güleç"
+        ]
+      },
       "Spring 2025": {
         "sections": [
           "01",
@@ -234,9 +282,22 @@
     "syllabus_pdf_text": "TED UNIVERSITY, COURSE SYLLABUS\nFaculty Engineering Department CMPE\nCourse Data Structures and\nCMPE 224 / CMPE 343 Course Title\nCode & Number Algorithms II\nþ Compulsory 2025-2026\nType of Course Semester\n¨ Elective þFall ¨Spring ¨ Summer\nCourse Credit Number of ECTS\n(3+0+0) 3 6\nHours Credits\nPre-requisite N/A Co-requisite N/A\nMode of þ Face-to-face Language of þ English\nDelivery ¨Distance learning Instruction ¨ Turkish\nCourse Course\nProf. Tolga Çapın Prof. Tolga Çapın\nCoordinator Lecturer(s)\nRequired Sedgewick, Wayne, Algorithms, Recommended Marc Allen Weiss, Data Structures\nReading 4th Edition, 2011. Reading and Algorithms in Java, 3rd Ed.\nUndirected graphs. Directed graphs. Minimum spanning trees. Shortest paths.\nMaximum flow and minimum cut. Radix sorts. Tries. Substring search.\nCourse Catalog\nRegular expressions. Data compression. Reductions. Intractability. Linear\nDescription\nprogramming.\nThe general objective of this course is to introduce advanced data structures.\nThis course introduces the use of graphs in problem solving and algorithm\ndevelopment and describes how to develop algorithms using advanced graph\nCourse data structures. This course then focuses on advanced string data structures\nObjectives and operations. The course includes the use of different algorithm-design\ntechniques, such as greedy, divide-and-conquer, and linear programming\ntechniques, to solve particular problems.\nUpon successful completion of this course, a student will be able to\n1. Use graph and string data structures in modeling and solving problems,\n2. Design graph and string-based algorithms,\nCourse\n3. Apply different algorithm-design techniques, including but not limited to,\nLearning\ngreedy, divide-and-conquer, and dynamic programming techniques, to\nOutcomes\nsolve problems,\n4. Analyze data structures and algorithms in terms of time and space\ncomplexity.\nUndirected graphs. Directed graphs. Minimum spanning trees. Shortest paths.\nCourse Maximum flow and minimum cut. Radix sorts. Tries. Substring search. Regular\nContents expressions. Data compression. Reductions. Intractability. Linear\nprogramming.\n\nþ Telling/Explaining ¨ Simulations & Games\nþ Discussions/Debates ¨ Video Presentations\nþ Questioning ¨ Oral Presentations/Reports\nþ Reading þ Concept Mapping\n¨ Peer Teaching ¨ Brainstorming\nTeaching ¨ Scaffolding/Coaching ¨ Drama/Role Playing\nMethods & ¨ Demonstrating ¨ Seminars\nLearning þ Problem Solving ¨ Field Trips\nActivities ¨ Inquiry ¨ Guest Speakers\n¨ Collaborating þ Hands-on Activities\n¨ Think-Pair-Share ¨ Service Learning\n¨ Predict-Observe-Explain ¨ Web Searching\n¨ Microteaching ¨ Experiments\n¨ Case Study/Scenario Analysis ¨ Other(s): .................................................\nþ Test/Exam ¨ Observation\nAssessment þ Quiz/Homework ¨ Self-evaluation\nMethods ¨ Oral Questioning ¨ Peer Evaluation\n(Formal & ¨ Performance Project ¨ Portfolio\nInformal) ¨ Written ¨ Presentation (Oral, Poster)\n¨ Oral ¨ Other(s): ....................................................\nþ Lectures .....................................42.. hrs\nþ Course Readings ....................10.. hrs\n¨ Workshop ......................................... hrs ¨ Resource Review ........................... hrs\n¨ Online Discussion .......................... hrs ¨ Research Review ........................... hrs\n¨ Debate ................................................. hrs ¨ Report on a Topic .......................... hrs\n¨ Work Placement ............................. hrs ¨ Case Study Analysis ...................... hrs\nStudent\n¨ Field Trips/Visits ........................... hrs ¨ Oral Presentation ......................... hrs\nWorkload\n¨ Observation ...................................... hrs ¨ Poster Presentation ...................... hrs\n¨ Lab Applications ............................ hrs ¨ Demonstration ................................ hrs\n(Total 182 Hrs)\n¨ Hands-on Work .............................. hrs ¨ Web Designs .................................... hrs\nþ Homeworks ..............................60.. hrs ¨ Mock Designs ................................... hrs\nþ Midterm I……….........................20.. hrs ¨ Team Meetings................................. hrs\nþ Midterm II…..….........................20.. hrs ¨ Other ................................................... hrs\nþ Final…..….....................................30.. hrs\n\nCOURSE DETAILS\nAttendance:\nAt least 70% of class attendance is mandatory. Course attendance will be recorded at each lecture.\nYour attendance level will be assessed by the percentage of the attendance handouts that you have\nsigned.\nHands-On Activities\nYou will be assigned a hands-on activity each week. You are expected to submit your answers to\nhands-on activities (you are expected to upload your answers to Moodle for online sessions, or submit\nyour work for face-to-face lectures). The hands-on activities are ungraded but they will be used to\nassess your active participation in the lectures.\nClass Readings\nClass readings are necessary but not mandatory. The material covered in class by your instructors will\nonly provide a fundamental understanding of the general context. If you are willing to effectively learn\na topic, you must actively work on it yourself. Reading is one of the most successful ways of learning\nabout a topic\nMissed Work\nMake ups for midterm and final exams will be provided if the student can provide a legal document\nconfirming a significant health issue at the time of the examination or with the approval of the\ninstructor.\nAssignment Rules\nAll assignment works must be done individually, unless explicitly stated in the homework assignment.\nA student can submit only one work. In case of multiple submissions, only the latest submission will\nbe considered. Students cannot submit work on other students’ behalf.\nLate Assignment Submission\nAssignments are expected to be completed by due date. For every day (24 hrs.) that the assignment\nis late after due date, 20% of the maximum will be deducted from the assignment score. No\nassignments will be accepted once they are four or more days late.\nExtra Credits\nExtra credits will not be provided.\nUse of Tools\nYou may use AI tools such as ChatGPT for allowed parts of the assignments. The allowed use of these\ntools will be announced as part of each assignment handout. It is mandatory to refer to your use of the\n\ntools including the URL, platform, prompt, time and date. You must also include sufficient number\nof screen snapshots of your use of these tools in your report. Otherwise your use will be considered\nas cheating.\nPlagiarism\nAll of the following are considered plagiarism:\n• turning in someone else's work as your own\n• copying words or ideas from someone else without giving credit\n• failing to put a quotation in quotation marks\n• giving incorrect information about the source of a quotation\n• changing words but copying the sentence structure of a source without giving credit\n• copying so many words or ideas from a source that it makes up the majority of your work,\nwhether you give credit or not” (www.plagiarism.org)\nPlagiarism is a very serious offense and will be penalized accordingly by the university disciplinary\ncommittee. The best way to avoid accidentally plagiarizing is to work on your own before you ask for\nthe help of other resources.\nCheating\nCheating has a very broad description which can be summarized as “acting dishonestly”. Some of the\nthings that can be considered as cheating are the following:\n• Copying answers on examinations, homework and laboratory works,\n• Using prohibited material on examinations,\n• Lying to gain any type of advantage in class\n• Providing false, modified or forged data in a report\n• Plagiarizing\n• Modifying graded material to be regraded.\n• Causing harm to colleagues by distributing false information about an examination, homework\nor laboratory\nCheating is also a very serious offense and will be penalized accordingly by the university disciplinary\ncommittee.\n\nCOURSE ASSIGNMENTS\nA. One Midterm Exam [35%]\nClosed-book written exam. The exam will most likely be held in the weekend. The exam hours\nand classrooms will be announced over Moodle.\nB. Programming Assignments [25%]\nThere will be five programming assignments. Each will involve developing a project in Java and\nsubmitting a written report on your work. The weight of each assignment toward the final grade\nwill be specified when the assignments are given.\nZoom meetings will be held to provide detailed information about the project requirements.\nAttendance to these online meetings is not mandatory, but valuable information will be provided\nto help you in your assignments.\nC. Final Exam [40%]\nClosed book exam\nImportant Notes:\nNote 1: A weighted midterm and final exam average of 30 points (out of 100) is required\nto pass this course. Students, who cannot satisfy this condition, will get an automatic F\ngrade.\nFor example, a student who gets:\n28 points (out of 100) from midterm exam;\n32 points (out of 100) from final exam\nwill satisfy this condition and will not get an automatic F : (28 x 35 + 32 x 40)/(35 + 40) = 30.133 > 30.\nHowever, the student may still get an F grade depending on the overall course performance.\nNote 2: To pass the course, a minimum 40/100 weighted grade is required for\nprogramming assignments. Students, who cannot satisfy this condition, will get an\nautomatic F grade.\nThe weighted average of programming assignments is calculated in a similar way to the exam\ngrades, as explained above.\n\nTENTATIVE COURSE OUTLINE\nW Day Topics Readings Assignments\nReview of Algorithms and Data\n1 22.09 – 28.09 Ch.4, Section 4.1\nStructures,\n2 29.09 – 05.10 Undirected Graphs Ch.4, Section 4.1\nAssignment 1:\n3 06.10 - 12.10 Undirected Graphs Ch.4, Section 4.1\n(Undir. Graphs)\n4 13.10 - 19.10 Directed Graphs Ch.4, Section 4.1\nAssignment 2:\n5 20.10 – 26.10 Directed Graphs Ch.4, Section 4.2\n(Dir. Graphs)\nDirected Graphs\n6 27.10 – 02.11 Ch.4, Section 4.2\nNO CLASS ON Tuesday / Wednesday\nAssignment 3:\n7 03.11 - ",
     "department": "CMPE",
     "offered_semesters": [
+      "Fall 2025",
       "Spring 2025"
     ],
     "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03",
+          "04"
+        ],
+        "instructors": [
+          "Tolga Kurtuluş Çapın",
+          "Mehmet Evren Coşkun"
+        ]
+      },
       "Spring 2025": {
         "sections": [
           "01",
@@ -287,9 +348,22 @@
     "syllabus_pdf_text": "",
     "department": "CMPE",
     "offered_semesters": [
+      "Fall 2025",
       "Spring 2025"
     ],
     "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03",
+          "04"
+        ],
+        "instructors": [
+          "Ayşe Yasemin Seydim",
+          "Deniz Cantürk"
+        ]
+      },
       "Spring 2025": {
         "sections": [
           "01",
@@ -340,9 +414,23 @@
     "syllabus_pdf_text": "",
     "department": "CMPE",
     "offered_semesters": [
+      "Fall 2025",
       "Spring 2025"
     ],
     "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "05"
+        ],
+        "instructors": [
+          "Fırat Akba",
+          "Eren Ulu"
+        ]
+      },
       "Spring 2025": {
         "sections": [
           "01",
@@ -391,9 +479,19 @@
     "syllabus_pdf_text": "TED UNIVERSITY, COURSE SYLLABUS\nSoftware/Computer\nFaculty Department\nEngineering Engineering\nCourse Information Security and\nCMPE 325-N Course Title\nCode & Number Cryptography\nCompulsory 2025-2026\nType of Course Semester\nElective Fall Spring\nCourse Credit Number of\n(3+0+0) 3 5\nHours ECTS Credits\nCMPE 211 OR CMPE 114\nPre-requisite Co-requisite\nMode of  Face-to-face Language of  English\nDelivery Distance learning Instruction Turkish\nCourse Dr. Elif KURTARAN Course Dr. Elif KURTARAN\nCoordinator ÖZBUDAK Lecturer(s) ÖZBUDAK\n- Cryptography and\nNetwork Security, 7th\nUnderstanding Ed., William Stallings\nCryptography:A Textbook\nRequired Recommended\nfor Students and - Cryptography: Theory\nReading Reading\nPractitioners, Christof and Practice. 4th Ed.,\nPaar, Jan Pelzl Douglas R. Stinson.\nSecurity concepts, stream ciphers and random numbers, block ciphers and block\nCourse Catalog cipher operations, modern crypto schemes; the Advanced Encryption Standard\nDescription (AES), DES , RSA, Diffie-Hellman key exchange, Digital Signature Algorithms,\nCryptographic Hash functions, Message Authentication Code, Protocols and key\nestablishment methods, public-key infrastructure.\nThe objective of this course is to provide the students the necessary knowledge about\nthe basics of cryptographic algorithms, and utilize these algorithms in computing\nCourse systems. Describe the use of cryptographic primitives to create secure systems,\nObjectives define and correctly implement cryptographic algorithms for the protection of\ninformation at rest and in transit. The students will be able to encrypt the information\nusing symmetric and asymmetric encryption algorithms.\nUpon successful completion of this course, a student will be able to\n1. Identify basics of cryptographic algorithms being used in information security.\n2. Understand block ciphers and stream ciphers\nCourse Learning\n3. Learn how to encrypt information using symmetric and asymmetric encryption\nOutcomes\nalgorithms.\n4. Learn cryptographic primitives to provide integrity, availability and\nconfidentiality.\n\n5. Be able to combine basic knowledge with applicable methodologies to solve\ninformation security related engineering problems.\n☒ Brainstorming ☒ Hands-on Activities ☐ Scaffolding / Coaching\n☒ Case Study/Scenario ☐ Inquiry ☒ Seminars\nAnalysis ☐ Microteaching ☐ Service Learning\n☐ Collaborating ☒ Oral Presentations / ☐ Simulations & Games\nLearning\n☒ Concept Mapping Reports ☒ Telling / Explaining\nActivities &\n☒ Demonstrating ☐ Peer Teaching ☐ Think-Pair-Share\nTeaching\nMethods1 ☒ Discussions / Debates ☒ Predict-Observe- ☒ Video Presentations\n☐ Drama / Role Playing Explain ☐ Web Searching\n☐ Experiments ☒ Problem Solving ☐ Other(s):……………\n☐ Field Trips ☒ Questioning\n☐ Guest Speakers ☒ Reading\n☒ Case Studies / ☐ Presentation (Oral,\n(10%) (... %)\nHomework Poster)\n☐ Lab Assignment (...%) ☐ Project (… %)\nAssessment ☐ Observation (...%) ☒ Quiz (10 %)\nMethods & ☐ Oral Questioning (...%) ☐ Self-evaluation (...%)\nCriteria2\n☐ Peer Evaluation (...%) ☒ Test/Exam (75 %)\n☐ Performance Project\n(...%) ☒ Other(s):In class\n(Written, Oral) (5%)\nactivities\n☐ Portfolio (...%)\n☒ Case Study (... hrs)\n(15 hrs) ☐ Online Discussion\nAnalysis\n☒ Course Readings (35 hrs) ☐ Oral Presentation (… hrs)\n☐ Debate (... hrs) ☐ Poster Presentation (... hrs)\n☐ Demonstration (... hrs) ☐ Report on a Topic (… hrs)\n☒ Exams/Quizzes (30 hrs) ☒ Research Review (10 hrs)\nStudent ☐ Field Trips/Visits ( hrs) ☐ Resource Review (... hrs)\nWorkload3\n☒ Hands-on Work (20 hrs) ☐ Team Meetings (… hrs)\n☐ Lab Applications (... hrs) ☐ Web Designs (... hrs)\n☒ Lectures (42 hrs) ☐ Work Placement (... hrs)\n☐ Mock Designs (... hrs) ☐ Workshop (... hrs)\n☐ Observation (... hrs) ☐ Other(s):……… (... hrs)\nTotal Workload4 152\n1 Multiple options possible.\n2 Multiple options possible. A percentage must be stated for the selected assessment method & criteria.\n3 Multiple options possible. The student workload is found by multiplying the number and duration (hour) of the activity\ninvolved.\n4 Computing the ECTS credits of a course: Total workload / 25 or 30 hours = ECTS credit and1 ECTS credit = 25-30 hours\n\nGRADING\nA. Midterm [35%]\nOne midterm exam that is worth 30% of the overall course grade.\nB. Quiz [10%]\nYou will have 2 announced quizzes.\nC. Assignments [10%]\nYou will be given 2 assignments each worth 5%.\nD. Active Class Participation [5%]\nIt is encouraged that you participate in class activities and discussions. Your grade for class activities\nis based on attendance and participation in in-class exercises. Points are awarded as follows:\nAttendance Level\nAbove 80% 5 points\nAbove 70% 4 points\nAbove 60% 3 points\nAbove 40% 2 points\nAbove 20% 1 point\nElse 0 points\nActive participation during activities is encouraged and may influence the final score within these\nranges.\nClass activities are conducted physically during lecture hours. Participation in these activities is\nrequired to receive class activity points.\nImportant: If it is discovered that a student submitted class activity work without attending the session\nin person (e.g., work uploaded from home or by a friend), the entire class activity grade will be\nreduced to zero for that student.\nE. Final Exam [40%]\nOne Final exam that is worth 40% of the overall course grade.\nCOURSE POLICIES\nAttendance\nAttending is NOT mandatory, but strongly recommended. Some hands-on activities and discussions\nwill be done in the lectures. If you would like to collect points for these activities ( see active class\nparticipation clause), you need to attend the lectures.\nMissed Work\nMake-up exam will be done only for midterm and final exam, if the student can provide a legal\ndocument confirming a life threatening health issue at the time of the exam, or with the consensus of\nthe CMPE faculty. (Only one Make up exam will be done at the end of the semester covering both\nmidterm and final). There will be no make-up for quizzes.\nLate Assignment Submission Policy\nLate submissions will be graded with 20% penalty for each day.\nExtra Credit\nExtra credits will not be offered.\n\nAssignment Rules\nAll assignment works must be done individually. A student can submit only one work. In case of\nmultiple submissions, only the latest submission will be considered. Students cannot submit work on\nother students’ behalf.\nPlagiarism\nAll of the following are considered plagiarism:\n• turning in someone else's work as your own\n• copying words or ideas from someone else without giving credit\n• failing to put a quotation in quotation marks\n• giving incorrect information about the source of a quotation\n• changing words but copying the sentence structure of a source without giving credit\n• copying so many words or ideas from a source that it makes up the majority of your work,\nwhether you give credit or not” (www.plagiarism.org)\nPlagiarism is a very serious offense and will be penalized accordingly by the university disciplinary\ncommittee. The best way to avoid accidentally plagiarizing is to work on your own before you ask for\nthe help of other resources.\nCheating\nCheating has a very broad description which can be summarized as “acting dishonestly”. Some of the\nthings that can be considered as cheating are the following:\n• Copying answers on examinations, homework and laboratory works,\n• Using prohibited material on examinations,\n• Lying to gain any type of advantage in class\n• Providing false, modified or forged data in a report\n• Plagiarizing.\n• Modifying graded material to be regraded.\n• Causing harm to colleagues by distributing false information about an examination, homework\nor laboratory\nCheating is a very serious offense and will be penalized accordingly by the university disciplinary\ncommittee.\nClass Readings\nClass readings are necessary but not mandatory. The material covered in class by your instructor will\nonly provide a fundamental understanding of the general context. The reading materials will be\nprovided by the instructor, at the relevant week.\n\nTENTATİVE COURSE OUTLINE\nAssignments, quizzes,\nWeek Topics Readings\nand exams\n22.09-26.09 Introduction to Chapter 1.1, 1.2,\nCryptography 1.3\n30.09-3.10 Modular Arithmetic and Chapter 1.4\nHistorical Ciphers\n6.10-10.10 Stream Ciphers and Chapter 2.1,\nRandom Numbers 2.2.2.1, 2.2.2, 2.3\n13.10-17.10 Block Ciphers and DES Chapter 3.1, 3.2,\n3.3, 3.4, 3.5\n20.10-24.10 Advanced Encryption Chapter 4.1, 4.2, Assignment 1\nStandard 4.3, 4.4\n(Due : 26.10.2025 )\n27.10-31.10 Advanced Encryption Chapter 4.1, 4.2, Quiz1 (30.10.2025)\nStandard 4.3, 4.4\n3.11-7.11 Block Cipher Operations Chapter 5.1.1, Midterm\n5.1.2, 5.1.3\n(03.11.2025 Monday\n19:00)\n10.11-14.11 Introduction to Public-Key Chapter 6.1, 6.2\nCryptography\n17.11-21.11 Number Theory for Public- Chapter 6.3\nKey Cryptography\n24.11-28.11 RSA Cryptosystem Chapter 7.1, 7.2,\n7.3, 7.4\n1.12-5.12 Diffie- Hellman Key Chapter 8.1, 8.3,\nExchange and Discrete Log 8.4\nProblem\n8.12-12.12 Digital Signatures Chapter 10.1, 10.2 Assignment 2\n(Due : 14.12.2025 )\n15.12-19.12 Hash Functions Chapter 11.2, Quiz 2\n11.4,12.1, 12.2\n22.12-26.12 Message Authentication Chapter 12.1, 12.2\nCodes\nDr. Elif KURTARAN\nPrepared By & ÖZBUDAK\nRevision Date\nDate 09/09/2025\n\nSTUDENT SERVICES INFO:\nStudent Development and Psychological Counseling Center:\nThe Center is a service mandated with providing crisis intervention and supportive listening services\nto the campus community. A major part of fulfilling that mandate is raising awareness of our service\nso students know they are never alone in dealing with problems. You may contact the SDPCC\nat: ogrencidanismamerkezi@tedu.edu.tr, 0312 585 0316, Office A122, Or visit their website at\nhttp://csc.tedu.edu.tr/\nTEDU COPeS - Psycho-Social Support\nTED University Psychosocial Support Team was initially established in order to facilitate coping with\nthe psychological, social, familial, academic, and professional difficulties that may arise due to\nadverse conditions associated with COVID-19 pandemic for TEDU students and employees.\nIn time we have expanded our services t",
     "department": "CMPE",
     "offered_semesters": [
+      "Fall 2025",
       "Spring 2025"
     ],
     "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01",
+          "02"
+        ],
+        "instructors": [
+          "Elif Kurtaran Özbudak"
+        ]
+      },
       "Spring 2025": {
         "sections": [
           "01",
@@ -442,9 +540,23 @@
     "syllabus_pdf_text": "",
     "department": "CMPE",
     "offered_semesters": [
+      "Fall 2025",
       "Spring 2025"
     ],
     "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "05"
+        ],
+        "instructors": [
+          "Fırat Akba",
+          "Eren Ulu"
+        ]
+      },
       "Spring 2025": {
         "sections": [
           "01",
@@ -496,9 +608,22 @@
     "syllabus_pdf_text": "TED UNIVERSITY, COURSE SYLLABUS\nFaculty Engineering Department CMPE\nCourse Data Structures and\nCMPE 224 / CMPE 343 Course Title\nCode & Number Algorithms II\nþ Compulsory 2025-2026\nType of Course Semester\n¨ Elective þFall ¨Spring ¨ Summer\nCourse Credit Number of ECTS\n(3+0+0) 3 6\nHours Credits\nPre-requisite N/A Co-requisite N/A\nMode of þ Face-to-face Language of þ English\nDelivery ¨Distance learning Instruction ¨ Turkish\nCourse Course\nProf. Tolga Çapın Prof. Tolga Çapın\nCoordinator Lecturer(s)\nRequired Sedgewick, Wayne, Algorithms, Recommended Marc Allen Weiss, Data Structures\nReading 4th Edition, 2011. Reading and Algorithms in Java, 3rd Ed.\nUndirected graphs. Directed graphs. Minimum spanning trees. Shortest paths.\nMaximum flow and minimum cut. Radix sorts. Tries. Substring search.\nCourse Catalog\nRegular expressions. Data compression. Reductions. Intractability. Linear\nDescription\nprogramming.\nThe general objective of this course is to introduce advanced data structures.\nThis course introduces the use of graphs in problem solving and algorithm\ndevelopment and describes how to develop algorithms using advanced graph\nCourse data structures. This course then focuses on advanced string data structures\nObjectives and operations. The course includes the use of different algorithm-design\ntechniques, such as greedy, divide-and-conquer, and linear programming\ntechniques, to solve particular problems.\nUpon successful completion of this course, a student will be able to\n1. Use graph and string data structures in modeling and solving problems,\n2. Design graph and string-based algorithms,\nCourse\n3. Apply different algorithm-design techniques, including but not limited to,\nLearning\ngreedy, divide-and-conquer, and dynamic programming techniques, to\nOutcomes\nsolve problems,\n4. Analyze data structures and algorithms in terms of time and space\ncomplexity.\nUndirected graphs. Directed graphs. Minimum spanning trees. Shortest paths.\nCourse Maximum flow and minimum cut. Radix sorts. Tries. Substring search. Regular\nContents expressions. Data compression. Reductions. Intractability. Linear\nprogramming.\n\nþ Telling/Explaining ¨ Simulations & Games\nþ Discussions/Debates ¨ Video Presentations\nþ Questioning ¨ Oral Presentations/Reports\nþ Reading þ Concept Mapping\n¨ Peer Teaching ¨ Brainstorming\nTeaching ¨ Scaffolding/Coaching ¨ Drama/Role Playing\nMethods & ¨ Demonstrating ¨ Seminars\nLearning þ Problem Solving ¨ Field Trips\nActivities ¨ Inquiry ¨ Guest Speakers\n¨ Collaborating þ Hands-on Activities\n¨ Think-Pair-Share ¨ Service Learning\n¨ Predict-Observe-Explain ¨ Web Searching\n¨ Microteaching ¨ Experiments\n¨ Case Study/Scenario Analysis ¨ Other(s): .................................................\nþ Test/Exam ¨ Observation\nAssessment þ Quiz/Homework ¨ Self-evaluation\nMethods ¨ Oral Questioning ¨ Peer Evaluation\n(Formal & ¨ Performance Project ¨ Portfolio\nInformal) ¨ Written ¨ Presentation (Oral, Poster)\n¨ Oral ¨ Other(s): ....................................................\nþ Lectures .....................................42.. hrs\nþ Course Readings ....................10.. hrs\n¨ Workshop ......................................... hrs ¨ Resource Review ........................... hrs\n¨ Online Discussion .......................... hrs ¨ Research Review ........................... hrs\n¨ Debate ................................................. hrs ¨ Report on a Topic .......................... hrs\n¨ Work Placement ............................. hrs ¨ Case Study Analysis ...................... hrs\nStudent\n¨ Field Trips/Visits ........................... hrs ¨ Oral Presentation ......................... hrs\nWorkload\n¨ Observation ...................................... hrs ¨ Poster Presentation ...................... hrs\n¨ Lab Applications ............................ hrs ¨ Demonstration ................................ hrs\n(Total 182 Hrs)\n¨ Hands-on Work .............................. hrs ¨ Web Designs .................................... hrs\nþ Homeworks ..............................60.. hrs ¨ Mock Designs ................................... hrs\nþ Midterm I……….........................20.. hrs ¨ Team Meetings................................. hrs\nþ Midterm II…..….........................20.. hrs ¨ Other ................................................... hrs\nþ Final…..….....................................30.. hrs\n\nCOURSE DETAILS\nAttendance:\nAt least 70% of class attendance is mandatory. Course attendance will be recorded at each lecture.\nYour attendance level will be assessed by the percentage of the attendance handouts that you have\nsigned.\nHands-On Activities\nYou will be assigned a hands-on activity each week. You are expected to submit your answers to\nhands-on activities (you are expected to upload your answers to Moodle for online sessions, or submit\nyour work for face-to-face lectures). The hands-on activities are ungraded but they will be used to\nassess your active participation in the lectures.\nClass Readings\nClass readings are necessary but not mandatory. The material covered in class by your instructors will\nonly provide a fundamental understanding of the general context. If you are willing to effectively learn\na topic, you must actively work on it yourself. Reading is one of the most successful ways of learning\nabout a topic\nMissed Work\nMake ups for midterm and final exams will be provided if the student can provide a legal document\nconfirming a significant health issue at the time of the examination or with the approval of the\ninstructor.\nAssignment Rules\nAll assignment works must be done individually, unless explicitly stated in the homework assignment.\nA student can submit only one work. In case of multiple submissions, only the latest submission will\nbe considered. Students cannot submit work on other students’ behalf.\nLate Assignment Submission\nAssignments are expected to be completed by due date. For every day (24 hrs.) that the assignment\nis late after due date, 20% of the maximum will be deducted from the assignment score. No\nassignments will be accepted once they are four or more days late.\nExtra Credits\nExtra credits will not be provided.\nUse of Tools\nYou may use AI tools such as ChatGPT for allowed parts of the assignments. The allowed use of these\ntools will be announced as part of each assignment handout. It is mandatory to refer to your use of the\n\ntools including the URL, platform, prompt, time and date. You must also include sufficient number\nof screen snapshots of your use of these tools in your report. Otherwise your use will be considered\nas cheating.\nPlagiarism\nAll of the following are considered plagiarism:\n• turning in someone else's work as your own\n• copying words or ideas from someone else without giving credit\n• failing to put a quotation in quotation marks\n• giving incorrect information about the source of a quotation\n• changing words but copying the sentence structure of a source without giving credit\n• copying so many words or ideas from a source that it makes up the majority of your work,\nwhether you give credit or not” (www.plagiarism.org)\nPlagiarism is a very serious offense and will be penalized accordingly by the university disciplinary\ncommittee. The best way to avoid accidentally plagiarizing is to work on your own before you ask for\nthe help of other resources.\nCheating\nCheating has a very broad description which can be summarized as “acting dishonestly”. Some of the\nthings that can be considered as cheating are the following:\n• Copying answers on examinations, homework and laboratory works,\n• Using prohibited material on examinations,\n• Lying to gain any type of advantage in class\n• Providing false, modified or forged data in a report\n• Plagiarizing\n• Modifying graded material to be regraded.\n• Causing harm to colleagues by distributing false information about an examination, homework\nor laboratory\nCheating is also a very serious offense and will be penalized accordingly by the university disciplinary\ncommittee.\n\nCOURSE ASSIGNMENTS\nA. One Midterm Exam [35%]\nClosed-book written exam. The exam will most likely be held in the weekend. The exam hours\nand classrooms will be announced over Moodle.\nB. Programming Assignments [25%]\nThere will be five programming assignments. Each will involve developing a project in Java and\nsubmitting a written report on your work. The weight of each assignment toward the final grade\nwill be specified when the assignments are given.\nZoom meetings will be held to provide detailed information about the project requirements.\nAttendance to these online meetings is not mandatory, but valuable information will be provided\nto help you in your assignments.\nC. Final Exam [40%]\nClosed book exam\nImportant Notes:\nNote 1: A weighted midterm and final exam average of 30 points (out of 100) is required\nto pass this course. Students, who cannot satisfy this condition, will get an automatic F\ngrade.\nFor example, a student who gets:\n28 points (out of 100) from midterm exam;\n32 points (out of 100) from final exam\nwill satisfy this condition and will not get an automatic F : (28 x 35 + 32 x 40)/(35 + 40) = 30.133 > 30.\nHowever, the student may still get an F grade depending on the overall course performance.\nNote 2: To pass the course, a minimum 40/100 weighted grade is required for\nprogramming assignments. Students, who cannot satisfy this condition, will get an\nautomatic F grade.\nThe weighted average of programming assignments is calculated in a similar way to the exam\ngrades, as explained above.\n\nTENTATIVE COURSE OUTLINE\nW Day Topics Readings Assignments\nReview of Algorithms and Data\n1 22.09 – 28.09 Ch.4, Section 4.1\nStructures,\n2 29.09 – 05.10 Undirected Graphs Ch.4, Section 4.1\nAssignment 1:\n3 06.10 - 12.10 Undirected Graphs Ch.4, Section 4.1\n(Undir. Graphs)\n4 13.10 - 19.10 Directed Graphs Ch.4, Section 4.1\nAssignment 2:\n5 20.10 – 26.10 Directed Graphs Ch.4, Section 4.2\n(Dir. Graphs)\nDirected Graphs\n6 27.10 – 02.11 Ch.4, Section 4.2\nNO CLASS ON Tuesday / Wednesday\nAssignment 3:\n7 03.11 - ",
     "department": "CMPE",
     "offered_semesters": [
+      "Fall 2025",
       "Spring 2025"
     ],
     "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03",
+          "04"
+        ],
+        "instructors": [
+          "Tolga Kurtuluş Çapın",
+          "Mehmet Evren Coşkun"
+        ]
+      },
       "Spring 2025": {
         "sections": [
           "01",
@@ -548,9 +673,22 @@
     "syllabus_pdf_text": "",
     "department": "CMPE",
     "offered_semesters": [
+      "Fall 2025",
       "Spring 2025"
     ],
     "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03",
+          "04"
+        ],
+        "instructors": [
+          "Saiful Islam",
+          "Mehmet Evren Coşkun"
+        ]
+      },
       "Spring 2025": {
         "sections": [
           "01",
@@ -600,9 +738,22 @@
     "syllabus_pdf_text": "",
     "department": "CMPE",
     "offered_semesters": [
+      "Fall 2025",
       "Spring 2025"
     ],
     "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03",
+          "04"
+        ],
+        "instructors": [
+          "Gökçe Nur Yılmaz",
+          "Javad Haghighat"
+        ]
+      },
       "Spring 2025": {
         "sections": [
           "01",
@@ -649,9 +800,18 @@
     "syllabus_pdf_text": "",
     "department": "CMPE",
     "offered_semesters": [
+      "Fall 2025",
       "Spring 2025"
     ],
     "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Ayşe Yasemin Seydim"
+        ]
+      },
       "Spring 2025": {
         "sections": [
           "01"
@@ -694,9 +854,21 @@
     "syllabus_pdf_text": "",
     "department": "CMPE",
     "offered_semesters": [
+      "Fall 2025",
       "Spring 2025"
     ],
     "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03",
+          "04"
+        ],
+        "instructors": [
+          "Ali Berkol"
+        ]
+      },
       "Spring 2025": {
         "sections": [
           "01",
@@ -745,9 +917,22 @@
     "syllabus_pdf_text": "",
     "department": "CMPE",
     "offered_semesters": [
+      "Fall 2025",
       "Spring 2025"
     ],
     "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01",
+          "02",
+          "03",
+          "04"
+        ],
+        "instructors": [
+          "Saiful Islam",
+          "Hakkı Gökhan İlk"
+        ]
+      },
       "Spring 2025": {
         "sections": [
           "01",
@@ -795,9 +980,19 @@
     "syllabus_pdf_text": "TED UNIVERSITY, COURSE SYLLABUS\nFaculty Engineering Department Computer Engineering\nComputer\nCourse Code & Number CMPE 472 Course Title\nNetworks\n Compulsory\nType of Course Semester  Fall Spring Summer\n Elective\nLevel of Course BSc Year of Study Sophomore\nCourse Credit Hours (2+2+0) 3 Number of ECTS Credits 6\nPre-requisite N/A Co-requisite N/A\nFace-to-face\n English\nMode of Delivery Distance learning Language of Instruction\nTurkish\nOnline via Zoom\nCourse Coordinator Asst.Prof.Dr. Emin KUĞU Course Lecturers Asst.Prof.Dr. Emin KUĞU\nComputer Networking,\n7th Edition (2016) by\nJames F. Kurose,\nKeith W. Ross\nRequired Reading Course Assistant(s)\nISBN-13: 978-\n0133594140\nISBN-10:\n9780133594140\nCommunication model, protocol architecture. OSI. Internet & TCP/IP. Wide Area Networks,\nCourse Catalog ATM, Circuit & Packet Switching. Cellular wireless networks. Local Area Networks, High speed\nDescription LANs, Wireless LANs, Internetworking, IPv6/IPv4. TCP congestion control, UDP, Network\nsecurity.\nThis course is an introduction to computer networks, with a focus on the Internet. We will focus\non computer networking design principles and the fundamental mechanisms of the Internet.\nMore specifically, we will cover the following topics:\n1. Organization of the Internet (Internet Service Providers, Content Providers, etc.)\n2. Switching techniques (e.g., circuit & packet switching)\nCourse Objectives\n3. Physical pieces of a network, including hosts, routers, switches, ISPs, wireless, LAN, access\npoint, and firewalls\n4. Layering principles (encapsulation, multiplexing)\n5. Roles of the different layers (application, transport, network, datalink, physical)\n6. Network Security (Private and public key cryptography)\n1. Analyze the fundamentals of computer networking,\n2. Recognize the functions of high-level network protocols such as routing, DNS, HTTP and\nARP,\nCourse Learning 3. Assess the functions of transport protocol, connectionless and connection orientation, the\nOutcomes principles of reliable data transfer, congestion, and flow control,\n4. Use network tools to observe and analyze network protocols,\n5. Describe link layer 802.11(a/b/g, wifi) and 802.3 (Ethernet) protocols,\n6. Construct client-server socket-based program.\n Telling/Explaining  Simulations & Games\n Discussions/Debates  Video Presentations\n Questioning  Oral presentations/Reports\nTeaching Methods &\n Reading  Concept Mapping\nLearning Activities\n Peer teaching  Brainstorming\n Scaffolding/Coaching  Drama/Role Playing\n Demonstrating  Seminars\n\n Problem solving  Field Trips\n Collaborating  Guest Speakers\n Think-Pair-Share  Hands-on Activities\n Microteaching  Experiments\n Case Study/Scenario Analysis  Other(s): …………………………….\n Test/Exam  Observation\n Quiz/Homework  Self-evaluation\nAssessment Methods Oral Questioning  Peer-evaluation\n(Formal & Informal)  Laboratory work  Portfolio\n Performance Project  Presentation (Oral, Poster)\n Other(s): …………………………….\n Midterm I ………………………………… 20 hrs\n Lectures ………………………………………… 28 hrs\n Midterm II ……………………………………. hrs\n Course Readings ….………………………. 29 hrs\n Final ………………………………………… 20 hrs\n Workshop …………………………………………… hrs\n Resource Review …………………….……. hrs\n Online Discussion ..……….……………………. hrs\n Research Review …………………………. hrs\n Debate .………………………………………………. hrs\n Report on a Topic ………………………... hrs\n Work Placement ………………………………… hrs\nStudent Workload  Case Study Analysis …………….……….. hrs\n Field Trips/Visits …………………………………. hrs\n(Total 175 Hrs)  Oral Presentation ………………..………. hrs\n Observation ……………………………………….. hrs\n Poster Presentation ………….……….. hrs\n Laboratory Applications ………………… 28 hrs\n Demonstration ………………………..….. hrs\n Quizzes ………………………………………….. 10 hrs\n Web Designs ………………………………… hrs\n Hands-on Work ………………………………….. hrs\n Mock Designs ………………………………. hrs\n Homework ………………………………………40 hrs\n Team Meetings ……………………………. hrs\n Other …………………………………………… hrs\nGRADING\nA. Midterm [25%]\nMidterm exam worth 25% of the overall grade.\nB. Final [35%]\nFinal exam worth 35% of the overall grade.\nC. Quizzes: [15%]\nThere will be 4 quizzes, each will contribute 3,75% towards your overall grade.\nD. Laboratory Works [15%]\nThere will be 5 graded lab activities, each is worth 3% towards your overall grade.\nE. Programming Assignments [10%]\nThere will be 2 programming assignments, each is worth 5% towards your overall grade.\nCOURSE POLICIES\nⅠ. Attendance\nAttendance to the 60% of lectures is mandatory.\nAttendance to the 75% of lab activities is mandatory.\nⅡ. Missed Work\nMake-ups for Midterm and Final exams will be provided if the student can provide a medical document confirming a\nsignificant health issue on the day of the exam. Please be aware that the applicable medical documents are updated.\nThere will be no makeup for quizzes, labs and programming assignments\nⅢ. Extra Credit\nExtra credits will not be offered.\nⅣ. Assignment Rules\nAll assignment works must be done individually. A student can submit only one work. In case of multiple submissions, only\nthe latest submission will be considered. Students cannot submit work on other students’ behalf.\nLate submissions will be penalized by 15% for each day past the deadline.\nⅤ.Plagiarism\n\nAll of the following are considered plagiarism.\n• turning in someone else's work as your own\n• copying words or ideas from someone else without giving credit\n• failing to put a quotation in quotation marks.\n• giving incorrect information about the source of a quotation\n• changing words but copying the sentence structure of a source without giving\ncredit\n• copying so many words or ideas from a source that it makes up the majority of\nyour work, whether you give credit or not ( www.plagiarism.org )\n• asking quiz, activity or assignment questions on online places, such as\nstackoverflow.com.\nPlagiarism is a very serious offense and will be penalized accordingly by the university disciplinary committee.\nThe students who are involved in any plagiarism activity will be subjected to disciplinary action.\nⅥ. Cheating\nCheating has a very broad description which can be summarized as “acting dishonestly”. Some of the things that can be\nconsidered as cheating are the following:\n• Copying answers on examinations, homework and laboratory works,\n• Using prohibited material on examinations,\n• Lying to gain any type of advantage in class.\n• Providing false, modified or forged data in a report\n• Plagiarizing\n• Modifying graded material to be regraded.\n• Causing harm to colleagues by distributing false information about an examination, homework or laboratory\nCheating is a very serious offense and will be penalized accordingly by the university disciplinary committee.\nⅦ. Class Participation\nIf you do not attend the laboratory and complete the requested tasks, you cannot /will not get the assigned points from the\nlaboratory. By actively participating in class, you can improve your learning process and immediately confirm what you have\nearned and what you have not internalized.\nⅧ. Class Readings\nClass readings are necessary but not mandatory. The material covered in class by your instructor will only provide a\nfundamental understanding of the general context. If you are willing to effectively learn something, you must actively work\non it yourself. Reading is one of the most successful ways of learning about a topic.\nIX. Student Development and Psychological Counseling Center\nStudent Development and Psychological Counseling Centre is mandated with providing crisis intervention and supportive\nlistening services to the campus community. The Center conducts individual counseling, group guidance studies, workshops,\nseminars, and orientation studies for all students in need. You may apply to the Center in order to deal with all your current\nproblems.\nFor further information and/or questions: ogrencidanismamerkezi@tedu.edu.tr, http://csc.tedu.edu.tr/\nX. TEDU Without Barriers Unit\nPlease inform the TEDU Without Barriers Unit and the instructor of the course about the specific issues in case you have a\nphysical or mental disability and are having trouble with anything related to this course—such as accessing the material,\nparticipating in the class, taking notes, preparing for, attending or managing to complete the exams. Your situation will be\nreviewed by commission, in accordance with the principle of confidentiality, and if deemed appropriate, facilitating\nmeasures will be taken so that you can take the course more efficiently.\nFor further information and/or questions: engelsiz@tedu.edu.tr, https://www.tedu.edu.tr/engelsiz-tedu\n\nTENTATIVE COURSE OUTLINE\nWeek Topic Reading LABS / QUIZZES / EXAMS\nIntroduction - The Internet and\nW1 22.09 - 26.09 CH 1.1 - 1.3 NO LAB\nComputer Networks\nW2 29.02 - 03.10 Delay, Loss, Throughput, Protocols CH 1.4 - 1.7 Wireshark Installation\nApplication Layer (Layer 5): Principles\nW3 06.10 - 10.10 CH 2.1 - 2.2 Lab 1: HTTP\nof Network Applications, HTTP\nW4 13.10 - 17.10 SMTP, DNS, Socket Programming CH 2.3 - 2.7 Quiz 1 at lab hours\nTransport Layer (Layer 4):\nW5 20.10 - 24.10 CH 3.1 - 3.3 Prog. Assingment-1 (Web Server)\nTransport Layer Services, UDP\nW6 27.10 – 31.10 Principles of Reliable Data Transfer CH 3.4 Lab 2: DNS\nW7 03.11 - 07.11 TCP and Congestion Control CH 3.5 – 3.7 Lab 3: UDP, TCP\nCH 3.7\nW8 10.11 – 14.11 Network Layer (Data Plane) MIDTERM (15.11.2025, 16:00)\nCH 4.1 – 4.2\nQuiz-2 at lab hours\nW9 17.11 - 21.11 IP and addressing CH 4.3 - 4.4\nProg. Assingment-2 (UDP Pinger)\nNetwork Layer (Control Plane):\nW10 24.11 - 28.11 CH 5.1 – 5.4 Lab 4: IP\nRouting Algorithms\nNetwork Layer (Control Plane) :\nW11 01.12 - 05.12 CH 5.5 – 5.7 Quiz-3 at lab hours\nRouting, SDN, ICMP, SNMP\nLink Layer (Layer 2): Error Detection\nW12 08.12 - 12.12 CH 6.1 - 6.3 Lab 5: NAT\nand Multiple Access\nW13 15.12 - 16.12 LANs, MPLS CH 6.4 - 6.7\nW14 22.12 - 26.12 Wireless Networks: Wi-Fi 802.11 Quiz-4 at lab hours\nPrepared by Emin KUĞU, on 15/09/2025",
     "department": "CMPE",
     "offered_semesters": [
+      "Fall 2025",
       "Spring 2025"
     ],
     "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01",
+          "03"
+        ],
+        "instructors": [
+          "Emin Kuğu"
+        ]
+      },
       "Spring 2025": {
         "sections": [
           "01",
@@ -838,9 +1033,18 @@
     "syllabus_pdf_text": "",
     "department": "CMPE",
     "offered_semesters": [
+      "Fall 2025",
       "Spring 2025"
     ],
     "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Tolga Kurtuluş Çapın"
+        ]
+      },
       "Spring 2025": {
         "sections": [
           "01"
@@ -884,9 +1088,19 @@
     "syllabus_pdf_text": "",
     "department": "CMPE",
     "offered_semesters": [
+      "Fall 2025",
       "Spring 2025"
     ],
     "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "O_1",
+          "01"
+        ],
+        "instructors": [
+          "Gökçe Nur Yılmaz"
+        ]
+      },
       "Spring 2025": {
         "sections": [
           "O_1",
@@ -930,9 +1144,19 @@
     "syllabus_pdf_text": "",
     "department": "CMPE",
     "offered_semesters": [
+      "Fall 2025",
       "Spring 2025"
     ],
     "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "O_1",
+          "01"
+        ],
+        "instructors": [
+          "Gökçe Nur Yılmaz"
+        ]
+      },
       "Spring 2025": {
         "sections": [
           "O_1",
@@ -978,9 +1202,19 @@
     "syllabus_pdf_text": "",
     "department": "CMPE",
     "offered_semesters": [
+      "Fall 2025",
       "Spring 2025"
     ],
     "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "O_1",
+          "01"
+        ],
+        "instructors": [
+          "Ayşe Yasemin Seydim"
+        ]
+      },
       "Spring 2025": {
         "sections": [
           "O_1",
@@ -1021,9 +1255,18 @@
     "syllabus_pdf_text": "",
     "department": "CMPE",
     "offered_semesters": [
+      "Fall 2025",
       "Spring 2025"
     ],
     "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Gökçe Nur Yılmaz"
+        ]
+      },
       "Spring 2025": {
         "sections": [
           "01"
@@ -1063,9 +1306,18 @@
     "syllabus_pdf_text": "",
     "department": "CMPE",
     "offered_semesters": [
+      "Fall 2025",
       "Spring 2025"
     ],
     "semester_data": {
+      "Fall 2025": {
+        "sections": [
+          "01"
+        ],
+        "instructors": [
+          "Gökçe Nur Yılmaz"
+        ]
+      },
       "Spring 2025": {
         "sections": [
           "01"

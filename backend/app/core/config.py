@@ -43,9 +43,20 @@ class Settings(BaseSettings):
     # Groq API
     GROQ_API_KEY: str = ""
     
+    # Azure/Microsoft (optional - not used with public client)
+    AZURE_CLIENT_ID: str = ""
+    AZURE_CLIENT_SECRET: str = ""
+    AZURE_TENANT_ID: str = "common"
+    AZURE_REDIRECT_URI: str = ""
+    AZURE_AUTHORITY: str = ""
+    
+    # Foursquare API
+    FOURSQUARE_API_KEY: str = ""
+    
     model_config = SettingsConfigDict(
         env_file=".env",
-        case_sensitive=True
+        case_sensitive=True,
+        extra="ignore"  # Ignore extra fields in .env
     )
 
 

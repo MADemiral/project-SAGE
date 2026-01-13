@@ -238,6 +238,39 @@ CREATE INDEX IF NOT EXISTS idx_events_source ON events(source, external_id);
 CREATE TRIGGER update_events_updated_at BEFORE UPDATE ON events
     FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
 
+-- Create calendar_events table for email-extracted events
+CREATE TABLE IF NOT EXISTS calendar_events (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    event_date TIMESTAMP WITH TIME ZONE NOT NULL,
+    end_date TIMESTAMP WITH TIME ZONE,
+    location VARCHAR(255),
+    event_type VARCHAR(50),  -- exam, deadline, meeting, class, assignment, etc.
+    priority VARCHAR(20) DEFAULT 'normal',  -- low, normal, high, urgent
+    source VARCHAR(50) DEFAULT 'email',  -- email, manual, imported
+    email_id VARCHAR(255),  -- Original email message ID
+    email_subject TEXT,
+    raw_email_content TEXT,  -- Store original email content for reference
+    llm_extraction_data JSONB,  -- Store the full LLM response
+    is_confirmed BOOLEAN DEFAULT FALSE,  -- User can confirm or reject extracted events
+    reminder_sent BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE
+);
+
+-- Create indexes for calendar_events
+CREATE INDEX IF NOT EXISTS idx_calendar_events_user_id ON calendar_events(user_id);
+CREATE INDEX IF NOT EXISTS idx_calendar_events_date ON calendar_events(event_date);
+CREATE INDEX IF NOT EXISTS idx_calendar_events_type ON calendar_events(event_type);
+CREATE INDEX IF NOT EXISTS idx_calendar_events_priority ON calendar_events(priority);
+CREATE INDEX IF NOT EXISTS idx_calendar_events_confirmed ON calendar_events(is_confirmed);
+CREATE INDEX IF NOT EXISTS idx_calendar_events_email_id ON calendar_events(email_id);
+
+CREATE TRIGGER update_calendar_events_updated_at BEFORE UPDATE ON calendar_events
+    FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+
 -- Grant permissions (if using specific roles)
 -- GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO sage_user;
 -- GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO sage_user;

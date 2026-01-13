@@ -57,6 +57,11 @@ services:
       - FSQ_API_KEY=${FSQ_API_KEY}
       - FSQ_CLIENT_ID=${FSQ_CLIENT_ID}
       - FSQ_CLIENT_SECRET=${FSQ_CLIENT_SECRET}
+      - AZURE_CLIENT_ID=${AZURE_CLIENT_ID}
+      - AZURE_CLIENT_SECRET=${AZURE_CLIENT_SECRET}
+      - AZURE_TENANT_ID=${AZURE_TENANT_ID}
+      - AZURE_REDIRECT_URI=${AZURE_REDIRECT_URI}
+      - AZURE_AUTHORITY=${AZURE_AUTHORITY}
     volumes:
       - ./backend:/app
       - ./data:/app/data
