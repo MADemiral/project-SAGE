@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Calendar, Mail, RefreshCw, CheckCircle, AlertCircle, Lock, Trash2, ArrowUpDown, Check, X, Plus, ChevronLeft, ChevronRight, Edit, LogOut } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
+import { useTheme } from '../context/ThemeContext';
 
 const CalendarPage = () => {
   const { user } = useAuth(); // Get authenticated user from context
+  const { isDark } = useTheme(); // Get theme context
   const [emails, setEmails] = useState([]);
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -368,7 +370,7 @@ const CalendarPage = () => {
   };
 
   return (
-    <div className="flex h-screen bg-dark-950 text-white overflow-hidden">
+    <div className={`flex h-screen ${isDark ? 'bg-dark-950 text-white' : 'bg-gray-50 text-gray-900'} overflow-hidden`}>
       <div className="flex-1 flex flex-col overflow-hidden">
         <div className="flex-1 overflow-y-auto">
           <div className="max-w-7xl mx-auto p-6">
@@ -379,7 +381,7 @@ const CalendarPage = () => {
                   <h1 className="text-3xl font-bold bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent">Calendar & Email</h1>
                 </div>
               </div>
-            <p className="text-dark-400">Sign in with your Gmail account to fetch and manage your calendar events</p>
+            <p className={isDark ? 'text-dark-400' : 'text-gray-600'}>Sign in with your Gmail account to fetch and manage your calendar events</p>
           </div>
         {error && (
           <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-lg flex items-start gap-3">
