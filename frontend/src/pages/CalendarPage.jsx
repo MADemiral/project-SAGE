@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Calendar, Mail, RefreshCw, CheckCircle, AlertCircle, Lock, Trash2, ArrowUpDown, Check, X, Plus, ChevronLeft, ChevronRight, Edit, LogOut } from 'lucide-react';
+import { Calendar, Mail, RefreshCw, CheckCircle, AlertCircle, Lock, Trash2, ArrowUpDown, Check, X, Plus, ChevronLeft, ChevronRight, LogOut } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useTheme } from '../context/ThemeContext';
 
@@ -29,7 +29,6 @@ const CalendarPage = () => {
   const [selectedEvent, setSelectedEvent] = useState(null); // Event clicked on calendar
   const [showConfirmPopup, setShowConfirmPopup] = useState(false); // Confirmation popup
   const [savingEvents, setSavingEvents] = useState(false); // Track save progress
-  const [editingEvent, setEditingEvent] = useState(null); // Event being edited
   // Calendar is always visible on this page - no popup needed
 
   useEffect(() => {
@@ -964,17 +963,7 @@ const CalendarPage = () => {
 
             {/* Action Buttons - Only show for single events from calendar, not "all day events" */}
             {!selectedEvent.allDayEvents && selectedEvent.id && (
-              <div className="p-6 bg-dark-900/50 rounded-b-xl flex gap-3 border-t border-dark-700">
-                <button
-                  onClick={() => {
-                    setEditingEvent(selectedEvent);
-                    setSelectedEvent(null);
-                  }}
-                  className="flex-1 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
-                >
-                  <Edit className="w-5 h-5" />
-                  Edit Event
-                </button>
+              <div className="p-6 bg-dark-900/50 rounded-b-xl border-t border-dark-700">
                 <button
                   onClick={async () => {
                     if (confirm(`Are you sure you want to delete "${selectedEvent.title}"?`)) {
@@ -989,7 +978,7 @@ const CalendarPage = () => {
                       }
                     }
                   }}
-                  className="flex-1 px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg font-medium transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
+                  className="w-full px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg font-medium transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
                 >
                   <Trash2 className="w-5 h-5" />
                   Delete Event
