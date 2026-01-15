@@ -60,7 +60,18 @@ export const AuthProvider = ({ children }) => {
     }
   }
 
-  const logout = () => {
+  const logout = async () => {
+    // Logout from IMAP session first
+    try {
+      await fetch('http://localhost:8000/api/v1/calendar/imap/logout', {
+        method: 'POST'
+      });
+    } catch (error) {
+      console.error('IMAP logout failed:', error);
+      // Continue with main logout even if IMAP logout fails
+    }
+    
+    // Clear main auth
     localStorage.removeItem('token')
     setToken(null)
     setUser(null)

@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Calendar, Mail, RefreshCw, CheckCircle, AlertCircle, Lock, Trash2, ArrowUpDown, Check, X, Plus, ChevronLeft, ChevronRight, Edit, Maximize2 } from 'lucide-react';
+import { Calendar, Mail, RefreshCw, CheckCircle, AlertCircle, Lock, Trash2, ArrowUpDown, Check, X, Plus, ChevronLeft, ChevronRight, Edit, LogOut } from 'lucide-react';
+import { useAuth } from '../context/AuthContext';
 
 const CalendarPage = () => {
+  const { user } = useAuth(); // Get authenticated user from context
   const [emails, setEmails] = useState([]);
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -25,13 +27,26 @@ const CalendarPage = () => {
   const [selectedEvent, setSelectedEvent] = useState(null); // Event clicked on calendar
   const [showConfirmPopup, setShowConfirmPopup] = useState(false); // Confirmation popup
   const [savingEvents, setSavingEvents] = useState(false); // Track save progress
-  const [showFullCalendar, setShowFullCalendar] = useState(false); // Full page calendar view
   const [editingEvent, setEditingEvent] = useState(null); // Event being edited
+  // Calendar is always visible on this page - no popup needed
 
   useEffect(() => {
     checkAuthStatus();
-    loadEvents(); // Load events on mount
-  }, []);
+    if (user) {
+      loadEvents(); // Only load events if user is logged in
+    } else {
+      // Clear events when user logs out
+      setEvents([]);
+      setEmails([]);
+      setExtractedEvents([]);
+      setApprovedEvents(new Set());
+      setExtractionResult(null);
+      // Also logout from IMAP if user logged out from main app
+      if (authenticated) {
+        handleImapLogout();
+      }
+    }
+  }, [user]); // Re-run when user changes
 
   const checkAuthStatus = async () => {
     try {
@@ -101,7 +116,33 @@ const CalendarPage = () => {
     }
   };
 
+  const handleImapLogout = async () => {
+    try {
+      await fetch('http://localhost:8000/api/v1/calendar/imap/logout', {
+        method: 'POST'
+      });
+      
+      // Clear all IMAP-related state
+      setAuthenticated(false);
+      setProfile(null);
+      setEmails([]);
+      setExtractedEvents([]);
+      setApprovedEvents(new Set());
+      setExtractionResult(null);
+      setImapEmail('');
+      setImapPassword('');
+      setError('');
+    } catch (err) {
+      console.error('Logout failed:', err);
+    }
+  };
+
   const handleExtractEvents = async () => {
+    if (!user) {
+      setError('User not logged in');
+      return;
+    }
+    
     setExtracting(true);
     setError('');
     setExtractionResult(null);
@@ -112,7 +153,7 @@ const CalendarPage = () => {
       const response = await fetch('http://localhost:8000/api/v1/calendar/imap/extract-events', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ user_id: 1, days: 30, max_results: 10 })  // Process last 10 emails
+        body: JSON.stringify({ user_id: user.id, days: 30, max_results: 10 })  // Use real user.id
       });
       if (response.ok) {
         const data = await response.json();
@@ -167,6 +208,11 @@ const CalendarPage = () => {
   };
   
   const confirmAndSaveEvents = async () => {
+    if (!user) {
+      setError('User not logged in');
+      return;
+    }
+    
     const eventsToAdd = extractedEvents.filter((_, idx) => approvedEvents.has(idx));
     
     setSavingEvents(true);
@@ -179,7 +225,7 @@ const CalendarPage = () => {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            user_id: 1,
+            user_id: user.id,  // Use real user.id
             ...event
           })
         });
@@ -205,8 +251,13 @@ const CalendarPage = () => {
   };
 
   const loadEvents = async () => {
+    if (!user) {
+      setEvents([]); // Clear events if no user
+      return;
+    }
+    
     try {
-      const response = await fetch('http://localhost:8000/api/v1/calendar/imap/events/1');  // TODO: Use actual user_id
+      const response = await fetch(`http://localhost:8000/api/v1/calendar/imap/events/${user.id}`);  // Use real user.id
       if (response.ok) {
         const data = await response.json();
         setEvents(data.events || []);
@@ -300,6 +351,22 @@ const CalendarPage = () => {
     return date.getMonth() === currentDate.getMonth();
   };
 
+  const getEventTypeColor = (eventType) => {
+    if (!eventType) return 'bg-blue-500';
+    
+    const type = eventType.toLowerCase().trim();
+    const colors = {
+      'academic': 'bg-blue-600',
+      'social': 'bg-purple-600',
+      'student_activity': 'bg-green-600',
+      'student activity': 'bg-green-600',
+      'career': 'bg-orange-600',
+      'other': 'bg-gray-600'
+    };
+    
+    return colors[type] || 'bg-gray-600';
+  };
+
   return (
     <div className="flex h-screen bg-dark-950 text-white overflow-hidden">
       <div className="flex-1 flex flex-col overflow-hidden">
@@ -311,14 +378,6 @@ const CalendarPage = () => {
                   <Calendar className="w-8 h-8 text-primary-400" />
                   <h1 className="text-3xl font-bold bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent">Calendar & Email</h1>
                 </div>
-                <button
-                  onClick={() => setShowFullCalendar(true)}
-                  className="px-4 py-2 bg-primary-600 hover:bg-primary-700 rounded-lg transition-colors flex items-center gap-2"
-                  title="Open Full Calendar View"
-                >
-                  <Maximize2 className="w-5 h-5" />
-                  Full Calendar
-                </button>
               </div>
             <p className="text-dark-400">Sign in with your Gmail account to fetch and manage your calendar events</p>
           </div>
@@ -402,12 +461,22 @@ const CalendarPage = () => {
         {authenticated && (
           <>
             {profile && (
-              <div className="mb-6 p-4 bg-green-500/10 border border-green-500/20 rounded-lg flex items-center gap-3">
-                <CheckCircle className="w-5 h-5 text-green-400" />
-                <div>
-                  <p className="text-green-400 font-medium">{profile.name}</p>
-                  <p className="text-dark-400 text-sm">{profile.email}</p>
+              <div className="mb-6 p-4 bg-green-500/10 border border-green-500/20 rounded-lg flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-400" />
+                  <div>
+                    <p className="text-green-400 font-medium">{profile.name}</p>
+                    <p className="text-dark-400 text-sm">{profile.email}</p>
+                  </div>
                 </div>
+                <button
+                  onClick={handleImapLogout}
+                  className="px-4 py-2 bg-red-600 hover:bg-red-700 rounded-lg transition-colors flex items-center gap-2"
+                  title="Logout from Gmail"
+                >
+                  <LogOut className="w-4 h-4" />
+                  Logout
+                </button>
               </div>
             )}
             <div className="mb-6">
@@ -555,164 +624,6 @@ const CalendarPage = () => {
               </div>
             )}
 
-            {/* Always show calendar - displays events when available */}
-            <div className="mb-6">
-              {/* Calendar Header */}
-              <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center gap-4">
-                  <h3 className="text-2xl font-bold">Calendar</h3>
-                  <button
-                    onClick={goToToday}
-                    className="px-4 py-2 bg-primary-600 hover:bg-primary-700 rounded-lg text-sm font-medium transition-colors"
-                  >
-                    Today
-                  </button>
-                </div>
-                <div className="flex items-center gap-4">
-                  <button
-                    onClick={() => navigateMonth(-1)}
-                    className="p-2 hover:bg-dark-800 rounded-lg transition-colors"
-                  >
-                    <ChevronLeft className="w-5 h-5" />
-                  </button>
-                  <h4 className="text-xl font-semibold min-w-[200px] text-center">
-                    {formatMonthYear(currentDate)}
-                  </h4>
-                  <button
-                    onClick={() => navigateMonth(1)}
-                    className="p-2 hover:bg-dark-800 rounded-lg transition-colors"
-                  >
-                    <ChevronRight className="w-5 h-5" />
-                  </button>
-                </div>
-                <div className="text-sm text-dark-400">
-                  {events.length} event{events.length !== 1 ? 's' : ''}
-                </div>
-              </div>
-
-                {/* Calendar Grid */}
-                <div className="bg-dark-900/50 border border-dark-700 rounded-lg overflow-hidden">
-                  {/* Weekday Headers */}
-                  <div className="grid grid-cols-7 bg-dark-800 border-b border-dark-700">
-                    {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map(day => (
-                      <div key={day} className="p-3 text-center text-sm font-semibold text-dark-300 border-r border-dark-700 last:border-r-0">
-                        {day}
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Calendar Days */}
-                  <div className="grid grid-cols-7">
-                    {(() => {
-                      const { daysInMonth, startingDayOfWeek } = getDaysInMonth(currentDate);
-                      const days = [];
-                      
-                      // Previous month's trailing days
-                      for (let i = 0; i < startingDayOfWeek; i++) {
-                        const prevMonthDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), -startingDayOfWeek + i + 1);
-                        days.push(
-                          <div key={`prev-${i}`} className="min-h-[120px] p-2 bg-dark-900/30 border-r border-b border-dark-700/50">
-                            <div className="text-xs text-dark-600 mb-1">{prevMonthDate.getDate()}</div>
-                          </div>
-                        );
-                      }
-                      
-                      // Current month's days
-                      for (let day = 1; day <= daysInMonth; day++) {
-                        const date = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
-                        const dayEvents = getEventsForDate(date);
-                        const today = isToday(date);
-                        
-                        days.push(
-                          <div
-                            key={day}
-                            className={`min-h-[120px] p-2 border-r border-b border-dark-700 ${
-                              today ? 'bg-primary-500/10' : 'bg-dark-900/50'
-                            } hover:bg-dark-800/50 transition-colors`}
-                          >
-                            <div className={`text-sm font-medium mb-2 ${
-                              today ? 'bg-primary-600 text-white w-7 h-7 rounded-full flex items-center justify-center' : 'text-dark-300'
-                            }`}>
-                              {day}
-                            </div>
-                            <div className="space-y-1">
-                              {dayEvents.slice(0, 3).map((event, idx) => (
-                                <div
-                                  key={idx}
-                                  onClick={() => setSelectedEvent(event)}
-                                  className={`text-xs p-1.5 rounded cursor-pointer transition-all hover:scale-105 hover:shadow-lg ${
-                                    event.event_type === 'academic' ? 'bg-blue-600/80 hover:bg-blue-600 text-white' :
-                                    event.event_type === 'social' ? 'bg-purple-600/80 hover:bg-purple-600 text-white' :
-                                    event.event_type === 'student_activity' ? 'bg-green-600/80 hover:bg-green-600 text-white' :
-                                    event.event_type === 'career' ? 'bg-orange-600/80 hover:bg-orange-600 text-white' :
-                                    event.event_type === 'deadline' ? 'bg-red-600/80 hover:bg-red-600 text-white' :
-                                    'bg-gray-600/80 hover:bg-gray-600 text-white'
-                                  }`}
-                                >
-                                  <div className="font-medium truncate">{event.title}</div>
-                                  {event.location && (
-                                    <div className="text-[10px] opacity-80 truncate">📍 {event.location}</div>
-                                  )}
-                                </div>
-                              ))}
-                              {dayEvents.length > 3 && (
-                                <div 
-                                  className="text-[10px] text-primary-400 pl-1 cursor-pointer hover:text-primary-300"
-                                  onClick={() => setSelectedEvent({ 
-                                    title: `All Events (${date.toLocaleDateString()})`,
-                                    description: 'Multiple events on this day',
-                                    allDayEvents: dayEvents
-                                  })}
-                                >
-                                  +{dayEvents.length - 3} more
-                                </div>
-                              )}
-                            </div>
-                          </div>
-                        );
-                      }
-                      
-                      // Next month's leading days
-                      const totalCells = days.length;
-                      const remainingCells = 35 - totalCells; // 5 weeks
-                      for (let i = 1; i <= remainingCells; i++) {
-                        const nextMonthDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, i);
-                        days.push(
-                          <div key={`next-${i}`} className="min-h-[120px] p-2 bg-dark-900/30 border-r border-b border-dark-700/50">
-                            <div className="text-xs text-dark-600 mb-1">{nextMonthDate.getDate()}</div>
-                          </div>
-                        );
-                      }
-                      
-                      return days;
-                    })()}
-                  </div>
-                </div>
-
-                {/* Event Legend */}
-                <div className="mt-4 flex flex-wrap gap-4 text-sm">
-                  <div className="flex items-center gap-2">
-                    <div className="w-4 h-4 bg-blue-600 rounded"></div>
-                    <span className="text-dark-400">Academic</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-4 h-4 bg-purple-600 rounded"></div>
-                    <span className="text-dark-400">Social</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-4 h-4 bg-green-600 rounded"></div>
-                    <span className="text-dark-400">Student Activity</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-4 h-4 bg-orange-600 rounded"></div>
-                    <span className="text-dark-400">Career</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-4 h-4 bg-red-600 rounded"></div>
-                    <span className="text-dark-400">Deadline</span>
-                  </div>
-                </div>
-              </div>
             {emails.length > 0 && (
               <div>
                 <div className="flex items-center justify-between mb-4">
@@ -752,6 +663,164 @@ const CalendarPage = () => {
             )}
           </>
         )}
+
+        {/* Always show calendar - displays events when available (visible whether authenticated or not) */}
+        <div className="mb-6">
+          {/* Calendar Header */}
+          <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center gap-4">
+              <h3 className="text-2xl font-bold">Calendar</h3>
+              <button
+                onClick={goToToday}
+                className="px-4 py-2 bg-primary-600 hover:bg-primary-700 rounded-lg text-sm font-medium transition-colors"
+              >
+                Today
+              </button>
+            </div>
+            <div className="flex items-center gap-4">
+              <button
+                onClick={() => navigateMonth(-1)}
+                className="p-2 hover:bg-dark-800 rounded-lg transition-colors"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <h4 className="text-xl font-semibold min-w-[200px] text-center">
+                {formatMonthYear(currentDate)}
+              </h4>
+              <button
+                onClick={() => navigateMonth(1)}
+                className="p-2 hover:bg-dark-800 rounded-lg transition-colors"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
+            <div className="text-sm text-dark-400">
+              {events.length} event{events.length !== 1 ? 's' : ''}
+            </div>
+          </div>
+
+          {/* Calendar Grid */}
+          <div className="bg-dark-900/50 border border-dark-700 rounded-lg overflow-hidden">
+            {/* Weekday Headers */}
+            <div className="grid grid-cols-7 bg-dark-800 border-b border-dark-700">
+              {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map(day => (
+                <div key={day} className="p-3 text-center text-sm font-semibold text-dark-300 border-r border-dark-700 last:border-r-0">
+                  {day}
+                </div>
+              ))}
+            </div>
+
+            {/* Calendar Days */}
+            <div className="grid grid-cols-7">
+              {(() => {
+                const { daysInMonth, startingDayOfWeek } = getDaysInMonth(currentDate);
+                const days = [];
+                
+                // Previous month's trailing days
+                for (let i = 0; i < startingDayOfWeek; i++) {
+                  const prevMonthDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), -startingDayOfWeek + i + 1);
+                  days.push(
+                    <div key={`prev-${i}`} className="min-h-[120px] p-2 bg-dark-900/30 border-r border-b border-dark-700/50">
+                      <div className="text-xs text-dark-600 mb-1">{prevMonthDate.getDate()}</div>
+                    </div>
+                  );
+                }
+                
+                // Current month's days
+                for (let day = 1; day <= daysInMonth; day++) {
+                  const date = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
+                  const dayEvents = getEventsForDate(date);
+                  const today = isToday(date);
+                  
+                  days.push(
+                    <div
+                      key={day}
+                      className={`min-h-[120px] p-2 border-r border-b border-dark-700 ${
+                        today ? 'bg-primary-500/10' : 'bg-dark-900/50'
+                      } hover:bg-dark-800/50 transition-colors`}
+                    >
+                      <div className={`text-sm font-medium mb-2 ${
+                        today ? 'bg-primary-600 text-white w-7 h-7 rounded-full flex items-center justify-center' : 'text-dark-300'
+                      }`}>
+                        {day}
+                      </div>
+                      <div className="space-y-1">
+                        {dayEvents.slice(0, 3).map((event, idx) => (
+                          <div
+                            key={idx}
+                            onClick={() => setSelectedEvent(event)}
+                            className={`text-xs p-1.5 rounded cursor-pointer transition-all hover:scale-105 hover:shadow-lg ${
+                              event.event_type === 'academic' ? 'bg-blue-600/80 hover:bg-blue-600 text-white' :
+                              event.event_type === 'social' ? 'bg-purple-600/80 hover:bg-purple-600 text-white' :
+                              event.event_type === 'student_activity' ? 'bg-green-600/80 hover:bg-green-600 text-white' :
+                              event.event_type === 'career' ? 'bg-orange-600/80 hover:bg-orange-600 text-white' :
+                              'bg-gray-600/80 hover:bg-gray-600 text-white'
+                            }`}
+                          >
+                            <div className="font-medium truncate">{event.title}</div>
+                            {event.location && (
+                              <div className="text-[10px] opacity-80 truncate">📍 {event.location}</div>
+                            )}
+                          </div>
+                        ))}
+                        {dayEvents.length > 3 && (
+                          <div 
+                            className="text-[10px] text-primary-400 pl-1 cursor-pointer hover:text-primary-300"
+                            onClick={() => setSelectedEvent({ 
+                              title: `All Events (${date.toLocaleDateString()})`,
+                              description: 'Multiple events on this day',
+                              allDayEvents: dayEvents
+                            })}
+                          >
+                            +{dayEvents.length - 3} more
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  );
+                }
+                
+                // Next month's leading days
+                const totalCells = days.length;
+                const remainingCells = 35 - totalCells; // 5 weeks
+                for (let i = 1; i <= remainingCells; i++) {
+                  const nextMonthDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, i);
+                  days.push(
+                    <div key={`next-${i}`} className="min-h-[120px] p-2 bg-dark-900/30 border-r border-b border-dark-700/50">
+                      <div className="text-xs text-dark-600 mb-1">{nextMonthDate.getDate()}</div>
+                    </div>
+                  );
+                }
+                
+                return days;
+              })()}
+            </div>
+          </div>
+
+          {/* Event Legend */}
+          <div className="mt-4 flex flex-wrap gap-4 text-sm">
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-4 bg-blue-600 rounded"></div>
+              <span className="text-dark-400">Academic</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-4 bg-purple-600 rounded"></div>
+              <span className="text-dark-400">Social</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-4 bg-green-600 rounded"></div>
+              <span className="text-dark-400">Student Activity</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-4 bg-orange-600 rounded"></div>
+              <span className="text-dark-400">Career</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-4 bg-gray-600 rounded"></div>
+              <span className="text-dark-400">Other</span>
+            </div>
+          </div>
+        </div>
           </div>
         </div>
       </div>
@@ -795,7 +864,6 @@ const CalendarPage = () => {
                           event.event_type === 'social' ? 'bg-purple-600/80 text-white' :
                           event.event_type === 'student_activity' ? 'bg-green-600/80 text-white' :
                           event.event_type === 'career' ? 'bg-orange-600/80 text-white' :
-                          event.event_type === 'deadline' ? 'bg-red-600/80 text-white' :
                           'bg-gray-600/80 text-white'
                         }`}>
                           {event.event_type || 'other'}
@@ -1004,140 +1072,7 @@ const CalendarPage = () => {
         </div>
       )}
 
-      {/* Full Calendar View Popup */}
-      {showFullCalendar && (
-        <div className="fixed inset-0 bg-dark-950 z-50 overflow-y-auto">
-          <div className="max-w-7xl mx-auto p-6">
-            {/* Header */}
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-3xl font-bold text-white">Full Calendar View</h2>
-              <button
-                onClick={() => setShowFullCalendar(false)}
-                className="px-4 py-2 bg-dark-700 hover:bg-dark-600 rounded-lg transition-colors flex items-center gap-2"
-              >
-                <X className="w-5 h-5" />
-                Close
-              </button>
-            </div>
-
-            {/* Calendar Navigation */}
-            <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center gap-4">
-                <h3 className="text-2xl font-bold">{formatMonthYear(currentDate)}</h3>
-                <button
-                  onClick={goToToday}
-                  className="px-4 py-2 bg-primary-600 hover:bg-primary-700 rounded-lg text-sm font-medium transition-colors"
-                >
-                  Today
-                </button>
-              </div>
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={() => navigateMonth(-1)}
-                  className="p-2 hover:bg-dark-800 rounded-lg transition-colors"
-                >
-                  <ChevronLeft className="w-5 h-5" />
-                </button>
-                <button
-                  onClick={() => navigateMonth(1)}
-                  className="p-2 hover:bg-dark-800 rounded-lg transition-colors"
-                >
-                  <ChevronRight className="w-5 h-5" />
-                </button>
-              </div>
-            </div>
-
-            {/* Full Calendar Grid */}
-            <div className="bg-dark-900/50 border border-dark-700 rounded-lg overflow-hidden">
-              {/* Weekday Headers */}
-              <div className="grid grid-cols-7 bg-dark-800 border-b border-dark-700">
-                {['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'].map(day => (
-                  <div key={day} className="p-4 text-center text-sm font-semibold text-dark-300 border-r border-dark-700 last:border-r-0">
-                    {day}
-                  </div>
-                ))}
-              </div>
-
-              {/* Calendar Days */}
-              <div className="grid grid-cols-7">
-                {(() => {
-                  const { daysInMonth, startingDayOfWeek } = getDaysInMonth(currentDate);
-                  const days = [];
-                  
-                  // Previous month's trailing days
-                  for (let i = 0; i < startingDayOfWeek; i++) {
-                    const prevMonthDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), -startingDayOfWeek + i + 1);
-                    days.push(
-                      <div key={`prev-${i}`} className="min-h-[150px] p-3 bg-dark-900/30 border-r border-b border-dark-700/50">
-                        <div className="text-sm text-dark-600 mb-2">{prevMonthDate.getDate()}</div>
-                      </div>
-                    );
-                  }
-                  
-                  // Current month's days
-                  for (let day = 1; day <= daysInMonth; day++) {
-                    const date = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
-                    const dayEvents = getEventsForDate(date);
-                    const today = isToday(date);
-                    
-                    days.push(
-                      <div
-                        key={day}
-                        className={`min-h-[150px] p-3 border-r border-b border-dark-700 ${
-                          today ? 'bg-primary-500/10' : 'bg-dark-900/50'
-                        }`}
-                      >
-                        <div className={`text-base font-medium mb-3 ${
-                          today ? 'bg-primary-600 text-white w-8 h-8 rounded-full flex items-center justify-center' : 'text-dark-300'
-                        }`}>
-                          {day}
-                        </div>
-                        <div className="space-y-1.5">
-                          {dayEvents.map((event, idx) => (
-                            <div
-                              key={idx}
-                              onClick={() => setSelectedEvent(event)}
-                              className={`text-xs p-2 rounded cursor-pointer transition-all hover:scale-105 hover:shadow-lg ${
-                                event.event_type === 'academic' ? 'bg-blue-600/80 hover:bg-blue-600 text-white' :
-                                event.event_type === 'social' ? 'bg-purple-600/80 hover:bg-purple-600 text-white' :
-                                event.event_type === 'student_activity' ? 'bg-green-600/80 hover:bg-green-600 text-white' :
-                                event.event_type === 'career' ? 'bg-orange-600/80 hover:bg-orange-600 text-white' :
-                                event.event_type === 'deadline' ? 'bg-red-600/80 hover:bg-red-600 text-white' :
-                                'bg-gray-600/80 hover:bg-gray-600 text-white'
-                              }`}
-                            >
-                              <div className="font-medium truncate">{event.title}</div>
-                              {event.requirements && (
-                                <div className="text-[10px] opacity-90 truncate">📚 {event.requirements}</div>
-                              )}
-                              {event.location && (
-                                <div className="text-[10px] opacity-80 truncate">📍 {event.location}</div>
-                              )}
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    );
-                  }
-                  
-                  // Next month's leading days
-                  const totalCells = days.length;
-                  const remainingCells = 35 - totalCells;
-                  for (let i = 1; i <= remainingCells; i++) {
-                    days.push(
-                      <div key={`next-${i}`} className="min-h-[150px] p-3 bg-dark-900/30 border-r border-b border-dark-700/50">
-                        <div className="text-sm text-dark-600 mb-2">{i}</div>
-                      </div>
-                    );
-                  }
-                  
-                  return days;
-                })()}
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Calendar is always visible on this page - popup removed */}
     </div>
   );
 };

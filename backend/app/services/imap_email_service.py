@@ -68,14 +68,16 @@ class IMAPEmailService:
             raise Exception(f"IMAP connection failed: {error_msg}")
     
     def disconnect(self):
-        """Close IMAP connection"""
+        """Close IMAP connection and clear session data"""
         if self.connection:
             try:
                 self.connection.close()
                 self.connection.logout()
             except:
                 pass
-            self.is_connected = False
+        self.connection = None
+        self.email_address = None
+        self.is_connected = False
     
     def fetch_emails(self, days: int = 30, max_results: int = 50) -> List[Dict[str, Any]]:
         """
@@ -231,51 +233,73 @@ class IMAPEmailService:
 CRITICAL: You MUST respond with ONLY valid JSON array format. No other text, no explanations, just the JSON array.
 
 Focus on extracting these types of events:
-- Academic Events: Classes, lectures, exams, assignments, project deadlines, office hours, academic meetings (EXTRACT COURSE CODES like CMPE101, CS202, etc.)
-- Social Events: Club meetings, social gatherings, parties, networking events, hangouts
-- Student Activities: Workshops, seminars, competitions, sports events, cultural events
-- Administrative: Registration deadlines, payment due dates, important announcements
-- Career Events: Job fairs, interviews, career workshops, internship opportunities
+- Academic: Classes, lectures, exams, assignments, project deadlines, office hours, academic meetings
+- Social: Club meetings, social gatherings, parties, networking events, hangouts
+- Student_Activity: Workshops, seminars, competitions, sports events, cultural events, student organization events
+- Career: Job fairs, interviews, career workshops, internship opportunities, career counseling
+- Other: Events that don't fit above categories
 
 RESPONSE FORMAT - Return ONLY this JSON structure, nothing else:
 [
   {
-    "title": "Clear event title with course code if academic",
-    "description": "Detailed description",
+    "title": "Clear event title",
+    "description": "Detailed description of the event",
     "event_date": "2026-01-15 14:00",
-    "end_date": "2026-01-15 16:00",
     "location": "Physical location or online link",
     "event_type": "academic",
     "priority": "high",
     "source": "email",
-    "organizer": "Who is organizing the event",
-    "requirements": "Course code like CMPE101 if academic, or any prerequisites"
+    "organizer": "Who is organizing the event"
   }
 ]
 
-CRITICAL TIME EXTRACTION RULES:
+CRITICAL RULES:
 1. Return ONLY the JSON array, no markdown, no code blocks, no extra text
 2. If no events found, return: []
 3. Extract ALL relevant events from the emails
-4. For ACADEMIC events, extract course codes (CMPE101, CS202, EE301, etc.) and include in requirements field
-5. Use event_type: academic, social, student_activity, career, administrative, meeting, or deadline
-6. Use priority: high (exams/deadlines), medium (meetings), low (social)
-7. DATE AND TIME FORMAT:
-   - MUST use 24-hour format: HH:MM (00:00 to 23:59)
-   - Examples: "14:00" for 2 PM, "09:30" for 9:30 AM, "16:45" for 4:45 PM
-   - Convert AM/PM times: "2:00 PM" becomes "14:00", "8:30 AM" becomes "08:30"
-   - Full format: "YYYY-MM-DD HH:MM" like "2026-01-15 14:00"
-8. TIME CONVERSION GUIDE:
-   - 12:00 AM (midnight) = 00:00
-   - 1:00 AM = 01:00, 2:00 AM = 02:00, ..., 11:00 AM = 11:00
-   - 12:00 PM (noon) = 12:00
-   - 1:00 PM = 13:00, 2:00 PM = 14:00, 3:00 PM = 15:00, 4:00 PM = 16:00
-   - 5:00 PM = 17:00, 6:00 PM = 18:00, 7:00 PM = 19:00, 8:00 PM = 20:00
-   - 9:00 PM = 21:00, 10:00 PM = 22:00, 11:00 PM = 23:00
-9. If time not mentioned, use 09:00 for morning events or 14:00 for afternoon events
-10. For end_date, if duration given, calculate: start time + duration
+4. Use EXACT event_type values: "academic", "social", "student_activity", "career", or "other" (lowercase, use underscore for student_activity)
+5. Use priority: "high" (exams/important events), "medium" (meetings), "low" (social)
+
+6. **24-HOUR TIME FORMAT IS MANDATORY**:
+   - ALWAYS use 24-hour format (00:00 to 23:00)
+   - NEVER use AM/PM format
+   - Examples: 09:00 (morning 9), 14:00 (afternoon 2), 21:00 (evening 9)
+   - READ the email carefully to find exact times
+
+7. **DATE AND TIME FORMAT**:
+   - Format: "YYYY-MM-DD HH:MM" (example: "2026-02-03 09:00")
+   - HH must be 00-23 (24-hour format)
+   - MM must be 00-59
+
+8. **TIME CONVERSION FROM EMAIL**:
+   - If email says "9 AM" or "9:00 AM" or "09:00 AM" → use "09:00"
+   - If email says "2 PM" or "2:00 PM" or "14:00" → use "14:00"
+   - If email says "5:30 PM" → use "17:30"
+   - If email says "11:45 AM" → use "11:45"
+   - Midnight (12 AM) → "00:00"
+   - Noon (12 PM) → "12:00"
+   - **IMPORTANT**: If time WITHOUT AM/PM (like "11:50", "9:30", "10:15"), assume it's in 24-hour format OR morning time if < 12
+   - Examples: "11:50" → "11:50" (11:50 AM), "9:30" → "09:30" (9:30 AM), "13:30" → "13:30" (1:30 PM)
+
+9. **CONVERSION TABLE**:
+   - 1 AM = 01:00, 2 AM = 02:00, 3 AM = 03:00, ..., 11 AM = 11:00, 12 PM = 12:00
+   - 1 PM = 13:00, 2 PM = 14:00, 3 PM = 15:00, 4 PM = 16:00, 5 PM = 17:00
+   - 6 PM = 18:00, 7 PM = 19:00, 8 PM = 20:00, 9 PM = 21:00, 10 PM = 22:00, 11 PM = 23:00
+
+10. **DEFAULT TIMES** (if time NOT mentioned):
+   - Morning events (classes, meetings): Use "09:00"
+   - Afternoon events: Use "14:00"
+   - Evening events: Use "19:00"
+
 11. Only extract FUTURE events (after today)
-12. Skip events with vague dates unless specific date given"""
+
+EXAMPLES WITH 24-HOUR FORMAT:
+- Email: "exam on February 3 at 9:00 AM" → event_date: "2026-02-03 09:00"
+- Email: "meeting at 2 PM on Jan 20" → event_date: "2026-01-20 14:00"
+- Email: "class starts at 13:30" → event_date: "2026-XX-XX 13:30"
+- Email: "deadline March 1" (no time) → event_date: "2026-03-01 09:00"
+- Email: "party at 8 PM Friday" → event_date: "2026-XX-XX 20:00"
+"""
         
         all_events = []
         batch_size = 5  # Reduced from 10 to 5 emails per batch to save tokens

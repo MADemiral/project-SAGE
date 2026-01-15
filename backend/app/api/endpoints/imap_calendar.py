@@ -152,20 +152,29 @@ async def save_event_to_calendar(request: SaveEventRequest, db: Session = Depend
     try:
         # Parse dates - handle both date and datetime formats
         event_date_str = request.event_date
+        event_date = None
+        
         if 'T' in event_date_str or ' ' in event_date_str:
             # Has time component
             for fmt in ["%Y-%m-%d %H:%M", "%Y-%m-%dT%H:%M", "%Y-%m-%d %H:%M:%S", "%Y-%m-%dT%H:%M:%S"]:
                 try:
+                    # Parse as timezone-naive datetime (no timezone conversion)
                     event_date = datetime.strptime(event_date_str.replace('T', ' ').split('.')[0], fmt)
                     break
                 except:
                     continue
-            else:
+            if not event_date:
                 # Fallback to date only
-                event_date = datetime.strptime(event_date_str.split()[0], "%Y-%m-%d")
+                try:
+                    event_date = datetime.strptime(event_date_str.split()[0], "%Y-%m-%d")
+                except:
+                    raise ValueError(f"Could not parse event_date: {event_date_str}")
         else:
             # Date only
-            event_date = datetime.strptime(event_date_str, "%Y-%m-%d")
+            try:
+                event_date = datetime.strptime(event_date_str, "%Y-%m-%d")
+            except:
+                raise ValueError(f"Could not parse event_date: {event_date_str}")
         
         end_date = None
         if request.end_date:
@@ -177,10 +186,22 @@ async def save_event_to_calendar(request: SaveEventRequest, db: Session = Depend
                         break
                     except:
                         continue
-                else:
-                    end_date = datetime.strptime(end_date_str.split()[0], "%Y-%m-%d")
+                if not end_date:
+                    try:
+                        end_date = datetime.strptime(end_date_str.split()[0], "%Y-%m-%d")
+                    except:
+                        pass  # end_date is optional, so we can skip if it fails
             else:
-                end_date = datetime.strptime(end_date_str, "%Y-%m-%d")
+                try:
+                    end_date = datetime.strptime(end_date_str, "%Y-%m-%d")
+                except:
+                    pass  # end_date is optional
+        
+        # Validate event_type
+        valid_event_types = ["academic", "social", "student_activity", "career", "other"]
+        event_type = request.event_type.lower().strip() if request.event_type else "other"
+        if event_type not in valid_event_types:
+            event_type = "other"
         
         # Create event
         calendar_event = CalendarEvent(
@@ -190,14 +211,13 @@ async def save_event_to_calendar(request: SaveEventRequest, db: Session = Depend
             event_date=event_date,
             end_date=end_date,
             location=request.location,
-            event_type=request.event_type or "other",
+            event_type=event_type,
             priority=request.priority or "medium",
             source="imap_email",
             email_subject=request.title,
             llm_extraction_data={
-                "organizer": request.organizer,
-                "requirements": request.requirements
-            },
+                "organizer": request.organizer
+            } if request.organizer else None,
             is_confirmed=False
         )
         
@@ -238,16 +258,62 @@ async def get_imap_events(user_id: int, db: Session = Depends(get_db)):
                     "id": e.id,
                     "title": e.title,
                     "description": e.description,
-                    "event_date": str(e.event_date),
-                    "end_date": str(e.end_date) if e.end_date else None,
+                    "event_date": e.event_date.strftime("%Y-%m-%d %H:%M:%S") if e.event_date else None,
+                    "end_date": e.end_date.strftime("%Y-%m-%d %H:%M:%S") if e.end_date else None,
                     "location": e.location,
                     "event_type": e.event_type,
                     "priority": e.priority,
                     "is_confirmed": e.is_confirmed,
-                    "created_at": str(e.created_at)
+                    "created_at": e.created_at.strftime("%Y-%m-%d %H:%M:%S") if e.created_at else None
                 }
                 for e in events
             ]
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+
+@router.delete("/events/{event_id}")
+async def delete_calendar_event(event_id: int, db: Session = Depends(get_db)):
+    """Delete a calendar event"""
+    try:
+        event = db.query(CalendarEvent).filter(CalendarEvent.id == event_id).first()
+        
+        if not event:
+            raise HTTPException(status_code=404, detail="Event not found")
+        
+        db.delete(event)
+        db.commit()
+        
+        return {
+            "success": True,
+            "message": "Event deleted successfully"
+        }
+    except HTTPException:
+        raise
+    except Exception as e:
+        db.rollback()
+        raise HTTPException(status_code=500, detail=f"Failed to delete event: {str(e)}")
+
+
+@router.put("/events/{event_id}/confirm")
+async def confirm_calendar_event(event_id: int, db: Session = Depends(get_db)):
+    """Confirm a calendar event"""
+    try:
+        event = db.query(CalendarEvent).filter(CalendarEvent.id == event_id).first()
+        
+        if not event:
+            raise HTTPException(status_code=404, detail="Event not found")
+        
+        event.is_confirmed = True
+        db.commit()
+        
+        return {
+            "success": True,
+            "message": "Event confirmed successfully"
+        }
+    except HTTPException:
+        raise
+    except Exception as e:
+        db.rollback()
+        raise HTTPException(status_code=500, detail=f"Failed to confirm event: {str(e)}")
